@@ -3,6 +3,7 @@ import SwiftUI
 import UIKit
 
 struct ContentView: View {
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @StateObject private var store = QuestionStore()
     @StateObject private var dictionary = StudyDictionaryStore()
     @State private var selectedExamID: String?
@@ -23,16 +24,46 @@ struct ContentView: View {
     }
 
     var body: some View {
-        NavigationSplitView(columnVisibility: $columnVisibility) {
-            sidebar
-        } detail: {
-            ZStack(alignment: .bottom) {
-                questionDetail
-                bottomBar
+        if horizontalSizeClass == .compact {
+            NavigationStack {
+                compactContent
             }
-            .sheet(isPresented: $showsScratchPad) {
-                ScratchPadView(drawing: $scratchDrawing)
+        } else {
+            NavigationSplitView(columnVisibility: $columnVisibility) {
+                sidebar
+            } detail: {
+                practiceShell
             }
+        }
+    }
+
+    @ViewBuilder
+    private var compactContent: some View {
+        if selectedExamID == nil {
+            examList
+        } else if showsQuestionPicker, let selectedExamID, let exam = store.exams.first(where: { $0.id == selectedExamID }) {
+            questionPicker(for: exam)
+        } else {
+            practiceShell
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button {
+                            showsQuestionPicker = true
+                        } label: {
+                            Label("Chọn câu", systemImage: "list.number")
+                        }
+                    }
+                }
+        }
+    }
+
+    private var practiceShell: some View {
+        ZStack(alignment: .bottom) {
+            questionDetail
+            bottomBar
+        }
+        .sheet(isPresented: $showsScratchPad) {
+            ScratchPadView(drawing: $scratchDrawing)
         }
     }
 
@@ -65,7 +96,13 @@ struct ContentView: View {
         return ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 Button {
-                    showsQuestionPicker = false
+                    if horizontalSizeClass == .compact {
+                        selectedExamID = nil
+                        selectedQuestionIndex = 0
+                        selectedAnswer = nil
+                    } else {
+                        showsQuestionPicker = false
+                    }
                 } label: {
                     Label("Back", systemImage: "chevron.left")
                         .font(.headline)
@@ -97,6 +134,9 @@ struct ContentView: View {
             selectedQuestionIndex = index
             selectedAnswer = nil
             columnVisibility = .detailOnly
+            if horizontalSizeClass == .compact {
+                showsQuestionPicker = false
+            }
         } label: {
             Text("\(index + 1)")
                 .font(.headline)
