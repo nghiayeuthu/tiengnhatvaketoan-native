@@ -94,6 +94,7 @@ struct ContentView: View {
                         Text(passage)
                             .font(.title3)
                             .lineSpacing(8)
+                            .textSelection(.enabled)
                             .padding()
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .background(Color.green.opacity(0.06))
@@ -107,6 +108,7 @@ struct ContentView: View {
                 .padding(.top, 24)
                 .padding(.bottom, 120)
                 .frame(maxWidth: 980, alignment: .leading)
+                .textSelection(.enabled)
             }
             .background(Color(.systemGroupedBackground))
         } else {
@@ -148,26 +150,27 @@ struct ContentView: View {
     private func options(for question: PracticeQuestion) -> some View {
         VStack(spacing: 14) {
             ForEach(Array(question.options.enumerated()), id: \.offset) { index, option in
-                Button {
-                    selectedAnswer = index
-                } label: {
-                    HStack {
-                        Text(option)
-                            .font(.title3)
-                            .foregroundStyle(.primary)
-                            .multilineTextAlignment(.leading)
-                        Spacer()
-                    }
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(optionBackground(index: index, question: question))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 14)
-                            .strokeBorder(optionBorder(index: index, question: question), lineWidth: 1.5)
-                    )
-                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                HStack {
+                    Text(option)
+                        .font(.title3)
+                        .foregroundStyle(.primary)
+                        .multilineTextAlignment(.leading)
+                        .textSelection(.enabled)
+                    Spacer()
                 }
-                .buttonStyle(.plain)
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(optionBackground(index: index, question: question))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 14)
+                        .strokeBorder(optionBorder(index: index, question: question), lineWidth: 1.5)
+                )
+                .clipShape(RoundedRectangle(cornerRadius: 14))
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    selectedAnswer = index
+                }
+                .accessibilityAddTraits(.isButton)
             }
         }
     }
