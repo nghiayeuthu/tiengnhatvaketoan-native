@@ -260,7 +260,7 @@ struct ContentView: View {
         if selectedAnswer != nil {
             let vocabNotes = dictionary.vocabularyMatches(for: question)
             let grammarNotes = dictionary.grammarMatches(for: question)
-            let explanationText = conciseExplanation(question.explanation) ?? fallbackExplanation(for: question, vocabNotes: vocabNotes, grammarNotes: grammarNotes)
+            let explanationText = conciseExplanation(question.explanation, for: question) ?? fallbackExplanation(for: question, vocabNotes: vocabNotes, grammarNotes: grammarNotes)
             let starOrderText = starOrderText(for: question)
 
             VStack(alignment: .leading, spacing: 12) {
@@ -418,7 +418,7 @@ struct ContentView: View {
         return output
     }
 
-    private func conciseExplanation(_ raw: String?) -> String? {
+    private func conciseExplanation(_ raw: String?, for question: PracticeQuestion) -> String? {
         guard let raw = raw?.nonEmpty else { return nil }
         let blockedPrefixes = [
             "Từ N1 cần nhớ:",
@@ -450,6 +450,7 @@ struct ContentView: View {
             .trimmingCharacters(in: .whitespacesAndNewlines))
 
         guard !cleaned.isEmpty else { return nil }
+        if isRedundantVocabularyExplanation(cleaned, for: question) { return nil }
         if cleaned.count <= 180 { return cleaned }
 
         let separators = CharacterSet(charactersIn: "。.!?")
@@ -458,6 +459,14 @@ struct ContentView: View {
             .filter { !$0.isEmpty }
         let short = sentences.prefix(2).joined(separator: "。")
         return short.isEmpty ? String(cleaned.prefix(180)) + "..." : short + "。"
+    }
+
+    private func isRedundantVocabularyExplanation(_ text: String, for question: PracticeQuestion) -> Bool {
+        guard question.sectionTitle == "Từ vựng" else { return false }
+        let compact = text.replacingOccurrences(of: " ", with: "")
+        guard compact.hasPrefix("Chọn") || compact.hasPrefix("Đápán") else { return false }
+        let genericMarkers = ["hợpnghĩa", "cáchdùng", "tựnhiên", "=", "（", "("]
+        return genericMarkers.contains { compact.contains($0) }
     }
 
     private func starOrderText(for question: PracticeQuestion) -> String? {
