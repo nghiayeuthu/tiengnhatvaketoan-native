@@ -153,7 +153,7 @@ struct ContentView: View {
                         text: option,
                         font: .preferredFont(forTextStyle: .title3)
                     )
-                    Spacer()
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     Button {
                         selectedAnswer = index
                     } label: {
