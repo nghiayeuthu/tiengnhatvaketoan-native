@@ -13,6 +13,8 @@
 		101010101010101010101004 /* QuestionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100004 /* QuestionStore.swift */; };
 		101010101010101010101005 /* PencilCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100005 /* PencilCanvasView.swift */; };
 		101010101010101010101006 /* ExamData in Resources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100006 /* ExamData */; };
+		101010101010101010101007 /* StudyDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100009 /* StudyDictionary.swift */; };
+		101010101010101010101008 /* StudyDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100010 /* StudyDictionary.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		101010101010101010100006 /* ExamData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ExamData; sourceTree = "<group>"; };
 		101010101010101010100007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		101010101010101010100008 /* TiengNhatVaKeToanNative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TiengNhatVaKeToanNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		101010101010101010100009 /* StudyDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyDictionary.swift; sourceTree = "<group>"; };
+		101010101010101010100010 /* StudyDictionary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StudyDictionary.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +57,9 @@
 				101010101010101010100003 /* Models.swift */,
 				101010101010101010100004 /* QuestionStore.swift */,
 				101010101010101010100005 /* PencilCanvasView.swift */,
+				101010101010101010100009 /* StudyDictionary.swift */,
 				101010101010101010100006 /* ExamData */,
+				101010101010101010100010 /* StudyDictionary.json */,
 				101010101010101010100007 /* Info.plist */,
 			);
 			path = TiengNhatVaKeToanNative;
@@ -126,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				101010101010101010101006 /* ExamData in Resources */,
+				101010101010101010101008 /* StudyDictionary.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +148,7 @@
 				101010101010101010101003 /* Models.swift in Sources */,
 				101010101010101010101004 /* QuestionStore.swift in Sources */,
 				101010101010101010101005 /* PencilCanvasView.swift in Sources */,
+				101010101010101010101007 /* StudyDictionary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

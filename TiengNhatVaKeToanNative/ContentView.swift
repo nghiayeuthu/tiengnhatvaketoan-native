@@ -3,6 +3,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var store = QuestionStore()
+    @StateObject private var dictionary = StudyDictionaryStore()
     @State private var selectedExamID: String?
     @State private var selectedQuestionIndex = 0
     @State private var selectedAnswer: Int?
@@ -174,6 +175,9 @@ struct ContentView: View {
     @ViewBuilder
     private func explanation(for question: PracticeQuestion) -> some View {
         if selectedAnswer != nil {
+            let vocabNotes = dictionary.vocabularyMatches(for: question)
+            let grammarNotes = dictionary.grammarMatches(for: question)
+
             VStack(alignment: .leading, spacing: 12) {
                 if let correct = question.correctAnswer, question.options.indices.contains(correct - 1) {
                     Text("Đáp án: \(correct). \(question.options[correct - 1])")
@@ -185,8 +189,17 @@ struct ContentView: View {
                 if let order = question.correctOrder, !order.isEmpty {
                     Text("正しい順序: \(order.joined(separator: " → "))")
                 }
-                if let explanation = question.explanation?.nonEmpty {
+                if let explanation = conciseExplanation(question.explanation) {
+                    Label("Giải thích", systemImage: "lightbulb")
+                        .font(.headline)
+                        .foregroundStyle(.orange)
                     Text(explanation)
+                }
+                if !grammarNotes.isEmpty {
+                    noteSection(title: "Ngữ pháp", systemImage: "text.book.closed", lines: grammarNotes.map { "\($0.pattern) = \($0.meaning)" })
+                }
+                if !vocabNotes.isEmpty {
+                    noteSection(title: "Từ vựng / cách đọc", systemImage: "character.book.closed", lines: vocabNotes.map(dictionary.note(for:)))
                 }
             }
             .font(.body)
@@ -196,6 +209,18 @@ struct ContentView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(Color.yellow.opacity(0.12))
             .clipShape(RoundedRectangle(cornerRadius: 16))
+        }
+    }
+
+    private func noteSection(title: String, systemImage: String, lines: [String]) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Label(title, systemImage: systemImage)
+                .font(.headline)
+                .foregroundStyle(.green)
+            ForEach(lines, id: \.self) { line in
+                Text("• \(line)")
+                    .font(.callout)
+            }
         }
     }
 
@@ -280,5 +305,41 @@ struct ContentView: View {
 
         output.append(AttributedString(remainder.removingAppMarkers))
         return output
+    }
+
+    private func conciseExplanation(_ raw: String?) -> String? {
+        guard let raw = raw?.nonEmpty else { return nil }
+        let blockedPrefixes = [
+            "Từ N1 cần nhớ:",
+            "Từ N2 cần nhớ:",
+            "Cách đọc kanji trong câu:",
+            "Ngữ pháp N1 cần nhớ:"
+        ]
+        let cleaned = raw
+            .components(separatedBy: .newlines)
+            .map { line in
+                var value = line.trimmingCharacters(in: .whitespacesAndNewlines)
+                for prefix in blockedPrefixes where value.hasPrefix(prefix) {
+                    value = ""
+                }
+                if value.hasPrefix("Đáp án:") {
+                    value = value.replacingOccurrences(of: #"^Đáp án:\s*\d+\.?\s*"#, with: "", options: .regularExpression)
+                }
+                return value
+            }
+            .filter { !$0.isEmpty }
+            .joined(separator: " ")
+            .replacingOccurrences(of: "  ", with: " ")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+
+        guard !cleaned.isEmpty else { return nil }
+        if cleaned.count <= 180 { return cleaned }
+
+        let separators = CharacterSet(charactersIn: "。.!?")
+        let sentences = cleaned.components(separatedBy: separators)
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty }
+        let short = sentences.prefix(2).joined(separator: "。")
+        return short.isEmpty ? String(cleaned.prefix(180)) + "..." : short + "。"
     }
 }
