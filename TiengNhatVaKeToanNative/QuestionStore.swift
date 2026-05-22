@@ -72,6 +72,7 @@ final class QuestionStore: ObservableObject {
                             correctAnswer: raw.correctAnswer,
                             explanation: raw.explanation,
                             correctOrder: raw.correctOrder,
+                            starOrder: raw.starOrder,
                             answerText: raw.answerText
                         )
                     )

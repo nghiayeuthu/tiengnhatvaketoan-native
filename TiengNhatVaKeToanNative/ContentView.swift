@@ -261,6 +261,7 @@ struct ContentView: View {
             let vocabNotes = dictionary.vocabularyMatches(for: question)
             let grammarNotes = dictionary.grammarMatches(for: question)
             let explanationText = conciseExplanation(question.explanation) ?? fallbackExplanation(for: question, vocabNotes: vocabNotes, grammarNotes: grammarNotes)
+            let starOrderText = starOrderText(for: question)
 
             VStack(alignment: .leading, spacing: 12) {
                 if let correct = question.correctAnswer, question.options.indices.contains(correct - 1) {
@@ -275,6 +276,13 @@ struct ContentView: View {
                 }
                 if let order = question.correctOrder, !order.isEmpty {
                     SelectableTextView(text: "正しい順序: \(order.joined(separator: " → "))")
+                }
+                if let starOrderText {
+                    SelectableTextView(
+                        text: "正しい順序: \(starOrderText)",
+                        font: .preferredFont(forTextStyle: .headline),
+                        isBold: true
+                    )
                 }
                 if let explanation = explanationText {
                     Label("Giải thích", systemImage: "lightbulb")
@@ -425,6 +433,12 @@ struct ContentView: View {
                 for prefix in blockedPrefixes where value.hasPrefix(prefix) {
                     value = ""
                 }
+                if value.hasPrefix("正しい順序:") {
+                    value = value
+                        .components(separatedBy: ". ")
+                        .filter { !$0.trimmingCharacters(in: .whitespacesAndNewlines).hasPrefix("正しい順序:") }
+                        .joined(separator: ". ")
+                }
                 if value.hasPrefix("Đáp án:") {
                     value = value.replacingOccurrences(of: #"^Đáp án:\s*\d+\.?\s*"#, with: "", options: .regularExpression)
                 }
@@ -444,6 +458,31 @@ struct ContentView: View {
             .filter { !$0.isEmpty }
         let short = sentences.prefix(2).joined(separator: "。")
         return short.isEmpty ? String(cleaned.prefix(180)) + "..." : short + "。"
+    }
+
+    private func starOrderText(for question: PracticeQuestion) -> String? {
+        if let starOrder = question.starOrder?.nonEmpty {
+            return normalizeOrderSeparators(starOrder)
+        }
+        guard let explanation = question.explanation,
+              let range = explanation.range(of: "正しい順序:") else {
+            return nil
+        }
+        let tail = explanation[range.upperBound...]
+        let rawOrder = tail
+            .components(separatedBy: ".")
+            .first?
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let rawOrder, !rawOrder.isEmpty else { return nil }
+        return normalizeOrderSeparators(rawOrder)
+    }
+
+    private func normalizeOrderSeparators(_ text: String) -> String {
+        text
+            .replacingOccurrences(of: " / ", with: " → ")
+            .replacingOccurrences(of: "/", with: " → ")
+            .replacingOccurrences(of: "  ", with: " ")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
     private func fallbackExplanation(for question: PracticeQuestion, vocabNotes: [VocabularyEntry], grammarNotes: [GrammarEntry]) -> String? {

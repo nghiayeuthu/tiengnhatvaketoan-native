@@ -44,6 +44,7 @@ struct RawQuestion: Decodable {
     let correctAnswer: Int?
     let explanation: String?
     let correctOrder: [String]?
+    let starOrder: String?
     let answerText: String?
 }
 
@@ -61,6 +62,7 @@ struct PracticeQuestion: Identifiable {
     let correctAnswer: Int?
     let explanation: String?
     let correctOrder: [String]?
+    let starOrder: String?
     let answerText: String?
 }
 
