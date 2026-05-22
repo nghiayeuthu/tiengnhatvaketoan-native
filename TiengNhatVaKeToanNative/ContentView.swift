@@ -260,6 +260,7 @@ struct ContentView: View {
         if selectedAnswer != nil {
             let vocabNotes = dictionary.vocabularyMatches(for: question)
             let grammarNotes = dictionary.grammarMatches(for: question)
+            let explanationText = conciseExplanation(question.explanation) ?? fallbackExplanation(for: question, vocabNotes: vocabNotes, grammarNotes: grammarNotes)
 
             VStack(alignment: .leading, spacing: 12) {
                 if let correct = question.correctAnswer, question.options.indices.contains(correct - 1) {
@@ -275,7 +276,7 @@ struct ContentView: View {
                 if let order = question.correctOrder, !order.isEmpty {
                     SelectableTextView(text: "正しい順序: \(order.joined(separator: " → "))")
                 }
-                if let explanation = conciseExplanation(question.explanation) {
+                if let explanation = explanationText {
                     Label("Giải thích", systemImage: "lightbulb")
                         .font(.headline)
                         .foregroundStyle(.orange)
@@ -443,5 +444,29 @@ struct ContentView: View {
             .filter { !$0.isEmpty }
         let short = sentences.prefix(2).joined(separator: "。")
         return short.isEmpty ? String(cleaned.prefix(180)) + "..." : short + "。"
+    }
+
+    private func fallbackExplanation(for question: PracticeQuestion, vocabNotes: [VocabularyEntry], grammarNotes: [GrammarEntry]) -> String? {
+        guard let correct = question.correctAnswer, question.options.indices.contains(correct - 1) else {
+            return nil
+        }
+
+        let answer = question.options[correct - 1]
+        switch question.sectionTitle {
+        case "Ngữ pháp":
+            if let grammar = grammarNotes.first {
+                return "Chọn 「\(answer)」 vì mẫu 「\(grammar.pattern)」 nghĩa là \(grammar.meaning), hợp với quan hệ ý trong câu."
+            }
+            return "Chọn 「\(answer)」 vì đây là cách nối/cụm ngữ pháp tự nhiên nhất trong câu."
+        case "Đọc hiểu":
+            return "Chọn 「\(answer)」 vì lựa chọn này khớp trực tiếp với nội dung đoạn văn và trả lời đúng trọng tâm câu hỏi."
+        case "Từ vựng":
+            if let vocab = vocabNotes.first {
+                return "Chọn 「\(answer)」. \(dictionary.note(for: vocab))."
+            }
+            return "Chọn 「\(answer)」 vì từ này hợp nghĩa và cách dùng trong câu."
+        default:
+            return "Chọn 「\(answer)」."
+        }
     }
 }
