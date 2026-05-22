@@ -259,7 +259,7 @@ struct ContentView: View {
     private func explanation(for question: PracticeQuestion) -> some View {
         if selectedAnswer != nil {
             let vocabNotes = dictionary.vocabularyMatches(for: question)
-            let grammarNotes = dictionary.grammarMatches(for: question)
+            let grammarNotes = question.sectionTitle == "Ngữ pháp" ? dictionary.grammarMatches(for: question) : []
             let explanationText = conciseExplanation(question.explanation) ?? fallbackExplanation(for: question, vocabNotes: vocabNotes, grammarNotes: grammarNotes)
             let starOrderText = starOrderText(for: question)
 
@@ -496,14 +496,11 @@ struct ContentView: View {
             if let grammar = grammarNotes.first {
                 return "Chọn 「\(answer)」 vì mẫu 「\(grammar.pattern)」 nghĩa là \(grammar.meaning), hợp với quan hệ ý trong câu."
             }
-            return "Chọn 「\(answer)」 vì đây là cách nối/cụm ngữ pháp tự nhiên nhất trong câu."
+            return nil
         case "Đọc hiểu":
             return nil
         case "Từ vựng":
-            if let vocab = vocabNotes.first {
-                return "Chọn 「\(answer)」. \(dictionary.note(for: vocab))."
-            }
-            return "Chọn 「\(answer)」 vì từ này hợp nghĩa và cách dùng trong câu."
+            return nil
         default:
             return "Chọn 「\(answer)」."
         }
