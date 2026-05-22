@@ -1,5 +1,6 @@
 import PencilKit
 import SwiftUI
+import UIKit
 
 struct ContentView: View {
     @StateObject private var store = QuestionStore()
@@ -91,10 +92,10 @@ struct ContentView: View {
                 VStack(alignment: .leading, spacing: 24) {
                     header(for: question)
                     if let passage = question.passage?.nonEmpty {
-                        Text(passage)
-                            .font(.title3)
-                            .lineSpacing(8)
-                            .textSelection(.enabled)
+                        SelectableTextView(
+                            text: passage,
+                            font: .preferredFont(forTextStyle: .title3)
+                        )
                             .padding()
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .background(Color.green.opacity(0.06))
@@ -140,10 +141,7 @@ struct ContentView: View {
     }
 
     private func questionText(_ question: PracticeQuestion) -> some View {
-        Text(attributedQuestion(question))
-            .font(.system(size: 30, weight: .bold))
-            .lineSpacing(8)
-            .textSelection(.enabled)
+        SelectableAttributedTextView(attributedText: attributedQuestion(question))
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 
@@ -151,12 +149,20 @@ struct ContentView: View {
         VStack(spacing: 14) {
             ForEach(Array(question.options.enumerated()), id: \.offset) { index, option in
                 HStack {
-                    Text(option)
-                        .font(.title3)
-                        .foregroundStyle(.primary)
-                        .multilineTextAlignment(.leading)
-                        .textSelection(.enabled)
+                    SelectableTextView(
+                        text: option,
+                        font: .preferredFont(forTextStyle: .title3)
+                    )
                     Spacer()
+                    Button {
+                        selectedAnswer = index
+                    } label: {
+                        Image(systemName: selectedAnswer == index ? "checkmark.circle.fill" : "circle")
+                            .font(.title2)
+                            .foregroundStyle(selectedAnswer == index ? .green : .secondary)
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("Chọn đáp án \(index + 1)")
                 }
                 .padding()
                 .frame(maxWidth: .infinity)
@@ -167,10 +173,6 @@ struct ContentView: View {
                 )
                 .clipShape(RoundedRectangle(cornerRadius: 14))
                 .contentShape(Rectangle())
-                .onTapGesture {
-                    selectedAnswer = index
-                }
-                .accessibilityAddTraits(.isButton)
             }
         }
     }
@@ -183,20 +185,23 @@ struct ContentView: View {
 
             VStack(alignment: .leading, spacing: 12) {
                 if let correct = question.correctAnswer, question.options.indices.contains(correct - 1) {
-                    Text("Đáp án: \(correct). \(question.options[correct - 1])")
-                        .font(.headline)
+                    SelectableTextView(
+                        text: "Đáp án: \(correct). \(question.options[correct - 1])",
+                        font: .preferredFont(forTextStyle: .headline),
+                        isBold: true
+                    )
                 }
                 if let answerText = question.answerText?.nonEmpty {
-                    Text(answerText)
+                    SelectableTextView(text: answerText)
                 }
                 if let order = question.correctOrder, !order.isEmpty {
-                    Text("正しい順序: \(order.joined(separator: " → "))")
+                    SelectableTextView(text: "正しい順序: \(order.joined(separator: " → "))")
                 }
                 if let explanation = conciseExplanation(question.explanation) {
                     Label("Giải thích", systemImage: "lightbulb")
                         .font(.headline)
                         .foregroundStyle(.orange)
-                    Text(explanation)
+                    SelectableTextView(text: explanation)
                 }
                 if !grammarNotes.isEmpty {
                     noteSection(title: "Ngữ pháp", systemImage: "text.book.closed", lines: grammarNotes.map { "\($0.pattern) = \($0.meaning)" })
@@ -221,8 +226,10 @@ struct ContentView: View {
                 .font(.headline)
                 .foregroundStyle(.green)
             ForEach(lines, id: \.self) { line in
-                Text("• \(line)")
-                    .font(.callout)
+                SelectableTextView(
+                    text: "• \(line)",
+                    font: .preferredFont(forTextStyle: .callout)
+                )
             }
         }
     }
@@ -288,25 +295,39 @@ struct ContentView: View {
         return Color.gray.opacity(0.18)
     }
 
-    private func attributedQuestion(_ question: PracticeQuestion) -> AttributedString {
+    private func attributedQuestion(_ question: PracticeQuestion) -> NSAttributedString {
         let source = question.textHtml ?? question.text
-        var output = AttributedString()
+        let output = NSMutableAttributedString()
         var remainder = source
+        let baseFont = UIFont.boldSystemFont(ofSize: 30)
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineSpacing = 8
+        let baseAttributes: [NSAttributedString.Key: Any] = [
+            .font: baseFont,
+            .foregroundColor: UIColor.label,
+            .paragraphStyle: paragraph
+        ]
 
         while let start = remainder.range(of: "[[u]]") {
             let before = String(remainder[..<start.lowerBound])
-            output.append(AttributedString(before.replacingOccurrences(of: "[[blank]]", with: "（　）").replacingOccurrences(of: "[[/blank]]", with: "")))
+            output.append(NSAttributedString(
+                string: before.replacingOccurrences(of: "[[blank]]", with: "（　）").replacingOccurrences(of: "[[/blank]]", with: ""),
+                attributes: baseAttributes
+            ))
             remainder = String(remainder[start.upperBound...])
 
             guard let end = remainder.range(of: "[[/u]]") else { break }
-            var marked = AttributedString(String(remainder[..<end.lowerBound]))
-            marked.underlineStyle = .single
-            marked.foregroundColor = .orange
-            output.append(marked)
+            output.append(NSAttributedString(
+                string: String(remainder[..<end.lowerBound]),
+                attributes: baseAttributes.merging([
+                    .underlineStyle: NSUnderlineStyle.single.rawValue,
+                    .foregroundColor: UIColor.systemOrange
+                ]) { _, new in new }
+            ))
             remainder = String(remainder[end.upperBound...])
         }
 
-        output.append(AttributedString(remainder.removingAppMarkers))
+        output.append(NSAttributedString(string: remainder.removingAppMarkers, attributes: baseAttributes))
         return output
     }
 
