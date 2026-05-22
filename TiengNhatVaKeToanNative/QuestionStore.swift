@@ -52,8 +52,8 @@ final class QuestionStore: ObservableObject {
             for group in section.groups {
                 for raw in group.questions {
                     let number = raw.questionNumber ?? raw.id ?? runningIndex
-                    let textHtml = raw.textHtml ?? raw.prompt ?? raw.question
-                    let text = (textHtml ?? raw.text ?? raw.question ?? raw.prompt ?? "")
+                    let textHtml = raw.textHtml?.nonEmpty ?? raw.prompt?.nonEmpty ?? raw.question?.nonEmpty
+                    let text = (textHtml ?? raw.text?.nonEmpty ?? raw.question?.nonEmpty ?? raw.prompt?.nonEmpty ?? "")
                         .removingAppMarkers
                     let passage = raw.passage ?? group.passage
 
