@@ -8,6 +8,7 @@ struct ContentView: View {
     @State private var selectedExamID: String?
     @State private var selectedQuestionIndex = 0
     @State private var selectedAnswer: Int?
+    @State private var showsQuestionPicker = false
     @State private var scratchDrawing = PKDrawing()
     @State private var showsScratchPad = false
 
@@ -22,19 +23,7 @@ struct ContentView: View {
 
     var body: some View {
         NavigationSplitView {
-            List {
-                Section("Luyện đề N1") {
-                    ForEach(store.exams) { exam in
-                        examRow(exam)
-                    }
-                }
-            }
-            .navigationTitle("TiengNhatVaKeToan")
-            .onAppear {
-                if selectedExamID == nil {
-                    selectedExamID = store.exams.first?.id
-                }
-            }
+            sidebar
         } detail: {
             ZStack(alignment: .bottom) {
                 questionDetail
@@ -43,6 +32,92 @@ struct ContentView: View {
             .sheet(isPresented: $showsScratchPad) {
                 ScratchPadView(drawing: $scratchDrawing)
             }
+        }
+    }
+
+    @ViewBuilder
+    private var sidebar: some View {
+        if showsQuestionPicker, let selectedExamID, let exam = store.exams.first(where: { $0.id == selectedExamID }) {
+            questionPicker(for: exam)
+        } else {
+            examList
+        }
+    }
+
+    private var examList: some View {
+        List {
+            Section("Luyện đề N1") {
+                ForEach(store.exams) { exam in
+                    examRow(exam)
+                }
+            }
+        }
+        .navigationTitle("Thư mục đề")
+    }
+
+    private func questionPicker(for exam: ExamDocument) -> some View {
+        let questions = store.questions(for: exam.id)
+        let columns = [
+            GridItem(.adaptive(minimum: 48, maximum: 64), spacing: 10)
+        ]
+
+        return ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                Button {
+                    showsQuestionPicker = false
+                } label: {
+                    Label("Back", systemImage: "chevron.left")
+                        .font(.headline)
+                }
+                .buttonStyle(.bordered)
+                .tint(.green)
+
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Chọn câu")
+                        .font(.title2.bold())
+                    Text("\(exam.title) • \(questions.count) câu")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+
+                LazyVGrid(columns: columns, alignment: .leading, spacing: 10) {
+                    ForEach(Array(questions.enumerated()), id: \.element.id) { index, question in
+                        questionNumberButton(index: index, question: question)
+                    }
+                }
+            }
+            .padding()
+        }
+        .navigationTitle("Chọn câu")
+    }
+
+    private func questionNumberButton(index: Int, question: PracticeQuestion) -> some View {
+        Button {
+            selectedQuestionIndex = index
+            selectedAnswer = nil
+        } label: {
+            Text("\(index + 1)")
+                .font(.headline)
+                .frame(width: 48, height: 44)
+                .background(selectedQuestionIndex == index ? Color.green : Color(.secondarySystemGroupedBackground))
+                .foregroundStyle(selectedQuestionIndex == index ? .white : .primary)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .strokeBorder(questionButtonBorder(for: question, isSelected: selectedQuestionIndex == index), lineWidth: 1.5)
+                )
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("Câu \(question.number)")
+    }
+
+    private func questionButtonBorder(for question: PracticeQuestion, isSelected: Bool) -> Color {
+        if isSelected { return .green }
+        switch question.sectionTitle {
+        case "Từ vựng": return .orange.opacity(0.45)
+        case "Ngữ pháp": return .blue.opacity(0.45)
+        case "Đọc hiểu": return .purple.opacity(0.45)
+        default: return .gray.opacity(0.3)
         }
     }
 
@@ -81,12 +156,15 @@ struct ContentView: View {
         selectedExamID = examID
         selectedQuestionIndex = 0
         selectedAnswer = nil
+        showsQuestionPicker = true
     }
 
     @ViewBuilder
     private var questionDetail: some View {
         if let error = store.loadError {
             ContentUnavailableView("Lỗi dữ liệu", systemImage: "exclamationmark.triangle", description: Text(error))
+        } else if selectedExamID == nil {
+            ContentUnavailableView("Chọn thư mục đề", systemImage: "book.closed", description: Text("Chọn một đề ở bên trái để bắt đầu luyện."))
         } else if let question = currentQuestion {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
