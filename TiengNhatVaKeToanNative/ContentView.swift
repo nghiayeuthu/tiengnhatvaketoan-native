@@ -11,6 +11,7 @@ struct ContentView: View {
     @State private var showsQuestionPicker = false
     @State private var scratchDrawing = PKDrawing()
     @State private var showsScratchPad = false
+    @State private var columnVisibility: NavigationSplitViewVisibility = .all
 
     var selectedQuestions: [PracticeQuestion] {
         store.questions(for: selectedExamID)
@@ -22,7 +23,7 @@ struct ContentView: View {
     }
 
     var body: some View {
-        NavigationSplitView {
+        NavigationSplitView(columnVisibility: $columnVisibility) {
             sidebar
         } detail: {
             ZStack(alignment: .bottom) {
@@ -95,6 +96,7 @@ struct ContentView: View {
         Button {
             selectedQuestionIndex = index
             selectedAnswer = nil
+            columnVisibility = .detailOnly
         } label: {
             Text("\(index + 1)")
                 .font(.headline)
@@ -157,6 +159,7 @@ struct ContentView: View {
         selectedQuestionIndex = 0
         selectedAnswer = nil
         showsQuestionPicker = true
+        columnVisibility = .all
     }
 
     @ViewBuilder
