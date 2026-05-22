@@ -22,6 +22,19 @@ struct GrammarEntry: Decodable, Identifiable, Hashable {
 
     var id: String { pattern }
     var searchTerms: [String] { [pattern] + (aliases ?? []) }
+
+    static let supplemental: [GrammarEntry] = [
+        GrammarEntry(pattern: "はずだ", meaning: "chắc là, lẽ ra phải; suy luận có căn cứ", aliases: ["はず", "はずです", "はずだった"]),
+        GrammarEntry(pattern: "てくる", meaning: "dần trở nên; thay đổi từ trước đến nay", aliases: ["てきた", "てくる"]),
+        GrammarEntry(pattern: "らしい", meaning: "có vẻ, nghe nói; suy đoán dựa trên thông tin", aliases: ["らしい", "らしく"]),
+        GrammarEntry(pattern: "わけだ", meaning: "thảo nào, nghĩa là; kết luận từ lý do", aliases: ["わけ", "わけです"]),
+        GrammarEntry(pattern: "わけではない", meaning: "không hẳn là, không có nghĩa là", aliases: ["わけではない", "わけじゃない"]),
+        GrammarEntry(pattern: "わけにはいかない", meaning: "không thể làm vì hoàn cảnh/đạo lý không cho phép", aliases: ["わけにはいかない", "わけにもいかない"]),
+        GrammarEntry(pattern: "に違いない", meaning: "chắc chắn là", aliases: ["に違いない"]),
+        GrammarEntry(pattern: "かもしれない", meaning: "có thể, biết đâu", aliases: ["かもしれない"]),
+        GrammarEntry(pattern: "ようだ", meaning: "có vẻ như, dường như", aliases: ["ようだ", "ようです"]),
+        GrammarEntry(pattern: "べきだ", meaning: "nên, cần phải", aliases: ["べき", "べきだ", "べきではない"])
+    ]
 }
 
 @MainActor
@@ -58,7 +71,7 @@ final class StudyDictionaryStore: ObservableObject {
     func grammarMatches(for question: PracticeQuestion, limit: Int = 4) -> [GrammarEntry] {
         let haystack = studyText(for: question) + "\n" + (question.explanation ?? "")
         var usedPatterns = Set<String>()
-        return grammar
+        return (grammar + GrammarEntry.supplemental)
             .filter { entry in
                 entry.searchTerms.contains { term in
                     let normalized = term.replacingOccurrences(of: "〜", with: "")
