@@ -20,26 +20,10 @@ struct ContentView: View {
 
     var body: some View {
         NavigationSplitView {
-            List(selection: $selectedExamID) {
+            List {
                 Section("Luyện đề N1") {
                     ForEach(store.exams) { exam in
-                        let count = store.questions(for: exam.id).count
-                        Button {
-                            selectedExamID = exam.id
-                            selectedQuestionIndex = 0
-                            selectedAnswer = nil
-                        } label: {
-                            HStack {
-                                VStack(alignment: .leading) {
-                                    Text(exam.title)
-                                        .font(.headline)
-                                    Text("\(count) câu")
-                                        .font(.caption)
-                                        .foregroundStyle(.secondary)
-                                }
-                                Spacer()
-                            }
-                        }
+                        examRow(exam)
                     }
                 }
             }
@@ -58,6 +42,43 @@ struct ContentView: View {
                 ScratchPadView(drawing: $scratchDrawing)
             }
         }
+    }
+
+    private func examRow(_ exam: ExamDocument) -> some View {
+        let count = store.questions(for: exam.id).count
+        let isSelected = selectedExamID == exam.id
+
+        return HStack(spacing: 12) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(exam.title)
+                    .font(.headline)
+                    .foregroundStyle(isSelected ? .white : .primary)
+                Text("\(count) câu")
+                    .font(.caption)
+                    .foregroundStyle(isSelected ? .white.opacity(0.85) : .secondary)
+            }
+            Spacer()
+            if isSelected {
+                Image(systemName: "checkmark.circle.fill")
+                    .foregroundStyle(.white)
+            }
+        }
+        .padding(.vertical, 8)
+        .padding(.horizontal, 10)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(isSelected ? Color.green : Color.clear)
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .contentShape(Rectangle())
+        .onTapGesture {
+            selectExam(exam.id)
+        }
+        .accessibilityAddTraits(.isButton)
+    }
+
+    private func selectExam(_ examID: String) {
+        selectedExamID = examID
+        selectedQuestionIndex = 0
+        selectedAnswer = nil
     }
 
     @ViewBuilder
