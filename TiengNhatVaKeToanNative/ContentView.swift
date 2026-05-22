@@ -418,7 +418,7 @@ struct ContentView: View {
             "Cách đọc kanji trong câu:",
             "Ngữ pháp N1 cần nhớ:"
         ]
-        let cleaned = raw
+        let cleaned = removeGenericReadingPhrases(from: raw
             .components(separatedBy: .newlines)
             .map { line in
                 var value = line.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -433,7 +433,7 @@ struct ContentView: View {
             .filter { !$0.isEmpty }
             .joined(separator: " ")
             .replacingOccurrences(of: "  ", with: " ")
-            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .trimmingCharacters(in: .whitespacesAndNewlines))
 
         guard !cleaned.isEmpty else { return nil }
         if cleaned.count <= 180 { return cleaned }
@@ -459,7 +459,7 @@ struct ContentView: View {
             }
             return "Chọn 「\(answer)」 vì đây là cách nối/cụm ngữ pháp tự nhiên nhất trong câu."
         case "Đọc hiểu":
-            return "Chọn 「\(answer)」 vì lựa chọn này khớp trực tiếp với nội dung đoạn văn và trả lời đúng trọng tâm câu hỏi."
+            return nil
         case "Từ vựng":
             if let vocab = vocabNotes.first {
                 return "Chọn 「\(answer)」. \(dictionary.note(for: vocab))."
@@ -468,5 +468,30 @@ struct ContentView: View {
         default:
             return "Chọn 「\(answer)」."
         }
+    }
+
+    private func removeGenericReadingPhrases(from text: String) -> String {
+        let genericMarkers = [
+            "Câu này cần đối chiếu",
+            "Câu này hỏi quan điểm",
+            "Câu này hỏi nội dung được chỉ tới",
+            "Câu này hỏi tác giả mô tả",
+            "Câu này hỏi kết luận",
+            "Câu này hỏi lý do",
+            "Ý đúng nằm ở lựa chọn này",
+            "Các lựa chọn còn lại",
+            "Các lựa chọn như",
+            "thường sai vì",
+            "dễ sai vì"
+        ]
+
+        return text
+            .components(separatedBy: ". ")
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { sentence in
+                !genericMarkers.contains { sentence.contains($0) }
+            }
+            .joined(separator: ". ")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }
