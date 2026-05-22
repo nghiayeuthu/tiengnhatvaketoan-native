@@ -259,7 +259,7 @@ struct ContentView: View {
     private func explanation(for question: PracticeQuestion) -> some View {
         if selectedAnswer != nil {
             let vocabNotes = dictionary.vocabularyMatches(for: question)
-            let grammarNotes = question.sectionTitle == "Ngữ pháp" ? dictionary.grammarMatches(for: question) : []
+            let grammarNotes = dictionary.grammarMatches(for: question)
             let explanationText = conciseExplanation(question.explanation) ?? fallbackExplanation(for: question, vocabNotes: vocabNotes, grammarNotes: grammarNotes)
             let starOrderText = starOrderText(for: question)
 
