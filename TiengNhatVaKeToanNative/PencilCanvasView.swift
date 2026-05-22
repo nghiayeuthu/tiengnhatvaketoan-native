@@ -1,14 +1,8 @@
 import PencilKit
 import SwiftUI
 
-enum PencilToolMode {
-    case pen
-    case eraser
-}
-
 struct PencilCanvasView: UIViewRepresentable {
     @Binding var drawing: PKDrawing
-    let toolMode: PencilToolMode
 
     func makeCoordinator() -> Coordinator {
         Coordinator(drawing: $drawing)
@@ -25,7 +19,8 @@ struct PencilCanvasView: UIViewRepresentable {
         canvas.maximumZoomScale = 1
         canvas.alwaysBounceVertical = false
         canvas.alwaysBounceHorizontal = false
-        applyTool(to: canvas)
+        canvas.tool = PKInkingTool(.pen, color: .black, width: 5)
+        context.coordinator.showToolPicker(for: canvas)
         return canvas
     }
 
@@ -33,20 +28,12 @@ struct PencilCanvasView: UIViewRepresentable {
         if canvas.drawing != drawing {
             canvas.drawing = drawing
         }
-        applyTool(to: canvas)
-    }
-
-    private func applyTool(to canvas: PKCanvasView) {
-        switch toolMode {
-        case .pen:
-            canvas.tool = PKInkingTool(.pen, color: .black, width: 5)
-        case .eraser:
-            canvas.tool = PKEraserTool(.bitmap)
-        }
+        context.coordinator.showToolPicker(for: canvas)
     }
 
     final class Coordinator: NSObject, PKCanvasViewDelegate {
         @Binding var drawing: PKDrawing
+        private var toolPicker: PKToolPicker?
 
         init(drawing: Binding<PKDrawing>) {
             _drawing = drawing
@@ -55,13 +42,27 @@ struct PencilCanvasView: UIViewRepresentable {
         func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
             drawing = canvasView.drawing
         }
+
+        func showToolPicker(for canvas: PKCanvasView) {
+            DispatchQueue.main.async {
+                guard let window = canvas.window else {
+                    canvas.becomeFirstResponder()
+                    return
+                }
+
+                let picker = PKToolPicker.shared(for: window) ?? PKToolPicker()
+                picker.addObserver(canvas)
+                picker.setVisible(true, forFirstResponder: canvas)
+                canvas.becomeFirstResponder()
+                self.toolPicker = picker
+            }
+        }
     }
 }
 
 struct ScratchPadView: View {
     @Binding var drawing: PKDrawing
     @Environment(\.dismiss) private var dismiss
-    @State private var toolMode: PencilToolMode = .pen
 
     var body: some View {
         VStack(spacing: 0) {
@@ -70,11 +71,6 @@ struct ScratchPadView: View {
                     .font(.headline)
                     .foregroundStyle(.green)
                 Spacer()
-                Button("Bút") { toolMode = .pen }
-                    .buttonStyle(.borderedProminent)
-                    .tint(toolMode == .pen ? .green : .gray)
-                Button("Tẩy lớn") { toolMode = .eraser }
-                    .buttonStyle(.bordered)
                 Button("Xóa") { drawing = PKDrawing() }
                     .buttonStyle(.bordered)
                 Button("Đóng") { dismiss() }
@@ -84,7 +80,7 @@ struct ScratchPadView: View {
             .padding()
             .background(.regularMaterial)
 
-            PencilCanvasView(drawing: $drawing, toolMode: toolMode)
+            PencilCanvasView(drawing: $drawing)
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .overlay(
