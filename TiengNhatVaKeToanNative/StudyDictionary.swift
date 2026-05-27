@@ -13,6 +13,17 @@ struct VocabularyEntry: Decodable, Identifiable, Hashable {
     let level: String
 
     var id: String { "\(level)-\(word)-\(reading)-\(meaning)" }
+
+    static let supplemental: [VocabularyEntry] = [
+        VocabularyEntry(word: "卓越", reading: "たくえつ", meaning: "vượt trội, xuất sắc", level: "N1"),
+        VocabularyEntry(word: "芳しい", reading: "かんばしい", meaning: "tốt, thuận lợi; thường dùng dạng phủ định 芳しくない = không tốt", level: "N1"),
+        VocabularyEntry(word: "リード", reading: "リード", meaning: "dẫn trước, dẫn điểm", level: "N2"),
+        VocabularyEntry(word: "互角", reading: "ごかく", meaning: "ngang tài ngang sức", level: "N1"),
+        VocabularyEntry(word: "割り当てる", reading: "わりあてる", meaning: "phân công, phân bổ, giao cho", level: "N2"),
+        VocabularyEntry(word: "ひとまず", reading: "ひとまず", meaning: "tạm thời, trước hết", level: "N2"),
+        VocabularyEntry(word: "むしゃくしゃ", reading: "むしゃくしゃ", meaning: "bực bội, khó chịu trong lòng", level: "N2"),
+        VocabularyEntry(word: "うろたえる", reading: "うろたえる", meaning: "lúng túng, hoảng hốt, mất bình tĩnh", level: "N1")
+    ]
 }
 
 struct GrammarEntry: Decodable, Identifiable, Hashable {
@@ -52,7 +63,7 @@ final class StudyDictionaryStore: ObservableObject {
     func vocabularyMatches(for question: PracticeQuestion, limit: Int = 6) -> [VocabularyEntry] {
         let haystack = studyText(for: question)
         var usedWords = Set<String>()
-        return vocabulary
+        return (vocabulary + VocabularyEntry.supplemental)
             .filter { entry in
                 guard entry.word.count >= 2 || containsKanji(entry.word) else { return false }
                 return haystack.contains(entry.word)

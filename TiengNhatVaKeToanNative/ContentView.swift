@@ -379,6 +379,14 @@ struct ContentView: View {
             return fromExplanation
         }
 
+        let underlinedTerms = underlinedTerms(in: question)
+        let underlinedVocab = vocabNotes.filter { entry in
+            underlinedTerms.contains(entry.word)
+        }
+        if !underlinedVocab.isEmpty {
+            return underlinedVocab.prefix(3).map(dictionary.note(for:)).joined(separator: "; ")
+        }
+
         if let grammar = grammarNotes.first(where: { grammar in
             grammar.searchTerms.contains { term in
                 let normalized = term.replacingOccurrences(of: "〜", with: "")
@@ -396,6 +404,25 @@ struct ContentView: View {
         }
 
         return nil
+    }
+
+    private func underlinedTerms(in question: PracticeQuestion) -> [String] {
+        guard let html = question.textHtml else { return [] }
+        var terms: [String] = []
+        var remainder = html
+
+        while let start = remainder.range(of: "[[u]]") {
+            remainder = String(remainder[start.upperBound...])
+            guard let end = remainder.range(of: "[[/u]]") else { break }
+            let term = String(remainder[..<end.lowerBound]).removingAppMarkers
+                .trimmingCharacters(in: .whitespacesAndNewlines)
+            if !term.isEmpty {
+                terms.append(term)
+            }
+            remainder = String(remainder[end.upperBound...])
+        }
+
+        return terms
     }
 
     private func answerMeaningFromExplanation(_ raw: String?, answer: String) -> String? {
