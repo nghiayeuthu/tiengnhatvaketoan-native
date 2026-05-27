@@ -305,6 +305,7 @@ struct ContentView: View {
             let grammarNotes = dictionary.grammarMatches(for: question)
             let explanationText = conciseExplanation(question.explanation, for: question) ?? fallbackExplanation(for: question, vocabNotes: vocabNotes, grammarNotes: grammarNotes)
             let starOrderText = starOrderText(for: question)
+            let answerMeaningText = answerMeaning(for: question, vocabNotes: vocabNotes, grammarNotes: grammarNotes)
 
             VStack(alignment: .leading, spacing: 12) {
                 if let correct = question.correctAnswer, question.options.indices.contains(correct - 1) {
@@ -313,6 +314,9 @@ struct ContentView: View {
                         font: .preferredFont(forTextStyle: .headline),
                         isBold: true
                     )
+                }
+                if let answerMeaningText {
+                    SelectableTextView(text: "Dịch đáp án: \(answerMeaningText)")
                 }
                 if let answerText = question.answerText?.nonEmpty {
                     SelectableTextView(text: answerText)
@@ -362,6 +366,60 @@ struct ContentView: View {
                 )
             }
         }
+    }
+
+    private func answerMeaning(for question: PracticeQuestion, vocabNotes: [VocabularyEntry], grammarNotes: [GrammarEntry]) -> String? {
+        guard let correct = question.correctAnswer,
+              question.options.indices.contains(correct - 1) else {
+            return nil
+        }
+
+        let answer = question.options[correct - 1]
+        if let fromExplanation = answerMeaningFromExplanation(question.explanation, answer: answer) {
+            return fromExplanation
+        }
+
+        if let grammar = grammarNotes.first(where: { grammar in
+            grammar.searchTerms.contains { term in
+                let normalized = term.replacingOccurrences(of: "〜", with: "")
+                return normalized.count >= 2 && answer.contains(normalized)
+            }
+        }) {
+            return "「\(grammar.pattern)」= \(grammar.meaning)"
+        }
+
+        let exactVocab = vocabNotes.filter { entry in
+            answer == entry.word || answer.contains(entry.word)
+        }
+        if !exactVocab.isEmpty {
+            return exactVocab.prefix(3).map(dictionary.note(for:)).joined(separator: "; ")
+        }
+
+        return nil
+    }
+
+    private func answerMeaningFromExplanation(_ raw: String?, answer: String) -> String? {
+        guard let raw = raw?.nonEmpty else { return nil }
+        let cleanedAnswer = answer.removingAppMarkers
+        let candidates = [
+            cleanedAnswer,
+            "「\(cleanedAnswer)」",
+            "『\(cleanedAnswer)』"
+        ]
+        let lines = raw
+            .components(separatedBy: CharacterSet(charactersIn: "\n。"))
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+
+        for line in lines {
+            guard line.contains("=") || line.contains("＝") else { continue }
+            let normalizedLine = line.replacingOccurrences(of: "＝", with: "=")
+            guard candidates.contains(where: { normalizedLine.contains($0) }) else { continue }
+            let parts = normalizedLine.components(separatedBy: "=")
+            guard let meaning = parts.dropFirst().joined(separator: "=").nonEmpty else { continue }
+            return "「\(cleanedAnswer)」= \(meaning.trimmingCharacters(in: .whitespacesAndNewlines))"
+        }
+
+        return nil
     }
 
     private var bottomBar: some View {

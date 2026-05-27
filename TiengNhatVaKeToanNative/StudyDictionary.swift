@@ -33,7 +33,9 @@ struct GrammarEntry: Decodable, Identifiable, Hashable {
         GrammarEntry(pattern: "に違いない", meaning: "chắc chắn là", aliases: ["に違いない"]),
         GrammarEntry(pattern: "かもしれない", meaning: "có thể, biết đâu", aliases: ["かもしれない"]),
         GrammarEntry(pattern: "ようだ", meaning: "có vẻ như, dường như", aliases: ["ようだ", "ようです"]),
-        GrammarEntry(pattern: "べきだ", meaning: "nên, cần phải", aliases: ["べき", "べきだ", "べきではない"])
+        GrammarEntry(pattern: "べきだ", meaning: "nên, cần phải", aliases: ["べき", "べきだ", "べきではない"]),
+        GrammarEntry(pattern: "というときに限って", meaning: "đúng vào lúc... thì lại; thường dùng cho việc không mong muốn", aliases: ["という時に限って", "ときに限って", "時に限って"]),
+        GrammarEntry(pattern: "に限って", meaning: "chính vào/lại đúng; riêng... thì", aliases: ["に限って"])
     ]
 }
 
