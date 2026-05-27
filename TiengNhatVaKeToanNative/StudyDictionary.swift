@@ -133,6 +133,7 @@ final class StudyDictionaryStore: ObservableObject {
     private func studyText(for question: PracticeQuestion) -> String {
         [
             question.text,
+            question.passage ?? "",
             question.options.joined(separator: "\n"),
             question.answerText ?? "",
             question.correctAnswer.flatMap { index in

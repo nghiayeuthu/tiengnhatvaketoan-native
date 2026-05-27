@@ -213,10 +213,7 @@ struct ContentView: View {
                 VStack(alignment: .leading, spacing: 24) {
                     header(for: question)
                     if let passage = question.passage?.nonEmpty {
-                        SelectableTextView(
-                            text: passage,
-                            font: .preferredFont(forTextStyle: .title3)
-                        )
+                        SelectableAttributedTextView(attributedText: attributedPassage(passage))
                             .padding()
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .background(Color.green.opacity(0.06))
@@ -543,6 +540,36 @@ struct ContentView: View {
         }
 
         output.append(NSAttributedString(string: remainder.removingAppMarkers, attributes: baseAttributes))
+        return output
+    }
+
+    private func attributedPassage(_ passage: String) -> NSAttributedString {
+        let output = NSMutableAttributedString(string: passage)
+        let fullRange = NSRange(location: 0, length: output.length)
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineSpacing = 8
+        output.addAttributes([
+            .font: UIFont.preferredFont(forTextStyle: .title3),
+            .foregroundColor: UIColor.label,
+            .paragraphStyle: paragraph
+        ], range: fullRange)
+
+        let patterns = [
+            #"【\d+(?:-[ab])?】"#,
+            #"\[\d+(?:-[ab])?\]"#
+        ]
+
+        for pattern in patterns {
+            guard let regex = try? NSRegularExpression(pattern: pattern) else { continue }
+            for match in regex.matches(in: passage, range: fullRange) {
+                output.addAttributes([
+                    .font: UIFont.boldSystemFont(ofSize: UIFont.preferredFont(forTextStyle: .title3).pointSize),
+                    .foregroundColor: UIColor.systemRed,
+                    .backgroundColor: UIColor.systemRed.withAlphaComponent(0.13)
+                ], range: match.range)
+            }
+        }
+
         return output
     }
 
