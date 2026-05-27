@@ -29,7 +29,8 @@ struct SelectableTextView: UIViewRepresentable {
     }
 
     func sizeThatFits(_ proposal: ProposedViewSize, uiView: UITextView, context: Context) -> CGSize? {
-        let width = proposal.width ?? UIScreen.main.bounds.width
+        let width = proposal.width ?? uiView.bounds.width
+        guard width > 0 else { return nil }
         let size = uiView.sizeThatFits(CGSize(width: width, height: .greatestFiniteMagnitude))
         return CGSize(width: width, height: size.height)
     }
@@ -58,7 +59,8 @@ struct SelectableAttributedTextView: UIViewRepresentable {
     }
 
     func sizeThatFits(_ proposal: ProposedViewSize, uiView: UITextView, context: Context) -> CGSize? {
-        let width = proposal.width ?? UIScreen.main.bounds.width
+        let width = proposal.width ?? uiView.bounds.width
+        guard width > 0 else { return nil }
         let size = uiView.sizeThatFits(CGSize(width: width, height: .greatestFiniteMagnitude))
         return CGSize(width: width, height: size.height)
     }

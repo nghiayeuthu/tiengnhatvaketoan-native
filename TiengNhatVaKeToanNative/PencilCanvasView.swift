@@ -50,7 +50,7 @@ struct PencilCanvasView: UIViewRepresentable {
                     return
                 }
 
-                let picker = PKToolPicker.shared(for: window) ?? PKToolPicker()
+                let picker = PKToolPicker()
                 picker.addObserver(canvas)
                 picker.setVisible(true, forFirstResponder: canvas)
                 canvas.becomeFirstResponder()
