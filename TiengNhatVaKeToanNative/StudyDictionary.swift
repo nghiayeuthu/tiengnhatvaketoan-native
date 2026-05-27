@@ -15,14 +15,35 @@ struct VocabularyEntry: Decodable, Identifiable, Hashable {
     var id: String { "\(level)-\(word)-\(reading)-\(meaning)" }
 
     static let supplemental: [VocabularyEntry] = [
+        VocabularyEntry(word: "深刻", reading: "しんこく", meaning: "nghiêm trọng, sâu sắc", level: "N2"),
+        VocabularyEntry(word: "思わぬ", reading: "おもわぬ", meaning: "không ngờ tới, bất ngờ", level: "N2"),
+        VocabularyEntry(word: "潜む", reading: "ひそむ", meaning: "ẩn nấp; tiềm ẩn, ẩn chứa", level: "N1"),
         VocabularyEntry(word: "卓越", reading: "たくえつ", meaning: "vượt trội, xuất sắc", level: "N1"),
         VocabularyEntry(word: "芳しい", reading: "かんばしい", meaning: "tốt, thuận lợi; thường dùng dạng phủ định 芳しくない = không tốt", level: "N1"),
+        VocabularyEntry(word: "管轄", reading: "かんかつ", meaning: "thẩm quyền quản lý, phạm vi phụ trách", level: "N1"),
+        VocabularyEntry(word: "一環", reading: "いっかん", meaning: "một phần trong chuỗi/hoạt động chung", level: "N1"),
+        VocabularyEntry(word: "前半", reading: "ぜんはん", meaning: "nửa đầu, hiệp đầu", level: "N2"),
+        VocabularyEntry(word: "後半", reading: "こうはん", meaning: "nửa sau, hiệp sau", level: "N2"),
+        VocabularyEntry(word: "逆転", reading: "ぎゃくてん", meaning: "lội ngược dòng, đảo ngược tình thế", level: "N2"),
         VocabularyEntry(word: "リード", reading: "リード", meaning: "dẫn trước, dẫn điểm", level: "N2"),
         VocabularyEntry(word: "互角", reading: "ごかく", meaning: "ngang tài ngang sức", level: "N1"),
+        VocabularyEntry(word: "若手", reading: "わかて", meaning: "người trẻ, lớp trẻ có triển vọng", level: "N2"),
+        VocabularyEntry(word: "実力", reading: "じつりょく", meaning: "thực lực, năng lực thật", level: "N2"),
         VocabularyEntry(word: "割り当てる", reading: "わりあてる", meaning: "phân công, phân bổ, giao cho", level: "N2"),
+        VocabularyEntry(word: "周到", reading: "しゅうとう", meaning: "chu đáo, chuẩn bị kỹ lưỡng", level: "N1"),
+        VocabularyEntry(word: "臨む", reading: "のぞむ", meaning: "tham dự, bước vào; đối mặt với", level: "N1"),
         VocabularyEntry(word: "ひとまず", reading: "ひとまず", meaning: "tạm thời, trước hết", level: "N2"),
         VocabularyEntry(word: "むしゃくしゃ", reading: "むしゃくしゃ", meaning: "bực bội, khó chịu trong lòng", level: "N2"),
-        VocabularyEntry(word: "うろたえる", reading: "うろたえる", meaning: "lúng túng, hoảng hốt, mất bình tĩnh", level: "N1")
+        VocabularyEntry(word: "誇張", reading: "こちょう", meaning: "phóng đại, nói quá", level: "N1"),
+        VocabularyEntry(word: "ひそか", reading: "ひそか", meaning: "âm thầm, bí mật, kín đáo", level: "N1"),
+        VocabularyEntry(word: "試練", reading: "しれん", meaning: "thử thách, gian nan", level: "N1"),
+        VocabularyEntry(word: "苦難", reading: "くなん", meaning: "khó khăn, gian khổ", level: "N1"),
+        VocabularyEntry(word: "うろたえる", reading: "うろたえる", meaning: "lúng túng, hoảng hốt, mất bình tĩnh", level: "N1"),
+        VocabularyEntry(word: "慌てる", reading: "あわてる", meaning: "vội vàng, hoảng hốt", level: "N2"),
+        VocabularyEntry(word: "当面", reading: "とうめん", meaning: "trước mắt, trong thời gian hiện tại", level: "N2"),
+        VocabularyEntry(word: "しばらく", reading: "しばらく", meaning: "một lúc, một thời gian", level: "N3"),
+        VocabularyEntry(word: "自前", reading: "じまえ", meaning: "tự mình lo; đồ của mình, tự có", level: "N1"),
+        VocabularyEntry(word: "衣装", reading: "いしょう", meaning: "trang phục, phục trang", level: "N2")
     ]
 }
 
@@ -66,7 +87,7 @@ final class StudyDictionaryStore: ObservableObject {
         return (vocabulary + VocabularyEntry.supplemental)
             .filter { entry in
                 guard entry.word.count >= 2 || containsKanji(entry.word) else { return false }
-                return haystack.contains(entry.word)
+                return matches(entry, in: haystack)
             }
             .sorted {
                 if $0.word.count == $1.word.count { return $0.level < $1.level }
@@ -113,6 +134,10 @@ final class StudyDictionaryStore: ObservableObject {
         return "\(entry.word)\(readingPart) = \(entry.meaning)"
     }
 
+    func matches(_ entry: VocabularyEntry, in text: String) -> Bool {
+        surfaceForms(for: entry.word).contains { text.contains($0) }
+    }
+
     private func load() {
         guard let url = Bundle.main.url(forResource: "StudyDictionary", withExtension: "json") else {
             return
@@ -146,5 +171,42 @@ final class StudyDictionaryStore: ObservableObject {
         text.unicodeScalars.contains { scalar in
             (0x4E00...0x9FFF).contains(Int(scalar.value))
         }
+    }
+
+    private func surfaceForms(for word: String) -> [String] {
+        var forms = Set([word])
+        if word.hasSuffix("む") {
+            let stem = String(word.dropLast())
+            forms.formUnion([stem + "んで", stem + "んだ", stem + "まない", stem + "みます", stem + "めば"])
+        }
+        if word.hasSuffix("ぶ") {
+            let stem = String(word.dropLast())
+            forms.formUnion([stem + "んで", stem + "んだ", stem + "ばない", stem + "びます", stem + "べば"])
+        }
+        if word.hasSuffix("ぬ") {
+            let stem = String(word.dropLast())
+            forms.formUnion([stem + "んで", stem + "んだ", stem + "なない", stem + "にます", stem + "ねば"])
+        }
+        if word.hasSuffix("ぐ") {
+            let stem = String(word.dropLast())
+            forms.formUnion([stem + "いで", stem + "いだ", stem + "がない", stem + "ぎます", stem + "げば"])
+        }
+        if word.hasSuffix("く") {
+            let stem = String(word.dropLast())
+            forms.formUnion([stem + "いて", stem + "いた", stem + "かない", stem + "きます", stem + "けば"])
+        }
+        if word.hasSuffix("す") {
+            let stem = String(word.dropLast())
+            forms.formUnion([stem + "して", stem + "した", stem + "さない", stem + "します", stem + "せば"])
+        }
+        if word.hasSuffix("る") {
+            let stem = String(word.dropLast())
+            forms.formUnion([stem + "て", stem + "た", stem + "ない", stem + "ます", stem + "れば"])
+        }
+        if word.hasSuffix("い") {
+            let stem = String(word.dropLast())
+            forms.formUnion([stem + "く", stem + "くない", stem + "かった", stem + "ければ"])
+        }
+        return Array(forms)
     }
 }

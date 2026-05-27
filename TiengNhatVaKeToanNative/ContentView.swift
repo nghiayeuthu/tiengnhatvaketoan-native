@@ -399,7 +399,9 @@ struct ContentView: View {
 
         let underlinedTerms = underlinedTerms(in: question)
         let underlinedVocab = vocabNotes.filter { entry in
-            underlinedTerms.contains(entry.word)
+            underlinedTerms.contains { term in
+                dictionary.matches(entry, in: term) || term.contains(entry.word)
+            }
         }
         if !underlinedVocab.isEmpty {
             return underlinedVocab.prefix(3).map(dictionary.note(for:)).joined(separator: "; ")
@@ -415,7 +417,7 @@ struct ContentView: View {
         }
 
         let exactVocab = vocabNotes.filter { entry in
-            answer == entry.word || answer.contains(entry.word)
+            answer == entry.word || answer.contains(entry.word) || dictionary.matches(entry, in: answer)
         }
         if !exactVocab.isEmpty {
             return exactVocab.prefix(3).map(dictionary.note(for:)).joined(separator: "; ")
