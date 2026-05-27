@@ -16,6 +16,7 @@
 		101010101010101010101007 /* StudyDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100009 /* StudyDictionary.swift */; };
 		101010101010101010101008 /* StudyDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100010 /* StudyDictionary.json */; };
 		101010101010101010101009 /* SelectableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100011 /* SelectableTextView.swift */; };
+		101010101010101010101010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100012 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		101010101010101010100009 /* StudyDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyDictionary.swift; sourceTree = "<group>"; };
 		101010101010101010100010 /* StudyDictionary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StudyDictionary.json; sourceTree = "<group>"; };
 		101010101010101010100011 /* SelectableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableTextView.swift; sourceTree = "<group>"; };
+		101010101010101010100012 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				101010101010101010100009 /* StudyDictionary.swift */,
 				101010101010101010100011 /* SelectableTextView.swift */,
 				101010101010101010100006 /* ExamData */,
+				101010101010101010100012 /* Assets.xcassets */,
 				101010101010101010100010 /* StudyDictionary.json */,
 				101010101010101010100007 /* Info.plist */,
 			);
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				101010101010101010101006 /* ExamData in Resources */,
+				101010101010101010101010 /* Assets.xcassets in Resources */,
 				101010101010101010101008 /* StudyDictionary.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +282,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -305,6 +310,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
