@@ -233,7 +233,7 @@ struct ContentView: View {
                 VStack(alignment: .leading, spacing: 24) {
                     header(for: question)
                     if let passage = question.passage?.nonEmpty {
-                        SelectableAttributedTextView(attributedText: attributedPassage(passage))
+                        SelectableAttributedTextView(attributedText: attributedPassage(passage, currentQuestionNumber: question.number))
                             .padding()
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .background(Color.green.opacity(0.06))
@@ -555,7 +555,7 @@ struct ContentView: View {
     }
 
     private func attributedQuestion(_ question: PracticeQuestion) -> NSAttributedString {
-        let source = question.textHtml ?? question.text
+        let source = (question.textHtml ?? question.text).nonEmpty ?? passageBlankPrompt(for: question) ?? ""
         let output = NSMutableAttributedString()
         var remainder = source
         let baseFont = UIFont.boldSystemFont(ofSize: 30)
@@ -590,7 +590,7 @@ struct ContentView: View {
         return output
     }
 
-    private func attributedPassage(_ passage: String) -> NSAttributedString {
+    private func attributedPassage(_ passage: String, currentQuestionNumber: Int) -> NSAttributedString {
         let output = NSMutableAttributedString(string: passage)
         let fullRange = NSRange(location: 0, length: output.length)
         let paragraph = NSMutableParagraphStyle()
@@ -603,7 +603,8 @@ struct ContentView: View {
 
         let patterns = [
             #"【\d+(?:-[ab])?】"#,
-            #"\[\d+(?:-[ab])?\]"#
+            #"\[\d+(?:-[ab])?\]"#,
+            #"[\(（][0-9０-９]+(?:-[ab])?[\)）]"#
         ]
 
         for pattern in patterns {
@@ -617,7 +618,54 @@ struct ContentView: View {
             }
         }
 
+        let currentPatterns = [
+            "【\(currentQuestionNumber)(?:-[ab])?】",
+            "\\[\(currentQuestionNumber)(?:-[ab])?\\]",
+            "[\\(（]\(fullWidthNumber(currentQuestionNumber))[\\)）]",
+            "[\\(（]\(currentQuestionNumber)[\\)）]"
+        ]
+
+        for pattern in currentPatterns {
+            guard let regex = try? NSRegularExpression(pattern: pattern) else { continue }
+            for match in regex.matches(in: passage, range: fullRange) {
+                output.addAttributes([
+                    .font: UIFont.boldSystemFont(ofSize: UIFont.preferredFont(forTextStyle: .title3).pointSize + 1),
+                    .foregroundColor: UIColor.white,
+                    .backgroundColor: UIColor.systemRed
+                ], range: match.range)
+            }
+        }
+
         return output
+    }
+
+    private func passageBlankPrompt(for question: PracticeQuestion) -> String? {
+        guard question.passage?.nonEmpty != nil else { return nil }
+        let isGrammarPassage = question.sectionTitle.contains("Ngữ pháp")
+            && (question.instruction?.localizedCaseInsensitiveContains("đoạn văn") == true
+                || question.instruction?.contains("文章") == true)
+        guard isGrammarPassage else { return nil }
+        return "（\(fullWidthNumber(question.number))）に入るものを選びなさい。"
+    }
+
+    private func fullWidthNumber(_ number: Int) -> String {
+        String(number).map { character in
+            switch character {
+            case "0": return "０"
+            case "1": return "１"
+            case "2": return "２"
+            case "3": return "３"
+            case "4": return "４"
+            case "5": return "５"
+            case "6": return "６"
+            case "7": return "７"
+            case "8": return "８"
+            case "9": return "９"
+            default: return character
+            }
+        }
+        .map(String.init)
+        .joined()
     }
 
     private func conciseExplanation(_ raw: String?, for question: PracticeQuestion) -> String? {
