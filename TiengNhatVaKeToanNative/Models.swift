@@ -70,8 +70,17 @@ extension String {
     var removingAppMarkers: String {
         replacingOccurrences(of: "[[u]]", with: "")
             .replacingOccurrences(of: "[[/u]]", with: "")
+            .replacingOccurrences(of: "[[br]]", with: "\n")
             .replacingOccurrences(of: "[[blank]]", with: "（　）")
             .replacingOccurrences(of: "[[/blank]]", with: "")
+            .replacingOccurrences(of: "[[table]]", with: "\n")
+            .replacingOccurrences(of: "[[/table]]", with: "\n")
+            .replacingOccurrences(of: "[[tr]]", with: "\n")
+            .replacingOccurrences(of: "[[/tr]]", with: "")
+            .replacingOccurrences(of: "[[th]]", with: " ")
+            .replacingOccurrences(of: "[[/th]]", with: " ")
+            .replacingOccurrences(of: "[[td]]", with: " ")
+            .replacingOccurrences(of: "[[/td]]", with: " ")
     }
 
     var nonEmpty: String? {

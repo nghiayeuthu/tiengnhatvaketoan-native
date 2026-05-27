@@ -570,7 +570,7 @@ struct ContentView: View {
         while let start = remainder.range(of: "[[u]]") {
             let before = String(remainder[..<start.lowerBound])
             output.append(NSAttributedString(
-                string: before.replacingOccurrences(of: "[[blank]]", with: "（　）").replacingOccurrences(of: "[[/blank]]", with: ""),
+                string: before.removingAppMarkers,
                 attributes: baseAttributes
             ))
             remainder = String(remainder[start.upperBound...])
