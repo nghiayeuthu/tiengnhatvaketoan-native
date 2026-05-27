@@ -9,10 +9,12 @@ struct ContentView: View {
     @State private var selectedExamID: String?
     @State private var selectedQuestionIndex = 0
     @State private var selectedAnswer: Int?
+    @State private var answerHistory: [String: Int] = ContentView.loadAnswerHistory()
     @State private var showsQuestionPicker = false
     @State private var scratchDrawing = PKDrawing()
     @State private var showsScratchPad = false
     @State private var columnVisibility: NavigationSplitViewVisibility = .all
+    private static let answerHistoryKey = "TiengNhatVaKeToan.answerHistory.v1"
 
     var selectedQuestions: [PracticeQuestion] {
         store.questions(for: selectedExamID)
@@ -85,6 +87,16 @@ struct ContentView: View {
             }
         }
         .navigationTitle("Thư mục đề")
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    resetHistory()
+                } label: {
+                    Label("Làm mới", systemImage: "arrow.clockwise")
+                }
+                .tint(.green)
+            }
+        }
     }
 
     private func questionPicker(for exam: ExamDocument) -> some View {
@@ -130,9 +142,10 @@ struct ContentView: View {
     }
 
     private func questionNumberButton(index: Int, question: PracticeQuestion) -> some View {
-        Button {
+        let isAnswered = answerHistory[question.id] != nil
+        return Button {
             selectedQuestionIndex = index
-            selectedAnswer = nil
+            selectedAnswer = answerHistory[question.id]
             columnVisibility = .detailOnly
             if horizontalSizeClass == .compact {
                 showsQuestionPicker = false
@@ -141,11 +154,11 @@ struct ContentView: View {
             Text("\(index + 1)")
                 .font(.headline)
                 .frame(width: 48, height: 44)
-                .background(selectedQuestionIndex == index ? Color.green : Color(.secondarySystemGroupedBackground))
+                .background(questionButtonBackground(isSelected: selectedQuestionIndex == index, isAnswered: isAnswered))
                 .foregroundStyle(selectedQuestionIndex == index ? .white : .primary)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .strokeBorder(questionButtonBorder(for: question, isSelected: selectedQuestionIndex == index), lineWidth: 1.5)
+                        .strokeBorder(questionButtonBorder(for: question, isSelected: selectedQuestionIndex == index, isAnswered: isAnswered), lineWidth: 1.5)
                 )
                 .clipShape(RoundedRectangle(cornerRadius: 10))
         }
@@ -153,8 +166,15 @@ struct ContentView: View {
         .accessibilityLabel("Câu \(question.number)")
     }
 
-    private func questionButtonBorder(for question: PracticeQuestion, isSelected: Bool) -> Color {
+    private func questionButtonBackground(isSelected: Bool, isAnswered: Bool) -> Color {
         if isSelected { return .green }
+        if isAnswered { return Color.green.opacity(0.12) }
+        return Color(.secondarySystemGroupedBackground)
+    }
+
+    private func questionButtonBorder(for question: PracticeQuestion, isSelected: Bool, isAnswered: Bool) -> Color {
+        if isSelected { return .green }
+        if isAnswered { return .green.opacity(0.75) }
         switch question.sectionTitle {
         case "Từ vựng": return .orange.opacity(0.45)
         case "Ngữ pháp": return .blue.opacity(0.45)
@@ -197,7 +217,7 @@ struct ContentView: View {
     private func selectExam(_ examID: String) {
         selectedExamID = examID
         selectedQuestionIndex = 0
-        selectedAnswer = nil
+        selectedAnswer = store.questions(for: examID).first.flatMap { answerHistory[$0.id] }
         showsQuestionPicker = true
         columnVisibility = .all
     }
@@ -274,6 +294,7 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     Button {
                         selectedAnswer = index
+                        saveAnswer(index, for: question)
                     } label: {
                         Image(systemName: selectedAnswer == index ? "checkmark.circle.fill" : "circle")
                             .font(.title2)
@@ -482,7 +503,33 @@ struct ContentView: View {
         let next = selectedQuestionIndex + delta
         guard selectedQuestions.indices.contains(next) else { return }
         selectedQuestionIndex = next
+        selectedAnswer = answerHistory[selectedQuestions[next].id]
+    }
+
+    private func saveAnswer(_ index: Int, for question: PracticeQuestion) {
+        answerHistory[question.id] = index
+        Self.saveAnswerHistory(answerHistory)
+    }
+
+    private func resetHistory() {
+        answerHistory = [:]
         selectedAnswer = nil
+        UserDefaults.standard.removeObject(forKey: Self.answerHistoryKey)
+    }
+
+    private static func loadAnswerHistory() -> [String: Int] {
+        let raw = UserDefaults.standard.dictionary(forKey: answerHistoryKey) ?? [:]
+        return raw.reduce(into: [String: Int]()) { result, item in
+            if let value = item.value as? Int {
+                result[item.key] = value
+            } else if let value = item.value as? NSNumber {
+                result[item.key] = value.intValue
+            }
+        }
+    }
+
+    private static func saveAnswerHistory(_ history: [String: Int]) {
+        UserDefaults.standard.set(history, forKey: answerHistoryKey)
     }
 
     private func optionBackground(index: Int, question: PracticeQuestion) -> Color {
