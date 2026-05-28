@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var scratchDrawing = PKDrawing()
     @State private var showsScratchPad = false
     @State private var columnVisibility: NavigationSplitViewVisibility = .all
+    @State private var searchText = ""
     private static let answerHistoryKey = "TiengNhatVaKeToan.answerHistory.v1"
 
     var selectedQuestions: [PracticeQuestion] {
@@ -23,6 +24,16 @@ struct ContentView: View {
     var currentQuestion: PracticeQuestion? {
         guard selectedQuestions.indices.contains(selectedQuestionIndex) else { return nil }
         return selectedQuestions[selectedQuestionIndex]
+    }
+
+    var searchResults: [PracticeQuestion] {
+        let query = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !query.isEmpty else { return [] }
+        return store.exams
+            .flatMap { store.questions(for: $0.id) }
+            .filter { question in
+                questionSearchText(question).localizedCaseInsensitiveContains(query)
+            }
     }
 
     var body: some View {
@@ -80,6 +91,28 @@ struct ContentView: View {
 
     private var examList: some View {
         List {
+            Section {
+                Label("Tìm kiếm", systemImage: "magnifyingglass")
+                    .font(.headline)
+                    .foregroundStyle(.green)
+                TextField("Nhập từ, kanji, ngữ pháp...", text: $searchText)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
+            }
+
+            if !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                Section("Kết quả tìm kiếm") {
+                    if searchResults.isEmpty {
+                        Text("Không tìm thấy")
+                            .foregroundStyle(.secondary)
+                    } else {
+                        ForEach(searchResults.prefix(50)) { question in
+                            searchResultRow(question)
+                        }
+                    }
+                }
+            }
+
             Section("Luyện đề N1") {
                 ForEach(store.exams) { exam in
                     examRow(exam)
@@ -146,7 +179,6 @@ struct ContentView: View {
         return Button {
             selectedQuestionIndex = index
             selectedAnswer = answerHistory[question.id]
-            columnVisibility = .detailOnly
             if horizontalSizeClass == .compact {
                 showsQuestionPicker = false
             }
@@ -164,6 +196,38 @@ struct ContentView: View {
         }
         .buttonStyle(.plain)
         .accessibilityLabel("Câu \(question.number)")
+    }
+
+    private func searchResultRow(_ question: PracticeQuestion) -> some View {
+        Button {
+            selectQuestion(question)
+        } label: {
+            VStack(alignment: .leading, spacing: 5) {
+                HStack {
+                    Text("\(question.examTitle) • câu \(question.number)")
+                        .font(.subheadline.bold())
+                    Spacer()
+                    Text(question.sectionTitle)
+                        .font(.caption)
+                        .foregroundStyle(sectionColor(question.sectionTitle))
+                }
+                Text(searchSnippet(for: question))
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(2)
+            }
+            .padding(.vertical, 4)
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func sectionColor(_ section: String) -> Color {
+        switch section {
+        case "Từ vựng": return .orange
+        case "Ngữ pháp": return .blue
+        case "Đọc hiểu": return .purple
+        default: return .secondary
+        }
     }
 
     private func questionButtonBackground(isSelected: Bool, isAnswered: Bool) -> Color {
@@ -219,6 +283,17 @@ struct ContentView: View {
         selectedQuestionIndex = 0
         selectedAnswer = store.questions(for: examID).first.flatMap { answerHistory[$0.id] }
         showsQuestionPicker = true
+        columnVisibility = .all
+    }
+
+    private func selectQuestion(_ question: PracticeQuestion) {
+        selectedExamID = question.examID
+        let questions = store.questions(for: question.examID)
+        if let index = questions.firstIndex(where: { $0.id == question.id }) {
+            selectedQuestionIndex = index
+        }
+        selectedAnswer = answerHistory[question.id]
+        showsQuestionPicker = horizontalSizeClass != .compact
         columnVisibility = .all
     }
 
@@ -517,6 +592,35 @@ struct ContentView: View {
         answerHistory = [:]
         selectedAnswer = nil
         UserDefaults.standard.removeObject(forKey: Self.answerHistoryKey)
+    }
+
+    private func questionSearchText(_ question: PracticeQuestion) -> String {
+        [
+            question.examTitle,
+            question.sectionTitle,
+            question.instruction ?? "",
+            question.text,
+            question.textHtml?.removingAppMarkers ?? "",
+            question.passage ?? "",
+            question.options.joined(separator: "\n"),
+            question.answerText ?? "",
+            question.explanation ?? ""
+        ]
+        .joined(separator: "\n")
+    }
+
+    private func searchSnippet(for question: PracticeQuestion) -> String {
+        let source = questionSearchText(question)
+            .replacingOccurrences(of: "\n", with: " ")
+            .replacingOccurrences(of: "  ", with: " ")
+        let query = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let range = source.range(of: query, options: [.caseInsensitive, .diacriticInsensitive]) else {
+            return String(source.prefix(90))
+        }
+        let prefixStart = source.index(range.lowerBound, offsetBy: -30, limitedBy: source.startIndex) ?? source.startIndex
+        let suffixEnd = source.index(range.upperBound, offsetBy: 60, limitedBy: source.endIndex) ?? source.endIndex
+        let snippet = source[prefixStart..<suffixEnd]
+        return "\(prefixStart == source.startIndex ? "" : "...")\(snippet)\(suffixEnd == source.endIndex ? "" : "...")"
     }
 
     private static func loadAnswerHistory() -> [String: Int] {
