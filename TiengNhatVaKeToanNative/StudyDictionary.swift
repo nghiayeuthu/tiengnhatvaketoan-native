@@ -42,6 +42,8 @@ struct VocabularyEntry: Decodable, Identifiable, Hashable {
         VocabularyEntry(word: "慌てる", reading: "あわてる", meaning: "vội vàng, hoảng hốt", level: "N2"),
         VocabularyEntry(word: "当面", reading: "とうめん", meaning: "trước mắt, trong thời gian hiện tại", level: "N2"),
         VocabularyEntry(word: "しばらく", reading: "しばらく", meaning: "một lúc, một thời gian", level: "N3"),
+        VocabularyEntry(word: "憩い", reading: "いこい", meaning: "sự nghỉ ngơi, thư giãn; nơi nghỉ chân", level: "N1"),
+        VocabularyEntry(word: "憩う", reading: "いこう", meaning: "nghỉ ngơi, thư giãn", level: "N1"),
         VocabularyEntry(word: "自前", reading: "じまえ", meaning: "tự mình lo; đồ của mình, tự có", level: "N1"),
         VocabularyEntry(word: "衣装", reading: "いしょう", meaning: "trang phục, phục trang", level: "N2")
     ]
@@ -198,6 +200,10 @@ final class StudyDictionaryStore: ObservableObject {
         if word.hasSuffix("す") {
             let stem = String(word.dropLast())
             forms.formUnion([stem + "して", stem + "した", stem + "さない", stem + "します", stem + "せば"])
+        }
+        if word.hasSuffix("う") {
+            let stem = String(word.dropLast())
+            forms.formUnion([stem + "って", stem + "った", stem + "わない", stem + "います", stem + "えば", stem + "い"])
         }
         if word.hasSuffix("る") {
             let stem = String(word.dropLast())
