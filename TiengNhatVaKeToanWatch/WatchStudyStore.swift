@@ -22,15 +22,12 @@ final class WatchStudyStore: ObservableObject {
     }
 
     private func load() {
-        guard let url = Bundle.main.url(forResource: "StudyDictionary", withExtension: "json"),
+        guard let url = Bundle.main.url(forResource: "WatchDictionary", withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let document = try? JSONDecoder().decode(WatchDictionaryDocument.self, from: data) else {
             cards = []
             return
         }
         cards = document.vocabulary
-            .filter { ($0.level == "N1" || $0.level == "N2") && !$0.meaning.isEmpty }
-            .prefix(300)
-            .map { $0 }
     }
 }

@@ -1,0 +1,1564 @@
+{
+  "vocabulary": [
+    {
+      "word": "絶叫",
+      "reading": "ぜっきょう",
+      "meaning": "hét lớn, la thất thanh",
+      "level": "N1"
+    },
+    {
+      "word": "背後",
+      "reading": "はいご",
+      "meaning": "phía sau, hậu cảnh",
+      "level": "N1"
+    },
+    {
+      "word": "背景",
+      "reading": "はいけい",
+      "meaning": "bối cảnh, nền tảng phía sau",
+      "level": "N1"
+    },
+    {
+      "word": "抱負",
+      "reading": "ほうふ",
+      "meaning": "hoài bão, chí hướng",
+      "level": "N1"
+    },
+    {
+      "word": "意識",
+      "reading": "いしき",
+      "meaning": "ý thức, cảm nhận, nhận biết",
+      "level": "N1"
+    },
+    {
+      "word": "侮る",
+      "reading": "あなどる",
+      "meaning": "coi thường, xem nhẹ",
+      "level": "N1"
+    },
+    {
+      "word": "筋道",
+      "reading": "すじみち",
+      "meaning": "trình tự logic, mạch lý lẽ",
+      "level": "N1"
+    },
+    {
+      "word": "奔放",
+      "reading": "ほんぽう",
+      "meaning": "phóng khoáng, không gò bó",
+      "level": "N1"
+    },
+    {
+      "word": "適応",
+      "reading": "てきおう",
+      "meaning": "thích nghi",
+      "level": "N1"
+    },
+    {
+      "word": "掲げる",
+      "reading": "かかげる",
+      "meaning": "đề ra, nêu lên",
+      "level": "N1"
+    },
+    {
+      "word": "踏襲",
+      "reading": "とうしゅう",
+      "meaning": "kế thừa, noi theo",
+      "level": "N1"
+    },
+    {
+      "word": "足止め",
+      "reading": "あしどめ",
+      "meaning": "bị giữ lại, bị kẹt không đi tiếp được",
+      "level": "N1"
+    },
+    {
+      "word": "払拭",
+      "reading": "ふっしょく",
+      "meaning": "xua tan, quét sạch",
+      "level": "N1"
+    },
+    {
+      "word": "手腕",
+      "reading": "しゅわん",
+      "meaning": "năng lực xử lý, tài xoay xở",
+      "level": "N1"
+    },
+    {
+      "word": "ロス",
+      "reading": "ロス",
+      "meaning": "mất mát, lãng phí",
+      "level": "N1"
+    },
+    {
+      "word": "おろそか",
+      "reading": "おろそか",
+      "meaning": "qua loa, lơ là",
+      "level": "N1"
+    },
+    {
+      "word": "目下",
+      "reading": "もっか",
+      "meaning": "hiện tại, trước mắt",
+      "level": "N1"
+    },
+    {
+      "word": "請け負う",
+      "reading": "うけおう",
+      "meaning": "nhận làm, đảm nhận",
+      "level": "N1"
+    },
+    {
+      "word": "進呈",
+      "reading": "しんてい",
+      "meaning": "kính tặng, biếu",
+      "level": "N1"
+    },
+    {
+      "word": "加工",
+      "reading": "かこう",
+      "meaning": "gia công, chế biến",
+      "level": "N1"
+    },
+    {
+      "word": "養う",
+      "reading": "やしなう",
+      "meaning": "nuôi dưỡng",
+      "level": "N1"
+    },
+    {
+      "word": "資質",
+      "reading": "ししつ",
+      "meaning": "tố chất, phẩm chất",
+      "level": "N1"
+    },
+    {
+      "word": "正当",
+      "reading": "せいとう",
+      "meaning": "chính đáng, hợp lý",
+      "level": "N1"
+    },
+    {
+      "word": "ありきたり",
+      "reading": "ありきたり",
+      "meaning": "tầm thường, thường thấy",
+      "level": "N1"
+    },
+    {
+      "word": "間柄",
+      "reading": "あいだがら",
+      "meaning": "mối quan hệ",
+      "level": "N1"
+    },
+    {
+      "word": "腐敗",
+      "reading": "ふはい",
+      "meaning": "mục nát, thối rữa; tham nhũng",
+      "level": "N1"
+    },
+    {
+      "word": "粗い",
+      "reading": "あらい",
+      "meaning": "thô, sơ sài",
+      "level": "N1"
+    },
+    {
+      "word": "粘膜",
+      "reading": "ねんまく",
+      "meaning": "niêm mạc",
+      "level": "N1"
+    },
+    {
+      "word": "寿命",
+      "reading": "じゅみょう",
+      "meaning": "tuổi thọ",
+      "level": "N1"
+    },
+    {
+      "word": "戒める",
+      "reading": "いましめる",
+      "meaning": "răn dạy, cảnh báo",
+      "level": "N1"
+    },
+    {
+      "word": "誓約書",
+      "reading": "せいやくしょ",
+      "meaning": "bản cam kết",
+      "level": "N1"
+    },
+    {
+      "word": "軌跡",
+      "reading": "きせき",
+      "meaning": "quỹ tích, dấu vết",
+      "level": "N1"
+    },
+    {
+      "word": "偏り",
+      "reading": "かたより",
+      "meaning": "thiên lệch",
+      "level": "N1"
+    },
+    {
+      "word": "矛盾",
+      "reading": "むじゅん",
+      "meaning": "mâu thuẫn",
+      "level": "N1"
+    },
+    {
+      "word": "誇張",
+      "reading": "こちょう",
+      "meaning": "phóng đại",
+      "level": "N1"
+    },
+    {
+      "word": "賄う",
+      "reading": "まかなう",
+      "meaning": "trang trải, cung cấp",
+      "level": "N1"
+    },
+    {
+      "word": "軽率",
+      "reading": "けいそつ",
+      "meaning": "khinh suất",
+      "level": "N1"
+    },
+    {
+      "word": "騒然",
+      "reading": "そうぜん",
+      "meaning": "náo động, ồn ào",
+      "level": "N1"
+    },
+    {
+      "word": "諭す",
+      "reading": "さとす",
+      "meaning": "khuyên bảo, giảng giải",
+      "level": "N1"
+    },
+    {
+      "word": "秩序",
+      "reading": "ちつじょ",
+      "meaning": "trật tự",
+      "level": "N1"
+    },
+    {
+      "word": "潜伏",
+      "reading": "せんぷく",
+      "meaning": "ẩn náu, tiềm phục",
+      "level": "N1"
+    },
+    {
+      "word": "朗らか",
+      "reading": "ほがらか",
+      "meaning": "vui vẻ, sáng sủa",
+      "level": "N1"
+    },
+    {
+      "word": "振興",
+      "reading": "しんこう",
+      "meaning": "chấn hưng, thúc đẩy",
+      "level": "N1"
+    },
+    {
+      "word": "余暇",
+      "reading": "よか",
+      "meaning": "thời gian rảnh",
+      "level": "N1"
+    },
+    {
+      "word": "鈍い",
+      "reading": "にぶい",
+      "meaning": "chậm, cùn, kém nhạy",
+      "level": "N1"
+    },
+    {
+      "word": "検閲",
+      "reading": "けんえつ",
+      "meaning": "kiểm duyệt",
+      "level": "N1"
+    },
+    {
+      "word": "崇高",
+      "reading": "すうこう",
+      "meaning": "cao cả",
+      "level": "N1"
+    },
+    {
+      "word": "裁く",
+      "reading": "さばく",
+      "meaning": "xét xử, phán xét",
+      "level": "N1"
+    },
+    {
+      "word": "胸中",
+      "reading": "きょうちゅう",
+      "meaning": "trong lòng, tâm tư",
+      "level": "N1"
+    },
+    {
+      "word": "躍進",
+      "reading": "やくしん",
+      "meaning": "tiến bộ/vươn lên vượt bậc",
+      "level": "N1"
+    },
+    {
+      "word": "遂行",
+      "reading": "すいこう",
+      "meaning": "thực hiện đến cùng",
+      "level": "N1"
+    },
+    {
+      "word": "凝縮",
+      "reading": "ぎょうしゅく",
+      "meaning": "cô đọng, nén lại",
+      "level": "N1"
+    },
+    {
+      "word": "健やか",
+      "reading": "すこやか",
+      "meaning": "khỏe mạnh",
+      "level": "N1"
+    },
+    {
+      "word": "中枢",
+      "reading": "ちゅうすう",
+      "meaning": "trung khu, phần cốt lõi",
+      "level": "N1"
+    },
+    {
+      "word": "否めない",
+      "reading": "いなめない",
+      "meaning": "không thể phủ nhận",
+      "level": "N1"
+    },
+    {
+      "word": "支障",
+      "reading": "ししょう",
+      "meaning": "trở ngại, ảnh hưởng xấu",
+      "level": "N1"
+    },
+    {
+      "word": "おびただしい",
+      "reading": "おびただしい",
+      "meaning": "rất nhiều, vô số",
+      "level": "N1"
+    },
+    {
+      "word": "絶大",
+      "reading": "ぜつだい",
+      "meaning": "rất lớn, tuyệt đại",
+      "level": "N1"
+    },
+    {
+      "word": "予断",
+      "reading": "よだん",
+      "meaning": "dự đoán chủ quan, đoán trước",
+      "level": "N1"
+    },
+    {
+      "word": "手際",
+      "reading": "てぎわ",
+      "meaning": "sự khéo léo, cách xử lý nhanh gọn",
+      "level": "N1"
+    },
+    {
+      "word": "無償",
+      "reading": "むしょう",
+      "meaning": "miễn phí, không thù lao",
+      "level": "N1"
+    },
+    {
+      "word": "打ち込む",
+      "reading": "うちこむ",
+      "meaning": "chuyên tâm, dồn sức vào",
+      "level": "N1"
+    },
+    {
+      "word": "率直",
+      "reading": "そっちょく",
+      "meaning": "thẳng thắn",
+      "level": "N1"
+    },
+    {
+      "word": "お手上げ",
+      "reading": "おてあげ",
+      "meaning": "bó tay, không còn cách nào",
+      "level": "N1"
+    },
+    {
+      "word": "格段",
+      "reading": "かくだん",
+      "meaning": "vượt bậc, rõ rệt",
+      "level": "N1"
+    },
+    {
+      "word": "いたって",
+      "reading": "いたって",
+      "meaning": "rất, cực kỳ",
+      "level": "N1"
+    },
+    {
+      "word": "一律",
+      "reading": "いちりつ",
+      "meaning": "đồng loạt, như nhau",
+      "level": "N1"
+    },
+    {
+      "word": "心構え",
+      "reading": "こころがまえ",
+      "meaning": "tâm thế, sự chuẩn bị tinh thần",
+      "level": "N1"
+    },
+    {
+      "word": "損なう",
+      "reading": "そこなう",
+      "meaning": "làm tổn hại, làm hỏng",
+      "level": "N1"
+    },
+    {
+      "word": "しがみつく",
+      "reading": "しがみつく",
+      "meaning": "bám chặt, níu chặt",
+      "level": "N1"
+    },
+    {
+      "word": "工面",
+      "reading": "くめん",
+      "meaning": "xoay xở tiền bạc",
+      "level": "N1"
+    },
+    {
+      "word": "がやがや",
+      "reading": "がやがや",
+      "meaning": "ồn ào bởi nhiều tiếng nói chuyện",
+      "level": "N1"
+    },
+    {
+      "word": "じわじわ",
+      "reading": "じわじわ",
+      "meaning": "dần dần, từ từ lan ra",
+      "level": "N1"
+    },
+    {
+      "word": "どろどろ",
+      "reading": "どろどろ",
+      "meaning": "sền sệt, lầy nhầy; rối rắm",
+      "level": "N1"
+    },
+    {
+      "word": "べたべた",
+      "reading": "べたべた",
+      "meaning": "dính bết; bám dính khó chịu",
+      "level": "N1"
+    },
+    {
+      "word": "情報通",
+      "reading": "じょうほうつう",
+      "meaning": "người thạo tin",
+      "level": "N1"
+    },
+    {
+      "word": "占有率",
+      "reading": "せんゆうりつ",
+      "meaning": "tỷ lệ chiếm giữ/thị phần",
+      "level": "N1"
+    },
+    {
+      "word": "迂闊",
+      "reading": "うかつ",
+      "meaning": "bất cẩn, sơ suất",
+      "level": "N1"
+    },
+    {
+      "word": "等身大",
+      "reading": "とうしんだい",
+      "meaning": "đúng với con người thật, không phóng đại",
+      "level": "N1"
+    },
+    {
+      "word": "媒介",
+      "reading": "ばいかい",
+      "meaning": "môi giới, trung gian",
+      "level": "N1"
+    },
+    {
+      "word": "補助",
+      "reading": "ほじょ",
+      "meaning": "hỗ trợ, trợ cấp",
+      "level": "N1"
+    },
+    {
+      "word": "申請",
+      "reading": "しんせい",
+      "meaning": "nộp đơn, xin",
+      "level": "N1"
+    },
+    {
+      "word": "書類",
+      "reading": "しょるい",
+      "meaning": "giấy tờ, hồ sơ",
+      "level": "N1"
+    },
+    {
+      "word": "締め切り",
+      "reading": "しめきり",
+      "meaning": "hạn chót",
+      "level": "N1"
+    },
+    {
+      "word": "提出",
+      "reading": "ていしゅつ",
+      "meaning": "nộp, trình",
+      "level": "N1"
+    },
+    {
+      "word": "責任",
+      "reading": "せきにん",
+      "meaning": "trách nhiệm",
+      "level": "N1"
+    },
+    {
+      "word": "資源",
+      "reading": "しげん",
+      "meaning": "tài nguyên",
+      "level": "N1"
+    },
+    {
+      "word": "現状",
+      "reading": "げんじょう",
+      "meaning": "hiện trạng",
+      "level": "N1"
+    },
+    {
+      "word": "講演",
+      "reading": "こうえん",
+      "meaning": "bài diễn thuyết",
+      "level": "N1"
+    },
+    {
+      "word": "専門家",
+      "reading": "せんもんか",
+      "meaning": "chuyên gia",
+      "level": "N1"
+    },
+    {
+      "word": "環境問題",
+      "reading": "かんきょうもんだい",
+      "meaning": "vấn đề môi trường",
+      "level": "N1"
+    },
+    {
+      "word": "引き換え",
+      "reading": "ひきかえ",
+      "meaning": "đổi lại, đánh đổi",
+      "level": "N1"
+    },
+    {
+      "word": "限りある",
+      "reading": "かぎりある",
+      "meaning": "có giới hạn",
+      "level": "N1"
+    },
+    {
+      "word": "失われる",
+      "reading": "うしなわれる",
+      "meaning": "bị mất đi",
+      "level": "N1"
+    },
+    {
+      "word": "考えさせられる",
+      "reading": "かんがえさせられる",
+      "meaning": "khiến phải suy nghĩ",
+      "level": "N1"
+    },
+    {
+      "word": "維持",
+      "reading": "いじ",
+      "meaning": "duy trì",
+      "level": "N1"
+    },
+    {
+      "word": "意図",
+      "reading": "いと",
+      "meaning": "ý đồ, mục đích, ý định",
+      "level": "N1"
+    },
+    {
+      "word": "寄附",
+      "reading": "きふ",
+      "meaning": "tặng cho, quyên góp",
+      "level": "N1"
+    },
+    {
+      "word": "拒否",
+      "reading": "きょひ",
+      "meaning": "cự tuyệt, bác bỏ",
+      "level": "N1"
+    },
+    {
+      "word": "処置",
+      "reading": "しょち",
+      "meaning": "xử trí, đối xử",
+      "level": "N1"
+    },
+    {
+      "word": "阻止",
+      "reading": "そし",
+      "meaning": "cản trở, chướng ngại",
+      "level": "N1"
+    },
+    {
+      "word": "破棄",
+      "reading": "はき",
+      "meaning": "hủy hoại, hủy bỏ",
+      "level": "N1"
+    },
+    {
+      "word": "保護",
+      "reading": "ほご",
+      "meaning": "bảo hộ",
+      "level": "N1"
+    },
+    {
+      "word": "保守",
+      "reading": "ほしゅ",
+      "meaning": "giữ gìn, duy trì, bảo thủ",
+      "level": "N1"
+    },
+    {
+      "word": "加味",
+      "reading": "かみ",
+      "meaning": "nêm thêm, thêm vào",
+      "level": "N1"
+    },
+    {
+      "word": "寄与",
+      "reading": "きよ",
+      "meaning": "đóng góp",
+      "level": "N1"
+    },
+    {
+      "word": "指揮",
+      "reading": "しき",
+      "meaning": "chỉ huy",
+      "level": "N1"
+    },
+    {
+      "word": "支持",
+      "reading": "しじ",
+      "meaning": "nâng đỡ, duy trì",
+      "level": "N1"
+    },
+    {
+      "word": "自首",
+      "reading": "じしゅ",
+      "meaning": "tự thú",
+      "level": "N1"
+    },
+    {
+      "word": "所持",
+      "reading": "しょじ",
+      "meaning": "sở hữu, tài sản",
+      "level": "N1"
+    },
+    {
+      "word": "麻痺",
+      "reading": "まひ",
+      "meaning": "tê liệt",
+      "level": "N1"
+    },
+    {
+      "word": "餓死",
+      "reading": "がし",
+      "meaning": "chết đói",
+      "level": "N1"
+    },
+    {
+      "word": "帰化",
+      "reading": "きか",
+      "meaning": "nhập quốc tịch, du nhập",
+      "level": "N1"
+    },
+    {
+      "word": "危惧",
+      "reading": "きぐ",
+      "meaning": "sợ sệt",
+      "level": "N1"
+    },
+    {
+      "word": "起訴",
+      "reading": "きそ",
+      "meaning": "khởi tố",
+      "level": "N1"
+    },
+    {
+      "word": "忌避",
+      "reading": "きひ",
+      "meaning": "né tránh, thoái thác",
+      "level": "N1"
+    },
+    {
+      "word": "挙手",
+      "reading": "きょしゅ",
+      "meaning": "giơ tay",
+      "level": "N1"
+    },
+    {
+      "word": "駆使",
+      "reading": "くし",
+      "meaning": "tận dụng",
+      "level": "N1"
+    },
+    {
+      "word": "駆除",
+      "reading": "くじょ",
+      "meaning": "loại bỏ",
+      "level": "N1"
+    },
+    {
+      "word": "固辞",
+      "reading": "こじ",
+      "meaning": "từ chối",
+      "level": "N1"
+    },
+    {
+      "word": "誇示",
+      "reading": "こじ",
+      "meaning": "phô trương",
+      "level": "N1"
+    },
+    {
+      "word": "示唆",
+      "reading": "しさ",
+      "meaning": "khơi gợi",
+      "level": "N1"
+    },
+    {
+      "word": "自負",
+      "reading": "じふ",
+      "meaning": "tự phụ, kiêu ngạo",
+      "level": "N1"
+    },
+    {
+      "word": "除去",
+      "reading": "じょきょ",
+      "meaning": "loại trừ",
+      "level": "N1"
+    },
+    {
+      "word": "図示",
+      "reading": "ずし",
+      "meaning": "đồ thị, biểu hiện",
+      "level": "N1"
+    },
+    {
+      "word": "打破",
+      "reading": "だは",
+      "meaning": "phá vỡ",
+      "level": "N1"
+    },
+    {
+      "word": "治癒",
+      "reading": "ちゆ",
+      "meaning": "chữa trị",
+      "level": "N1"
+    },
+    {
+      "word": "卑下",
+      "reading": "ひげ",
+      "meaning": "khiêm tốn, nhún nhường",
+      "level": "N1"
+    },
+    {
+      "word": "補佐",
+      "reading": "ほさ",
+      "meaning": "trợ lý, phụ tá",
+      "level": "N1"
+    },
+    {
+      "word": "拉致",
+      "reading": "らち",
+      "meaning": "bắt cóc, cuỗm đi",
+      "level": "N1"
+    },
+    {
+      "word": "濾過",
+      "reading": "ろか",
+      "meaning": "lọc, thấm qua",
+      "level": "N1"
+    },
+    {
+      "word": "意義",
+      "reading": "いぎ",
+      "meaning": "ý nghĩa",
+      "level": "N1"
+    },
+    {
+      "word": "異議",
+      "reading": "いぎ",
+      "meaning": "phản đối, kháng nghị",
+      "level": "N1"
+    },
+    {
+      "word": "意地",
+      "reading": "いじ",
+      "meaning": "tâm địa",
+      "level": "N1"
+    },
+    {
+      "word": "過疎",
+      "reading": "かそ",
+      "meaning": "sự giảm dân số",
+      "level": "N1"
+    },
+    {
+      "word": "規模",
+      "reading": "きぼ",
+      "meaning": "quy mô",
+      "level": "N1"
+    },
+    {
+      "word": "義務",
+      "reading": "ぎむ",
+      "meaning": "nghĩa vụ",
+      "level": "N1"
+    },
+    {
+      "word": "個々",
+      "reading": "ここ",
+      "meaning": "từng cái",
+      "level": "N1"
+    },
+    {
+      "word": "誤差",
+      "reading": "ごさ",
+      "meaning": "sai số, chênh lệch",
+      "level": "N1"
+    },
+    {
+      "word": "磁気",
+      "reading": "じき",
+      "meaning": "từ tính",
+      "level": "N1"
+    },
+    {
+      "word": "時期",
+      "reading": "じき",
+      "meaning": "thời kì",
+      "level": "N1"
+    },
+    {
+      "word": "自己",
+      "reading": "じこ",
+      "meaning": "tự mình",
+      "level": "N1"
+    },
+    {
+      "word": "視野",
+      "reading": "しや",
+      "meaning": "tầm nhìn, tầm hiểu biết",
+      "level": "N1"
+    },
+    {
+      "word": "砂利",
+      "reading": "じゃり",
+      "meaning": "sỏi",
+      "level": "N1"
+    },
+    {
+      "word": "趣旨",
+      "reading": "しゅし",
+      "meaning": "ý định, ý chính",
+      "level": "N1"
+    },
+    {
+      "word": "種々",
+      "reading": "しゅじゅ",
+      "meaning": "đa dạng, nhiều loại",
+      "level": "N1"
+    },
+    {
+      "word": "措置",
+      "reading": "そち",
+      "meaning": "biện pháp",
+      "level": "N1"
+    },
+    {
+      "word": "墓地",
+      "reading": "ぼち",
+      "meaning": "nghĩa trang, nơi chôn cất",
+      "level": "N1"
+    },
+    {
+      "word": "余地",
+      "reading": "よち",
+      "meaning": "đất trống",
+      "level": "N1"
+    },
+    {
+      "word": "危機",
+      "reading": "きき",
+      "meaning": "khủng hoảng",
+      "level": "N1"
+    },
+    {
+      "word": "義理",
+      "reading": "ぎり",
+      "meaning": "tình nghĩa",
+      "level": "N1"
+    },
+    {
+      "word": "下痢",
+      "reading": "げり",
+      "meaning": "tiêu chảy",
+      "level": "N1"
+    },
+    {
+      "word": "語彙",
+      "reading": "ごい",
+      "meaning": "từ vựng",
+      "level": "N1"
+    },
+    {
+      "word": "語句",
+      "reading": "ごく",
+      "meaning": "cụm từ ngữ",
+      "level": "N1"
+    },
+    {
+      "word": "孤児",
+      "reading": "こじ",
+      "meaning": "trẻ mồ côi, cô nhi",
+      "level": "N1"
+    },
+    {
+      "word": "詐欺",
+      "reading": "さぎ",
+      "meaning": "lừa đảo",
+      "level": "N1"
+    },
+    {
+      "word": "歯科",
+      "reading": "しか",
+      "meaning": "nha khoa",
+      "level": "N1"
+    },
+    {
+      "word": "自我",
+      "reading": "じが",
+      "meaning": "tự mình",
+      "level": "N1"
+    },
+    {
+      "word": "磁器",
+      "reading": "じき",
+      "meaning": "đồ gốm sứ",
+      "level": "N1"
+    },
+    {
+      "word": "時差",
+      "reading": "じさ",
+      "meaning": "chênh lệch giờ",
+      "level": "N1"
+    },
+    {
+      "word": "自主",
+      "reading": "じしゅ",
+      "meaning": "tự chủ",
+      "level": "N1"
+    },
+    {
+      "word": "守備",
+      "reading": "しゅび",
+      "meaning": "bảo vệ, trấn thủ",
+      "level": "N1"
+    },
+    {
+      "word": "助詞",
+      "reading": "じょし",
+      "meaning": "trợ từ",
+      "level": "N1"
+    },
+    {
+      "word": "庶務",
+      "reading": "しょむ",
+      "meaning": "tổng vụ",
+      "level": "N1"
+    },
+    {
+      "word": "世辞",
+      "reading": "せじ",
+      "meaning": "nịnh, tâng bốc",
+      "level": "N1"
+    },
+    {
+      "word": "著書",
+      "reading": "ちょしょ",
+      "meaning": "tác phẩm sách",
+      "level": "N1"
+    },
+    {
+      "word": "徒歩",
+      "reading": "とほ",
+      "meaning": "đi bộ",
+      "level": "N1"
+    },
+    {
+      "word": "秘書",
+      "reading": "ひしょ",
+      "meaning": "thư kí",
+      "level": "N1"
+    },
+    {
+      "word": "不意",
+      "reading": "ふい",
+      "meaning": "bất chợt, không ngờ tới",
+      "level": "N1"
+    },
+    {
+      "word": "部下",
+      "reading": "ぶか",
+      "meaning": "cấp dưới",
+      "level": "N1"
+    },
+    {
+      "word": "捕虜",
+      "reading": "ほりょ",
+      "meaning": "tù binh",
+      "level": "N1"
+    },
+    {
+      "word": "未知",
+      "reading": "みち",
+      "meaning": "chưa biết",
+      "level": "N1"
+    },
+    {
+      "word": "利子",
+      "reading": "りし",
+      "meaning": "lãi tức, tiền lời",
+      "level": "N1"
+    },
+    {
+      "word": "意気",
+      "reading": "いき",
+      "meaning": "tinh thần",
+      "level": "N1"
+    },
+    {
+      "word": "囲碁",
+      "reading": "いご",
+      "meaning": "cờ vây",
+      "level": "N1"
+    },
+    {
+      "word": "遺書",
+      "reading": "いしょ",
+      "meaning": "di thư, di chúc",
+      "level": "N1"
+    },
+    {
+      "word": "歌詞",
+      "reading": "かし",
+      "meaning": "lời bài hát",
+      "level": "N1"
+    },
+    {
+      "word": "過度",
+      "reading": "かど",
+      "meaning": "quá mức qui định",
+      "level": "N1"
+    },
+    {
+      "word": "可否",
+      "reading": "かひ",
+      "meaning": "đúng và sai",
+      "level": "N1"
+    },
+    {
+      "word": "飢餓",
+      "reading": "きが",
+      "meaning": "thiếu ăn, chết đói",
+      "level": "N1"
+    },
+    {
+      "word": "機器",
+      "reading": "きき",
+      "meaning": "thiết bị, máy móc",
+      "level": "N1"
+    },
+    {
+      "word": "季語",
+      "reading": "きご",
+      "meaning": "từ ngữ theo mùa",
+      "level": "N1"
+    },
+    {
+      "word": "機種",
+      "reading": "きしゅ",
+      "meaning": "loại máy",
+      "level": "N1"
+    },
+    {
+      "word": "旗手",
+      "reading": "きしゅ",
+      "meaning": "người cầm cờ hiệu",
+      "level": "N1"
+    },
+    {
+      "word": "既知",
+      "reading": "きち",
+      "meaning": "đã biết rồi",
+      "level": "N1"
+    },
+    {
+      "word": "虚偽",
+      "reading": "きょぎ",
+      "meaning": "giả dối, sai sự thật",
+      "level": "N1"
+    },
+    {
+      "word": "虚無",
+      "reading": "きょむ",
+      "meaning": "hư vô, không thực",
+      "level": "N1"
+    },
+    {
+      "word": "呼気",
+      "reading": "こき",
+      "meaning": "hơi thở",
+      "level": "N1"
+    },
+    {
+      "word": "誤字",
+      "reading": "ごじ",
+      "meaning": "chữ in sai, chữ sai",
+      "level": "N1"
+    },
+    {
+      "word": "語尾",
+      "reading": "ごび",
+      "meaning": "vĩ tố, âm cuối, chữ tận cùng",
+      "level": "N1"
+    },
+    {
+      "word": "差異",
+      "reading": "さい",
+      "meaning": "sự sai khác",
+      "level": "N1"
+    },
+    {
+      "word": "時価",
+      "reading": "じか",
+      "meaning": "giá hiện tại, giá thị trường",
+      "level": "N1"
+    },
+    {
+      "word": "時下",
+      "reading": "じか",
+      "meaning": "thời nay",
+      "level": "N1"
+    },
+    {
+      "word": "時機",
+      "reading": "じき",
+      "meaning": "cơ hội, thời cơ",
+      "level": "N1"
+    },
+    {
+      "word": "次期",
+      "reading": "じき",
+      "meaning": "thời kì sau, thời tiếp theo",
+      "level": "N1"
+    },
+    {
+      "word": "私語",
+      "reading": "しご",
+      "meaning": "nói chuyện riêng, thì thầm",
+      "level": "N1"
+    },
+    {
+      "word": "死語",
+      "reading": "しご",
+      "meaning": "từ lỗi thời, tử ngữ",
+      "level": "N1"
+    },
+    {
+      "word": "事後",
+      "reading": "じご",
+      "meaning": "xảy ra sau đó",
+      "level": "N1"
+    },
+    {
+      "word": "私費",
+      "reading": "しひ",
+      "meaning": "tự trả tiền",
+      "level": "N1"
+    },
+    {
+      "word": "自費",
+      "reading": "じひ",
+      "meaning": "tự trả tiền",
+      "level": "N1"
+    },
+    {
+      "word": "首位",
+      "reading": "しゅい",
+      "meaning": "vị trí đứng đầu",
+      "level": "N1"
+    },
+    {
+      "word": "主旨",
+      "reading": "しゅし",
+      "meaning": "lí do chính, ý chính",
+      "level": "N1"
+    },
+    {
+      "word": "種子",
+      "reading": "しゅし",
+      "meaning": "hạt giống",
+      "level": "N1"
+    },
+    {
+      "word": "手話",
+      "reading": "しゅわ",
+      "meaning": "ra dấu, ngôn ngữ kí hiệu",
+      "level": "N1"
+    },
+    {
+      "word": "書記",
+      "reading": "しょき",
+      "meaning": "ghi chép, thư kí",
+      "level": "N1"
+    },
+    {
+      "word": "齟齬",
+      "reading": "そご",
+      "meaning": "mâu thuẫn, bất hòa",
+      "level": "N1"
+    },
+    {
+      "word": "地価",
+      "reading": "ちか",
+      "meaning": "giá đất",
+      "level": "N1"
+    },
+    {
+      "word": "致死",
+      "reading": "ちし",
+      "meaning": "chí mạng, gây chết",
+      "level": "N1"
+    },
+    {
+      "word": "覇者",
+      "reading": "はしゃ",
+      "meaning": "quán quân, vô địch",
+      "level": "N1"
+    },
+    {
+      "word": "馬車",
+      "reading": "ばしゃ",
+      "meaning": "xe ngựa",
+      "level": "N1"
+    },
+    {
+      "word": "避暑",
+      "reading": "ひしょ",
+      "meaning": "tránh nóng",
+      "level": "N1"
+    },
+    {
+      "word": "比喩",
+      "reading": "ひゆ",
+      "meaning": "so sánh, ví von",
+      "level": "N1"
+    },
+    {
+      "word": "部署",
+      "reading": "ぶしょ",
+      "meaning": "cương vị",
+      "level": "N1"
+    },
+    {
+      "word": "不和",
+      "reading": "ふわ",
+      "meaning": "bất hòa",
+      "level": "N1"
+    },
+    {
+      "word": "簿記",
+      "reading": "ぼき",
+      "meaning": "làm sổ sách",
+      "level": "N1"
+    },
+    {
+      "word": "母語",
+      "reading": "ぼご",
+      "meaning": "tiếng mẹ đẻ",
+      "level": "N1"
+    },
+    {
+      "word": "無期",
+      "reading": "むき",
+      "meaning": "mập mờ, không hạn định",
+      "level": "N1"
+    },
+    {
+      "word": "路地",
+      "reading": "ろじ",
+      "meaning": "đường đi",
+      "level": "N1"
+    },
+    {
+      "word": "和語",
+      "reading": "わご",
+      "meaning": "tiếng Nhật",
+      "level": "N1"
+    },
+    {
+      "word": "移行",
+      "reading": "いこう",
+      "meaning": "di trú, chuyển tiếp",
+      "level": "N1"
+    },
+    {
+      "word": "委託",
+      "reading": "いたく",
+      "meaning": "ủy thác",
+      "level": "N1"
+    },
+    {
+      "word": "違反",
+      "reading": "いはん",
+      "meaning": "vi phạm",
+      "level": "N1"
+    },
+    {
+      "word": "依頼",
+      "reading": "いらい",
+      "meaning": "nhờ cậy, yêu cầu",
+      "level": "N1"
+    },
+    {
+      "word": "汚染",
+      "reading": "おせん",
+      "meaning": "ô nhiễm",
+      "level": "N1"
+    },
+    {
+      "word": "加減",
+      "reading": "かげん",
+      "meaning": "gia giảm, điều chỉnh",
+      "level": "N1"
+    },
+    {
+      "word": "企画",
+      "reading": "きかく",
+      "meaning": "kế hoạch",
+      "level": "N1"
+    },
+    {
+      "word": "棄権",
+      "reading": "きけん",
+      "meaning": "bỏ phiếu trắng",
+      "level": "N1"
+    },
+    {
+      "word": "記載",
+      "reading": "きさい",
+      "meaning": "ghi chép, viết",
+      "level": "N1"
+    },
+    {
+      "word": "規制",
+      "reading": "きせい",
+      "meaning": "quy chế",
+      "level": "N1"
+    },
+    {
+      "word": "偽造",
+      "reading": "ぎぞう",
+      "meaning": "ngụy tạo, giả mạo",
+      "level": "N1"
+    },
+    {
+      "word": "誤解",
+      "reading": "ごかい",
+      "meaning": "hiểu sai, hiểu lầm",
+      "level": "N1"
+    },
+    {
+      "word": "故障",
+      "reading": "こしょう",
+      "meaning": "trục trặc, hỏng hóc",
+      "level": "N1"
+    },
+    {
+      "word": "雇用",
+      "reading": "こよう",
+      "meaning": "tuyển dụng",
+      "level": "N1"
+    },
+    {
+      "word": "孤立",
+      "reading": "こりつ",
+      "meaning": "cô lập",
+      "level": "N1"
+    },
+    {
+      "word": "作用",
+      "reading": "さよう",
+      "meaning": "tác dụng",
+      "level": "N1"
+    },
+    {
+      "word": "飼育",
+      "reading": "しいく",
+      "meaning": "chăn nuôi",
+      "level": "N1"
+    },
+    {
+      "word": "自覚",
+      "reading": "じかく",
+      "meaning": "tự giác",
+      "level": "N1"
+    },
+    {
+      "word": "志向",
+      "reading": "しこう",
+      "meaning": "chí hướng",
+      "level": "N1"
+    },
+    {
+      "word": "思考",
+      "reading": "しこう",
+      "meaning": "suy nghĩ",
+      "level": "N1"
+    },
+    {
+      "word": "施行",
+      "reading": "しこう",
+      "meaning": "thực hiện, thi hành",
+      "level": "N1"
+    },
+    {
+      "word": "試行",
+      "reading": "しこう",
+      "meaning": "thử nghiệm",
+      "level": "N1"
+    },
+    {
+      "word": "視察",
+      "reading": "しさつ",
+      "meaning": "thị sát",
+      "level": "N1"
+    },
+    {
+      "word": "辞退",
+      "reading": "じたい",
+      "meaning": "từ chối, khước từ",
+      "level": "N1"
+    },
+    {
+      "word": "指摘",
+      "reading": "してき",
+      "meaning": "chỉ trích",
+      "level": "N1"
+    },
+    {
+      "word": "自慢",
+      "reading": "じまん",
+      "meaning": "tự mãn",
+      "level": "N1"
+    },
+    {
+      "word": "謝罪",
+      "reading": "しゃざい",
+      "meaning": "tạ tội",
+      "level": "N1"
+    },
+    {
+      "word": "謝絶",
+      "reading": "しゃぜつ",
+      "meaning": "cự tuyệt, từ chối",
+      "level": "N1"
+    },
+    {
+      "word": "修行",
+      "reading": "しゅぎょう",
+      "meaning": "tu nghiệp, tu hành",
+      "level": "N1"
+    },
+    {
+      "word": "主張",
+      "reading": "しゅちょう",
+      "meaning": "chủ trương",
+      "level": "N1"
+    },
+    {
+      "word": "主導",
+      "reading": "しゅどう",
+      "meaning": "chủ đạo",
+      "level": "N1"
+    },
+    {
+      "word": "樹立",
+      "reading": "じゅりつ",
+      "meaning": "thành lập",
+      "level": "N1"
+    },
+    {
+      "word": "助言",
+      "reading": "じょげん",
+      "meaning": "lời khuyên",
+      "level": "N1"
+    },
+    {
+      "word": "処罰",
+      "reading": "しょばつ",
+      "meaning": "xử phạt",
+      "level": "N1"
+    },
+    {
+      "word": "署名",
+      "reading": "しょめい",
+      "meaning": "chữ kí, đề tên",
+      "level": "N1"
+    },
+    {
+      "word": "所有",
+      "reading": "しょゆう",
+      "meaning": "sở hữu",
+      "level": "N1"
+    },
+    {
+      "word": "是正",
+      "reading": "ぜせい",
+      "meaning": "sửa cho đúng, làm cho ngay ngắn",
+      "level": "N1"
+    },
+    {
+      "word": "訴訟",
+      "reading": "そしょう",
+      "meaning": "kiện tụng, thưa kiện",
+      "level": "N1"
+    },
+    {
+      "word": "打開",
+      "reading": "だかい",
+      "meaning": "công phá, vượt qua",
+      "level": "N1"
+    },
+    {
+      "word": "妥協",
+      "reading": "だきょう",
+      "meaning": "thỏa hiệp",
+      "level": "N1"
+    },
+    {
+      "word": "把握",
+      "reading": "はあく",
+      "meaning": "nắm bắt",
+      "level": "N1"
+    }
+  ]
+}

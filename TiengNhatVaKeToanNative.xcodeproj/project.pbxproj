@@ -22,6 +22,7 @@
 		202020202020202020201003 /* WatchStudyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202020202020202020200003 /* WatchStudyStore.swift */; };
 		202020202020202020201004 /* StudyDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100010 /* StudyDictionary.json */; };
 		202020202020202020201005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100012 /* Assets.xcassets */; };
+		202020202020202020201006 /* WatchDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 202020202020202020200006 /* WatchDictionary.json */; };
 		303030303030303030301001 /* TiengNhatVaKeToanWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 202020202020202020200004 /* TiengNhatVaKeToanWatch.app */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		202020202020202020200002 /* WatchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchContentView.swift; sourceTree = "<group>"; };
 		202020202020202020200003 /* WatchStudyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchStudyStore.swift; sourceTree = "<group>"; };
 		202020202020202020200004 /* TiengNhatVaKeToanWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TiengNhatVaKeToanWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		202020202020202020200006 /* WatchDictionary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WatchDictionary.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				202020202020202020200001 /* TiengNhatVaKeToanWatchApp.swift */,
 				202020202020202020200002 /* WatchContentView.swift */,
 				202020202020202020200003 /* WatchStudyStore.swift */,
+				202020202020202020200006 /* WatchDictionary.json */,
 			);
 			path = TiengNhatVaKeToanWatch;
 			sourceTree = "<group>";
@@ -231,7 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				202020202020202020201004 /* StudyDictionary.json in Resources */,
+				202020202020202020201006 /* WatchDictionary.json in Resources */,
 				202020202020202020201005 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
