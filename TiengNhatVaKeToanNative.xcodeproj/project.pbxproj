@@ -21,7 +21,32 @@
 		202020202020202020201002 /* WatchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202020202020202020200002 /* WatchContentView.swift */; };
 		202020202020202020201003 /* WatchStudyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202020202020202020200003 /* WatchStudyStore.swift */; };
 		202020202020202020201004 /* StudyDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100010 /* StudyDictionary.json */; };
+		303030303030303030301001 /* TiengNhatVaKeToanWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 202020202020202020200004 /* TiengNhatVaKeToanWatch.app */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		303030303030303030302001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 101010101010101010107001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 202020202020202020204001;
+			remoteInfo = TiengNhatVaKeToanWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		303030303030303030303001 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				303030303030303030301001 /* TiengNhatVaKeToanWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		101010101010101010100001 /* TiengNhatVaKeToanNativeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiengNhatVaKeToanNativeApp.swift; sourceTree = "<group>"; };
@@ -116,10 +141,12 @@
 				101010101010101010105001 /* Sources */,
 				101010101010101010102001 /* Frameworks */,
 				101010101010101010106001 /* Resources */,
+				303030303030303030303001 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				303030303030303030304001 /* PBXTargetDependency */,
 			);
 			name = TiengNhatVaKeToanNative;
 			productName = TiengNhatVaKeToanNative;
@@ -144,6 +171,14 @@
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
+
+/* Begin PBXTargetDependency section */
+		303030303030303030304001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 202020202020202020204001 /* TiengNhatVaKeToanWatch */;
+			targetProxy = 303030303030303030302001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXProject section */
 		101010101010101010107001 /* Project object */ = {
