@@ -169,7 +169,7 @@
 			name = TiengNhatVaKeToanWatch;
 			productName = TiengNhatVaKeToanWatch;
 			productReference = 202020202020202020200004 /* TiengNhatVaKeToanWatch.app */;
-			productType = "com.apple.product-type.application.watchapp2";
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
