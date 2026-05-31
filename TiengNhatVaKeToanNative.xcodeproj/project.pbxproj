@@ -21,6 +21,7 @@
 		202020202020202020201002 /* WatchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202020202020202020200002 /* WatchContentView.swift */; };
 		202020202020202020201003 /* WatchStudyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202020202020202020200003 /* WatchStudyStore.swift */; };
 		202020202020202020201004 /* StudyDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100010 /* StudyDictionary.json */; };
+		202020202020202020201005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100012 /* Assets.xcassets */; };
 		303030303030303030301001 /* TiengNhatVaKeToanWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 202020202020202020200004 /* TiengNhatVaKeToanWatch.app */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -231,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				202020202020202020201004 /* StudyDictionary.json in Resources */,
+				202020202020202020201005 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,12 +441,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9C4H9322AU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = TiengNhatVaKeToan;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.nghiayeuthu.TiengNhatVaKeToanNative;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -454,7 +458,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nghiayeuthu.TiengNhatVaKeToanNative.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
-				SKIP_INSTALL = NO;
+				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "watchos watchsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -467,12 +471,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9C4H9322AU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = TiengNhatVaKeToan;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.nghiayeuthu.TiengNhatVaKeToanNative;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -482,7 +488,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nghiayeuthu.TiengNhatVaKeToanNative.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
-				SKIP_INSTALL = NO;
+				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "watchos watchsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
