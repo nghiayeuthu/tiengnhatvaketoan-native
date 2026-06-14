@@ -14,190 +14,6 @@ struct VocabularyEntry: Decodable, Identifiable, Hashable {
 
     var id: String { "\(level)-\(word)-\(reading)-\(meaning)" }
 
-    static let supplemental: [VocabularyEntry] = [
-        VocabularyEntry(word: "深刻", reading: "しんこく", meaning: "nghiêm trọng, sâu sắc", level: "N2"),
-        VocabularyEntry(word: "思わぬ", reading: "おもわぬ", meaning: "không ngờ tới, bất ngờ", level: "N2"),
-        VocabularyEntry(word: "潜む", reading: "ひそむ", meaning: "ẩn nấp; tiềm ẩn, ẩn chứa", level: "N1"),
-        VocabularyEntry(word: "卓越", reading: "たくえつ", meaning: "vượt trội, xuất sắc", level: "N1"),
-        VocabularyEntry(word: "芳しい", reading: "かんばしい", meaning: "tốt, thuận lợi; thường dùng dạng phủ định 芳しくない = không tốt", level: "N1"),
-        VocabularyEntry(word: "管轄", reading: "かんかつ", meaning: "thẩm quyền quản lý, phạm vi phụ trách", level: "N1"),
-        VocabularyEntry(word: "一環", reading: "いっかん", meaning: "một phần trong chuỗi/hoạt động chung", level: "N1"),
-        VocabularyEntry(word: "前半", reading: "ぜんはん", meaning: "nửa đầu, hiệp đầu", level: "N2"),
-        VocabularyEntry(word: "後半", reading: "こうはん", meaning: "nửa sau, hiệp sau", level: "N2"),
-        VocabularyEntry(word: "逆転", reading: "ぎゃくてん", meaning: "lội ngược dòng, đảo ngược tình thế", level: "N2"),
-        VocabularyEntry(word: "リード", reading: "リード", meaning: "dẫn trước, dẫn điểm", level: "N2"),
-        VocabularyEntry(word: "互角", reading: "ごかく", meaning: "ngang tài ngang sức", level: "N1"),
-        VocabularyEntry(word: "若手", reading: "わかて", meaning: "người trẻ, lớp trẻ có triển vọng", level: "N2"),
-        VocabularyEntry(word: "実力", reading: "じつりょく", meaning: "thực lực, năng lực thật", level: "N2"),
-        VocabularyEntry(word: "割り当てる", reading: "わりあてる", meaning: "phân công, phân bổ, giao cho", level: "N2"),
-        VocabularyEntry(word: "周到", reading: "しゅうとう", meaning: "chu đáo, chuẩn bị kỹ lưỡng", level: "N1"),
-        VocabularyEntry(word: "臨む", reading: "のぞむ", meaning: "tham dự, bước vào; đối mặt với", level: "N1"),
-        VocabularyEntry(word: "ひとまず", reading: "ひとまず", meaning: "tạm thời, trước hết", level: "N2"),
-        VocabularyEntry(word: "むしゃくしゃ", reading: "むしゃくしゃ", meaning: "bực bội, khó chịu trong lòng", level: "N2"),
-        VocabularyEntry(word: "誇張", reading: "こちょう", meaning: "phóng đại, nói quá", level: "N1"),
-        VocabularyEntry(word: "ひそか", reading: "ひそか", meaning: "âm thầm, bí mật, kín đáo", level: "N1"),
-        VocabularyEntry(word: "試練", reading: "しれん", meaning: "thử thách, gian nan", level: "N1"),
-        VocabularyEntry(word: "苦難", reading: "くなん", meaning: "khó khăn, gian khổ", level: "N1"),
-        VocabularyEntry(word: "うろたえる", reading: "うろたえる", meaning: "lúng túng, hoảng hốt, mất bình tĩnh", level: "N1"),
-        VocabularyEntry(word: "慌てる", reading: "あわてる", meaning: "vội vàng, hoảng hốt", level: "N2"),
-        VocabularyEntry(word: "当面", reading: "とうめん", meaning: "trước mắt, trong thời gian hiện tại", level: "N2"),
-        VocabularyEntry(word: "しばらく", reading: "しばらく", meaning: "một lúc, một thời gian", level: "N3"),
-        VocabularyEntry(word: "憩い", reading: "いこい", meaning: "sự nghỉ ngơi, thư giãn; nơi nghỉ chân", level: "N1"),
-        VocabularyEntry(word: "憩う", reading: "いこう", meaning: "nghỉ ngơi, thư giãn", level: "N1"),
-        VocabularyEntry(word: "自前", reading: "じまえ", meaning: "tự mình lo; đồ của mình, tự có", level: "N1"),
-        VocabularyEntry(word: "衣装", reading: "いしょう", meaning: "trang phục, phục trang", level: "N2"),
-        VocabularyEntry(word: "壊す", reading: "こわす", meaning: "phá, làm hỏng", level: "N3"),
-        VocabularyEntry(word: "壊れる", reading: "こわれる", meaning: "bị hỏng, bị phá", level: "N3"),
-        VocabularyEntry(word: "ルーズ", reading: "ルーズ", meaning: "cẩu thả, lỏng lẻo, không chặt chẽ", level: "N2"),
-        VocabularyEntry(word: "なじむ", reading: "なじむ", meaning: "quen, hòa nhập, hợp với", level: "N2"),
-        VocabularyEntry(word: "煩わしい", reading: "わずらわしい", meaning: "phiền phức, rắc rối", level: "N1"),
-        VocabularyEntry(word: "嫌味", reading: "いやみ", meaning: "lời mỉa mai; vẻ khó ưa", level: "N2"),
-        VocabularyEntry(word: "伴奏", reading: "ばんそう", meaning: "đệm nhạc", level: "N1"),
-        VocabularyEntry(word: "練る", reading: "ねる", meaning: "trau chuốt, nghiền ngẫm, lập kỹ", level: "N2"),
-        VocabularyEntry(word: "まばら", reading: "まばら", meaning: "thưa thớt, lác đác", level: "N1"),
-        VocabularyEntry(word: "どんより", reading: "どんより", meaning: "u ám, nặng nề, âm u", level: "N2"),
-        VocabularyEntry(word: "捗る", reading: "はかどる", meaning: "tiến triển thuận lợi, trôi chảy", level: "N1"),
-        VocabularyEntry(word: "やむを得ず", reading: "やむをえず", meaning: "bất đắc dĩ, không còn cách nào khác", level: "N2"),
-        VocabularyEntry(word: "細心", reading: "さいしん", meaning: "hết sức cẩn thận, tỉ mỉ", level: "N1"),
-        VocabularyEntry(word: "めきめき", reading: "めきめき", meaning: "nhanh chóng, rõ rệt", level: "N1"),
-        VocabularyEntry(word: "利益", reading: "りえき", meaning: "lợi ích, lợi nhuận", level: "N3"),
-        VocabularyEntry(word: "目論む", reading: "もくろむ", meaning: "mưu tính, lên kế hoạch", level: "N1"),
-        VocabularyEntry(word: "にわかには", reading: "にわかには", meaning: "khó mà ngay lập tức, không dễ gì", level: "N1"),
-        VocabularyEntry(word: "シビア", reading: "シビア", meaning: "nghiêm khắc, khắt khe", level: "N1"),
-        VocabularyEntry(word: "鈍る", reading: "にぶる", meaning: "cùn đi; suy giảm, chậm lại", level: "N2"),
-        VocabularyEntry(word: "歴然", reading: "れきぜん", meaning: "rõ ràng, hiển nhiên", level: "N1"),
-        VocabularyEntry(word: "おのずと", reading: "おのずと", meaning: "tự nhiên, tự khắc", level: "N1"),
-        VocabularyEntry(word: "枠", reading: "わく", meaning: "khung, khuôn khổ, phạm vi", level: "N2"),
-        VocabularyEntry(word: "スケール", reading: "スケール", meaning: "quy mô, tầm cỡ", level: "N2"),
-        VocabularyEntry(word: "しきりに", reading: "しきりに", meaning: "liên tục, nhiều lần, không ngừng", level: "N2"),
-        VocabularyEntry(word: "けなす", reading: "けなす", meaning: "chê bai, nói xấu", level: "N1"),
-        VocabularyEntry(word: "おっくう", reading: "おっくう", meaning: "ngại, thấy phiền, không muốn làm", level: "N1"),
-        VocabularyEntry(word: "跡地", reading: "あとち", meaning: "khu đất sau khi dỡ/chuyển đi", level: "N1"),
-        VocabularyEntry(word: "あらかじめ", reading: "あらかじめ", meaning: "trước, sẵn, từ trước", level: "N2"),
-        VocabularyEntry(word: "抜群", reading: "ばつぐん", meaning: "vượt trội, xuất sắc", level: "N1"),
-        VocabularyEntry(word: "バックアップ", reading: "バックアップ", meaning: "hỗ trợ; sao lưu", level: "N2"),
-        VocabularyEntry(word: "おおむね", reading: "おおむね", meaning: "nhìn chung, đại khái", level: "N1"),
-        VocabularyEntry(word: "ことごとく", reading: "ことごとく", meaning: "toàn bộ, hết thảy", level: "N1"),
-        VocabularyEntry(word: "裏づけ", reading: "うらづけ", meaning: "căn cứ, bằng chứng hỗ trợ", level: "N1"),
-        VocabularyEntry(word: "術", reading: "すべ", meaning: "cách, phương kế", level: "N1"),
-        VocabularyEntry(word: "急かす", reading: "せかす", meaning: "thúc giục", level: "N1"),
-        VocabularyEntry(word: "ストレート", reading: "ストレート", meaning: "thẳng thắn, trực tiếp", level: "N2"),
-        VocabularyEntry(word: "気掛かり", reading: "きがかり", meaning: "lo lắng, bận tâm", level: "N2"),
-        VocabularyEntry(word: "不用意", reading: "ふようい", meaning: "bất cẩn, thiếu thận trọng", level: "N1"),
-        VocabularyEntry(word: "手分け", reading: "てわけ", meaning: "chia việc, phân công", level: "N2"),
-        VocabularyEntry(word: "慕う", reading: "したう", meaning: "kính mến, ngưỡng mộ, yêu quý", level: "N1"),
-        VocabularyEntry(word: "仕上がる", reading: "しあがる", meaning: "hoàn thành, xong xuôi", level: "N2"),
-        VocabularyEntry(word: "クレーム", reading: "クレーム", meaning: "khiếu nại, phàn nàn", level: "N2"),
-        VocabularyEntry(word: "今更", reading: "いまさら", meaning: "đến giờ thì..., quá muộn", level: "N2"),
-        VocabularyEntry(word: "くまなく", reading: "くまなく", meaning: "khắp nơi, không bỏ sót", level: "N1"),
-        VocabularyEntry(word: "ふいに", reading: "ふいに", meaning: "đột nhiên, bất chợt", level: "N2"),
-        VocabularyEntry(word: "もはや", reading: "もはや", meaning: "đã/không còn... nữa", level: "N2"),
-        VocabularyEntry(word: "甚だしい", reading: "はなはだしい", meaning: "quá mức, nghiêm trọng", level: "N1"),
-        VocabularyEntry(word: "催す", reading: "もよおす", meaning: "tổ chức; cảm thấy", level: "N2"),
-        VocabularyEntry(word: "満たない", reading: "みたない", meaning: "chưa đến, không đủ", level: "N2"),
-        VocabularyEntry(word: "言い張る", reading: "いいはる", meaning: "khăng khăng, một mực nói", level: "N2"),
-        VocabularyEntry(word: "人出", reading: "ひとで", meaning: "lượng người ra ngoài, đám đông", level: "N1"),
-        VocabularyEntry(word: "一任", reading: "いちにん", meaning: "giao phó toàn quyền", level: "N1"),
-        VocabularyEntry(word: "荷が重い", reading: "にがおもい", meaning: "quá sức, là gánh nặng", level: "N2"),
-        VocabularyEntry(word: "支援", reading: "しえん", meaning: "hỗ trợ, viện trợ", level: "N2"),
-        VocabularyEntry(word: "仰天", reading: "ぎょうてん", meaning: "kinh ngạc, sửng sốt", level: "N1"),
-        VocabularyEntry(word: "かばう", reading: "かばう", meaning: "bảo vệ, bênh vực", level: "N2"),
-        VocabularyEntry(word: "はがす", reading: "はがす", meaning: "bóc, gỡ, lột ra", level: "N2"),
-        VocabularyEntry(word: "可決", reading: "かけつ", meaning: "thông qua, được phê chuẩn", level: "N1"),
-        VocabularyEntry(word: "異色", reading: "いしょく", meaning: "khác thường, độc đáo", level: "N1"),
-        VocabularyEntry(word: "揺らぎ", reading: "ゆらぎ", meaning: "dao động, lung lay", level: "N1"),
-        VocabularyEntry(word: "耐えがたい", reading: "たえがたい", meaning: "khó chịu đựng", level: "N1"),
-        VocabularyEntry(word: "稼働", reading: "かどう", meaning: "vận hành, hoạt động", level: "N1"),
-        VocabularyEntry(word: "錯覚", reading: "さっかく", meaning: "ảo giác; hiểu nhầm", level: "N1"),
-        VocabularyEntry(word: "殺到", reading: "さっとう", meaning: "đổ xô tới, ùn tới", level: "N1"),
-        VocabularyEntry(word: "平凡", reading: "へいぼん", meaning: "bình thường, tầm thường", level: "N2"),
-        VocabularyEntry(word: "ささい", reading: "ささい", meaning: "nhỏ nhặt, không đáng kể", level: "N1"),
-        VocabularyEntry(word: "戸惑う", reading: "とまどう", meaning: "bối rối, lúng túng", level: "N2"),
-        VocabularyEntry(word: "かねがね", reading: "かねがね", meaning: "từ lâu, trước nay", level: "N1"),
-        VocabularyEntry(word: "お詫び", reading: "おわび", meaning: "lời xin lỗi", level: "N2"),
-        VocabularyEntry(word: "怯える", reading: "おびえる", meaning: "sợ hãi, hoảng sợ", level: "N2"),
-        VocabularyEntry(word: "非", reading: "ひ", meaning: "lỗi, sai trái, điều không đúng", level: "N1"),
-        VocabularyEntry(word: "粘り強い", reading: "ねばりづよい", meaning: "kiên trì, bền bỉ", level: "N1"),
-        VocabularyEntry(word: "むっとする", reading: "むっとする", meaning: "bực mình, sa sầm mặt", level: "N2"),
-        VocabularyEntry(word: "真っ先", reading: "まっさき", meaning: "đầu tiên, trước hết", level: "N2"),
-        VocabularyEntry(word: "うなだれる", reading: "うなだれる", meaning: "cúi gằm đầu", level: "N1"),
-        VocabularyEntry(word: "言及", reading: "げんきゅう", meaning: "đề cập, nhắc tới", level: "N1"),
-        VocabularyEntry(word: "速やか", reading: "すみやか", meaning: "nhanh chóng, mau lẹ", level: "N2"),
-        VocabularyEntry(word: "つかの間", reading: "つかのま", meaning: "thoáng chốc, trong khoảnh khắc", level: "N1"),
-        VocabularyEntry(word: "しくじる", reading: "しくじる", meaning: "thất bại, mắc lỗi", level: "N1"),
-        VocabularyEntry(word: "心当たり", reading: "こころあたり", meaning: "điều nhớ ra, manh mối", level: "N1"),
-        VocabularyEntry(word: "起用", reading: "きよう", meaning: "bổ nhiệm, dùng người", level: "N1"),
-        VocabularyEntry(word: "多角的", reading: "たかくてき", meaning: "đa phương diện, nhiều góc độ", level: "N1"),
-        VocabularyEntry(word: "薄く切る", reading: "うすくきる", meaning: "cắt mỏng, thái lát", level: "N2"),
-        VocabularyEntry(word: "めいめい", reading: "めいめい", meaning: "từng người, mỗi người", level: "N1"),
-        VocabularyEntry(word: "渋る", reading: "しぶる", meaning: "do dự, miễn cưỡng", level: "N1"),
-        VocabularyEntry(word: "かさばる", reading: "かさばる", meaning: "cồng kềnh, chiếm chỗ", level: "N1"),
-        VocabularyEntry(word: "コンパクト", reading: "コンパクト", meaning: "nhỏ gọn", level: "N2"),
-        VocabularyEntry(word: "つぶやく", reading: "つぶやく", meaning: "lẩm bẩm, thì thầm một mình", level: "N2"),
-        VocabularyEntry(word: "ばてる", reading: "ばてる", meaning: "kiệt sức, mệt lả", level: "N2"),
-        VocabularyEntry(word: "目安", reading: "めやす", meaning: "mốc, tiêu chuẩn tham khảo", level: "N2"),
-        VocabularyEntry(word: "危ぶむ", reading: "あやぶむ", meaning: "lo ngại, e rằng", level: "N1"),
-        VocabularyEntry(word: "異例", reading: "いれい", meaning: "hiếm, khác thường, ngoại lệ", level: "N1"),
-        VocabularyEntry(word: "ひたむき", reading: "ひたむき", meaning: "hết mình, một lòng chăm chỉ", level: "N1"),
-        VocabularyEntry(word: "架空", reading: "かくう", meaning: "hư cấu, tưởng tượng", level: "N1"),
-        VocabularyEntry(word: "施す", reading: "ほどこす", meaning: "thực hiện, áp dụng; ban cho", level: "N1"),
-        VocabularyEntry(word: "余波", reading: "よは", meaning: "dư âm, ảnh hưởng lan ra", level: "N1"),
-        VocabularyEntry(word: "寡黙", reading: "かもく", meaning: "ít nói", level: "N1"),
-        VocabularyEntry(word: "ずれ込む", reading: "ずれこむ", meaning: "bị trễ, lùi sang", level: "N1"),
-        VocabularyEntry(word: "ろくに", reading: "ろくに", meaning: "không đủ, chẳng mấy", level: "N2"),
-        VocabularyEntry(word: "なつく", reading: "なつく", meaning: "quấn, thân thiết", level: "N2"),
-        VocabularyEntry(word: "派", reading: "は", meaning: "phái, phe, nhóm", level: "N2"),
-        VocabularyEntry(word: "熟知", reading: "じゅくち", meaning: "biết rõ, nắm vững", level: "N1"),
-        VocabularyEntry(word: "リスク", reading: "リスク", meaning: "rủi ro", level: "N2"),
-        VocabularyEntry(word: "絶賛", reading: "ぜっさん", meaning: "khen ngợi hết lời", level: "N1"),
-        VocabularyEntry(word: "リタイア", reading: "リタイア", meaning: "bỏ cuộc, rút lui", level: "N2"),
-        VocabularyEntry(word: "かみ合う", reading: "かみあう", meaning: "ăn khớp, khớp nhau", level: "N1"),
-        VocabularyEntry(word: "閉口", reading: "へいこう", meaning: "ngán ngẩm, bó tay", level: "N1"),
-        VocabularyEntry(word: "気まま", reading: "きまま", meaning: "tùy thích, tùy hứng", level: "N2"),
-        VocabularyEntry(word: "調達", reading: "ちょうたつ", meaning: "thu xếp, huy động, cung ứng", level: "N1"),
-        VocabularyEntry(word: "スポット", reading: "スポット", meaning: "địa điểm, điểm nổi bật", level: "N2"),
-        VocabularyEntry(word: "拮抗", reading: "きっこう", meaning: "cân bằng, ngang sức", level: "N1"),
-        VocabularyEntry(word: "懸念", reading: "けねん", meaning: "lo ngại, quan ngại", level: "N1"),
-        VocabularyEntry(word: "不慮", reading: "ふりょ", meaning: "bất ngờ, ngoài ý muốn", level: "N1"),
-        VocabularyEntry(word: "もろい", reading: "もろい", meaning: "dễ vỡ, yếu, mong manh", level: "N2"),
-        VocabularyEntry(word: "快挙", reading: "かいきょ", meaning: "thành tích lớn, chiến công đáng mừng", level: "N1"),
-        VocabularyEntry(word: "見返り", reading: "みかえり", meaning: "đổi lại, sự đáp lại", level: "N1"),
-        VocabularyEntry(word: "辛抱", reading: "しんぼう", meaning: "nhẫn nại, chịu đựng", level: "N2"),
-        VocabularyEntry(word: "足手まとい", reading: "あしでまとい", meaning: "vướng víu, gánh nặng", level: "N1"),
-        VocabularyEntry(word: "委託", reading: "いたく", meaning: "ủy thác, giao phó", level: "N1"),
-        VocabularyEntry(word: "すがすがしい", reading: "すがすがしい", meaning: "sảng khoái, dễ chịu", level: "N1"),
-        VocabularyEntry(word: "コンスタント", reading: "コンスタント", meaning: "đều đặn, ổn định", level: "N2"),
-        VocabularyEntry(word: "手腕", reading: "しゅわん", meaning: "năng lực, tài xử lý", level: "N1"),
-        VocabularyEntry(word: "ロス", reading: "ロス", meaning: "mất mát, lãng phí", level: "N2"),
-        VocabularyEntry(word: "目下", reading: "もっか", meaning: "hiện tại, trước mắt", level: "N1"),
-        VocabularyEntry(word: "請け負う", reading: "うけおう", meaning: "nhận thầu, đảm nhận", level: "N1"),
-        VocabularyEntry(word: "進呈", reading: "しんてい", meaning: "biếu, tặng", level: "N1"),
-        VocabularyEntry(word: "手先", reading: "てさき", meaning: "đầu ngón tay; sự khéo tay", level: "N2"),
-        VocabularyEntry(word: "加筆", reading: "かひつ", meaning: "viết thêm, bổ sung vào văn bản", level: "N1"),
-        VocabularyEntry(word: "着手", reading: "ちゃくしゅ", meaning: "bắt tay vào, khởi công", level: "N1"),
-        VocabularyEntry(word: "破格", reading: "はかく", meaning: "phá lệ, đặc biệt; giá rất rẻ", level: "N1"),
-        VocabularyEntry(word: "まろやか", reading: "まろやか", meaning: "dịu, êm, tròn vị", level: "N1"),
-        VocabularyEntry(word: "抜き打ち", reading: "ぬきうち", meaning: "bất ngờ, không báo trước", level: "N1"),
-        VocabularyEntry(word: "かすれる", reading: "かすれる", meaning: "khàn; mờ, nhòe", level: "N1"),
-        VocabularyEntry(word: "頑丈", reading: "がんじょう", meaning: "chắc chắn, bền, vững chãi", level: "N2"),
-        VocabularyEntry(word: "行政", reading: "ぎょうせい", meaning: "hành chính, chính quyền", level: "N2"),
-        VocabularyEntry(word: "携わる", reading: "たずさわる", meaning: "tham gia, làm việc trong lĩnh vực", level: "N1"),
-        VocabularyEntry(word: "開花", reading: "かいか", meaning: "nở hoa; phát huy tài năng", level: "N1"),
-        VocabularyEntry(word: "才能", reading: "さいのう", meaning: "tài năng", level: "N3"),
-        VocabularyEntry(word: "営業", reading: "えいぎょう", meaning: "kinh doanh, bán hàng", level: "N2"),
-        VocabularyEntry(word: "成績", reading: "せいせき", meaning: "thành tích, kết quả", level: "N3"),
-        VocabularyEntry(word: "運用", reading: "うんよう", meaning: "vận dụng, quản lý/vận hành tiền hoặc hệ thống", level: "N1"),
-        VocabularyEntry(word: "緻密", reading: "ちみつ", meaning: "tỉ mỉ, tinh vi, chặt chẽ", level: "N1"),
-        VocabularyEntry(word: "迫力", reading: "はくりょく", meaning: "sức mạnh gây ấn tượng, sự lôi cuốn mạnh", level: "N2"),
-        VocabularyEntry(word: "目まぐるしい", reading: "めまぐるしい", meaning: "chóng mặt, thay đổi liên tục rất nhanh", level: "N1"),
-        VocabularyEntry(word: "大げさ", reading: "おおげさ", meaning: "phóng đại, khoa trương", level: "N2"),
-        VocabularyEntry(word: "こっそり", reading: "こっそり", meaning: "lén lút, âm thầm, kín đáo", level: "N2"),
-        VocabularyEntry(word: "山小屋", reading: "やまごや", meaning: "nhà nghỉ/lều trên núi", level: "N2"),
-        VocabularyEntry(word: "雨が止む", reading: "あめがやむ", meaning: "mưa tạnh", level: "N3"),
-        VocabularyEntry(word: "本番", reading: "ほんばん", meaning: "lần diễn/thi thật, thời điểm chính thức", level: "N2"),
-        VocabularyEntry(word: "臨む", reading: "のぞむ", meaning: "tham dự, bước vào; đối mặt với", level: "N1"),
-        VocabularyEntry(word: "若手", reading: "わかて", meaning: "người trẻ, lớp trẻ có triển vọng", level: "N2")
-    ]
 }
 
 struct GrammarEntry: Decodable, Identifiable, Hashable {
@@ -208,20 +24,6 @@ struct GrammarEntry: Decodable, Identifiable, Hashable {
     var id: String { pattern }
     var searchTerms: [String] { [pattern] + (aliases ?? []) }
 
-    static let supplemental: [GrammarEntry] = [
-        GrammarEntry(pattern: "はずだ", meaning: "chắc là, lẽ ra phải; suy luận có căn cứ", aliases: ["はず", "はずです", "はずだった"]),
-        GrammarEntry(pattern: "てくる", meaning: "dần trở nên; thay đổi từ trước đến nay", aliases: ["てきた", "てくる"]),
-        GrammarEntry(pattern: "らしい", meaning: "có vẻ, nghe nói; suy đoán dựa trên thông tin", aliases: ["らしい", "らしく"]),
-        GrammarEntry(pattern: "わけだ", meaning: "thảo nào, nghĩa là; kết luận từ lý do", aliases: ["わけ", "わけです"]),
-        GrammarEntry(pattern: "わけではない", meaning: "không hẳn là, không có nghĩa là", aliases: ["わけではない", "わけじゃない"]),
-        GrammarEntry(pattern: "わけにはいかない", meaning: "không thể làm vì hoàn cảnh/đạo lý không cho phép", aliases: ["わけにはいかない", "わけにもいかない"]),
-        GrammarEntry(pattern: "に違いない", meaning: "chắc chắn là", aliases: ["に違いない"]),
-        GrammarEntry(pattern: "かもしれない", meaning: "có thể, biết đâu", aliases: ["かもしれない"]),
-        GrammarEntry(pattern: "ようだ", meaning: "có vẻ như, dường như", aliases: ["ようだ", "ようです"]),
-        GrammarEntry(pattern: "べきだ", meaning: "nên, cần phải", aliases: ["べき", "べきだ", "べきではない"]),
-        GrammarEntry(pattern: "というときに限って", meaning: "đúng vào lúc... thì lại; thường dùng cho việc không mong muốn", aliases: ["という時に限って", "ときに限って", "時に限って"]),
-        GrammarEntry(pattern: "に限って", meaning: "chính vào/lại đúng; riêng... thì", aliases: ["に限って"])
-    ]
 }
 
 @MainActor
@@ -229,24 +31,27 @@ final class StudyDictionaryStore: ObservableObject {
     @Published private(set) var vocabulary: [VocabularyEntry] = []
     @Published private(set) var grammar: [GrammarEntry] = []
     @Published private(set) var hanViet: [String: String] = [:]
+    private var vocabularyMatchCache: [String: [VocabularyEntry]] = [:]
+    private var grammarMatchCache: [String: [GrammarEntry]] = [:]
 
     init() {
         load()
     }
 
     func vocabularyMatches(for question: PracticeQuestion, limit: Int = 6) -> [VocabularyEntry] {
-        let haystack = studyText(for: question)
+        let cacheKey = "\(question.id)-\(limit)"
+        if let cached = vocabularyMatchCache[cacheKey] {
+            return cached
+        }
+
+        let haystack = studyText(for: question, includeLongPassage: question.sectionTitle != "Đọc hiểu")
         var usedWords = Set<String>()
-        let supplementalIDs = Set(VocabularyEntry.supplemental.map(\.id))
-        return (VocabularyEntry.supplemental + vocabulary)
+        let vocabularyResults = vocabulary
             .filter { entry in
                 guard entry.word.count >= 2 || containsKanji(entry.word) else { return false }
                 return matches(entry, in: haystack)
             }
             .sorted {
-                if $0.word == $1.word {
-                    return supplementalIDs.contains($0.id) && !supplementalIDs.contains($1.id)
-                }
                 if $0.word.count == $1.word.count { return $0.level < $1.level }
                 return $0.word.count > $1.word.count
             }
@@ -257,12 +62,19 @@ final class StudyDictionaryStore: ObservableObject {
             }
             .prefix(limit)
             .map { $0 }
+        vocabularyMatchCache[cacheKey] = vocabularyResults
+        return vocabularyResults
     }
 
     func grammarMatches(for question: PracticeQuestion, limit: Int = 4) -> [GrammarEntry] {
-        let haystack = studyText(for: question) + "\n" + (question.explanation ?? "")
+        let cacheKey = "\(question.id)-\(limit)"
+        if let cached = grammarMatchCache[cacheKey] {
+            return cached
+        }
+
+        let haystack = studyText(for: question, includeLongPassage: question.sectionTitle != "Đọc hiểu") + "\n" + (question.explanation ?? "")
         var usedPatterns = Set<String>()
-        return (grammar + GrammarEntry.supplemental)
+        let grammarResults = grammar
             .filter { entry in
                 entry.searchTerms.contains { term in
                     let normalized = term.replacingOccurrences(of: "〜", with: "")
@@ -276,6 +88,8 @@ final class StudyDictionaryStore: ObservableObject {
             }
             .prefix(limit)
             .map { $0 }
+        grammarMatchCache[cacheKey] = grammarResults
+        return grammarResults
     }
 
     func hanVietText(for word: String) -> String? {
@@ -291,9 +105,522 @@ final class StudyDictionaryStore: ObservableObject {
         return "\(entry.word)\(readingPart) = \(entry.meaning)"
     }
 
+    func flashcardText(offset: Int = 0) -> String? {
+        let daySeed = Calendar(identifier: .gregorian).ordinality(of: .day, in: .era, for: Date()) ?? 0
+        let seed = max(0, daySeed + offset)
+        let vocabularyPool = vocabulary
+            .filter { ["N1", "N2"].contains($0.level) && !$0.word.isEmpty && !$0.meaning.isEmpty }
+        let grammarPool = (grammar)
+            .filter { !$0.pattern.isEmpty && !$0.meaning.isEmpty }
+
+        if seed.isMultiple(of: 3), !grammarPool.isEmpty {
+            let entry = grammarPool[seed % grammarPool.count]
+            return "文法: \(entry.pattern)\n\(entry.meaning)"
+        }
+        guard !vocabularyPool.isEmpty else {
+            return grammarPool.isEmpty ? nil : {
+                let entry = grammarPool[seed % grammarPool.count]
+                return "文法: \(entry.pattern)\n\(entry.meaning)"
+            }()
+        }
+        let entry = vocabularyPool[seed % vocabularyPool.count]
+        return "\(entry.level) 語彙: \(note(for: entry))"
+    }
+
+    func inferredUnderlineTerm(for question: PracticeQuestion) -> String? {
+        guard question.sectionTitle == "Từ vựng" else { return nil }
+        let text = question.text.removingAppMarkers
+        guard !text.isEmpty else { return nil }
+
+        let answer = question.correctAnswer.flatMap { index in
+            question.options.indices.contains(index - 1) ? question.options[index - 1] : nil
+        } ?? question.answerText ?? ""
+
+        if isReadingQuestion(question),
+           let reading = (question.answerText?.nonEmpty ?? answer.nonEmpty) {
+            return readingQuestionUnderlineTerm(in: text, reading: reading)
+        }
+
+        if (6...10).contains(question.number),
+           let kanjiAnswer = (question.answerText?.nonEmpty ?? answer.nonEmpty),
+           let term = kanaTermForKanjiAnswer(kanjiAnswer, in: text) {
+            return term
+        }
+        if (6...10).contains(question.number),
+           let term = longestKanaTerm(in: text) {
+            return term
+        }
+
+        if isSynonymQuestion(question),
+           let term = synonymUnderlineTerm(for: question, in: text, excluding: answer) {
+            return term
+        }
+
+        if let leadingTerm = leadingVocabularyUsageTerm(in: text, question: question) {
+            return leadingTerm
+        }
+
+        return nil
+    }
+
+    func confidentKanjiUnderlineTerm(for question: PracticeQuestion) -> String? {
+        guard question.sectionTitle == "Từ vựng",
+              (1...10).contains(question.number) else {
+            return nil
+        }
+        let text = question.text.removingAppMarkers
+        guard !text.isEmpty else { return nil }
+
+        let answer = question.correctAnswer.flatMap { index in
+            question.options.indices.contains(index - 1) ? question.options[index - 1] : nil
+        } ?? question.answerText ?? ""
+
+        if isReadingQuestion(question),
+           let reading = (question.answerText?.nonEmpty ?? answer.nonEmpty) {
+            return readingQuestionUnderlineTerm(in: text, reading: reading)
+        }
+
+        if question.examLevel == "N2",
+           let kanjiAnswer = (question.answerText?.nonEmpty ?? answer.nonEmpty) {
+            return kanaTermForKanjiAnswer(kanjiAnswer, in: text)
+        }
+
+        return nil
+    }
+
+    private func isReadingQuestion(_ question: PracticeQuestion) -> Bool {
+        let text = question.text.removingAppMarkers
+        let instruction = question.instruction ?? ""
+        let answer = question.correctAnswer.flatMap { index in
+            question.options.indices.contains(index - 1) ? question.options[index - 1] : nil
+        } ?? question.answerText ?? ""
+
+        guard question.sectionTitle == "Từ vựng",
+              !answer.isEmpty,
+              isKanaText(answer),
+              containsKanji(text) else {
+            return false
+        }
+
+        return text.contains("読み方")
+            || instruction.contains("読み方")
+            || instruction.contains("言葉の読み方")
+            || (question.number <= 10 && question.options.allSatisfy { option in
+                isKanaText(option)
+            })
+    }
+
+    private func isSynonymQuestion(_ question: PracticeQuestion) -> Bool {
+        let instruction = question.instruction ?? ""
+        let text = question.text.removingAppMarkers
+        return instruction.contains("意味が最も近い")
+            || instruction.contains("意味に最も近い")
+            || (instruction.contains("最も近い") && instruction.contains("言葉"))
+            || text.contains("意味が近い")
+            || text.contains("意味に近い")
+            || text.contains("意味が最も近い")
+            || text.contains("意味に最も近い")
+            || instruction.localizedCaseInsensitiveContains("đồng nghĩa")
+            || instruction.localizedCaseInsensitiveContains("gần nghĩa")
+            || (instruction.isEmpty && (21...27).contains(question.number))
+    }
+
+    private func synonymUnderlineTerm(for question: PracticeQuestion, in text: String, excluding answer: String) -> String? {
+        let coreText = synonymPromptCore(in: text)
+
+        if let explanationTerm = synonymTermFromExplanation(question.explanation),
+           let surface = surfaceForDictionaryHead(explanationTerm, in: coreText) {
+            return surface
+        }
+
+        if let phrase = finalSynonymFocusPhrase(in: coreText) {
+            return phrase
+        }
+
+        if let term = longestVocabularyWordContained(in: coreText, excluding: answer) {
+            return term
+        }
+
+        if let katakana = katakanaFocusTerm(in: coreText) {
+            return katakana
+        }
+
+        return longestVocabularyWordContained(in: text, excluding: answer)
+    }
+
+    private func synonymPromptCore(in text: String) -> String {
+        let markers = ["。意味", "意味が", "意味に", "意味は"]
+        for marker in markers {
+            if let range = text.range(of: marker) {
+                return String(text[..<range.lowerBound])
+            }
+        }
+        return text
+    }
+
+    private func finalSynonymFocusPhrase(in text: String) -> String? {
+        let separators = CharacterSet(charactersIn: "。\n")
+        guard let candidate = text
+            .components(separatedBy: separators)
+            .map({ $0.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines.union(.punctuationCharacters)) })
+            .last(where: { !$0.isEmpty }) else {
+            return nil
+        }
+        guard candidate.range(of: #"[ァ-ヶー]"#, options: .regularExpression) != nil else {
+            return nil
+        }
+        let particles = ["は", "が", "を", "に", "で", "と", "へ", "も"]
+        let pieces = candidate.components(separatedBy: .whitespacesAndNewlines).filter { !$0.isEmpty }
+        if pieces.count == 1 {
+            let compact = pieces[0]
+            for particle in particles.reversed() {
+                if let range = compact.range(of: particle, options: .backwards),
+                   range.upperBound < compact.endIndex {
+                    let tail = String(compact[range.upperBound...])
+                    if tail.count >= 2 { return tail }
+                }
+            }
+            return compact.count <= 12 ? compact : nil
+        }
+        return pieces.last.map { String($0.prefix(12)) }
+    }
+
+    private func synonymTermFromExplanation(_ raw: String?) -> String? {
+        guard let raw = raw else { return nil }
+        let normalized = raw
+            .replacingOccurrences(of: "＝", with: "=")
+            .components(separatedBy: CharacterSet(charactersIn: "\n。"))
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+        for line in normalized where line.contains("=") {
+            guard let head = line.components(separatedBy: "=").first?.trimmingCharacters(in: .whitespacesAndNewlines),
+                  !head.isEmpty else {
+                continue
+            }
+            return head
+                .replacingOccurrences(of: "「", with: "")
+                .replacingOccurrences(of: "」", with: "")
+                .replacingOccurrences(of: "『", with: "")
+                .replacingOccurrences(of: "』", with: "")
+        }
+        return nil
+    }
+
+    private func surfaceForDictionaryHead(_ term: String, in text: String) -> String? {
+        let cleaned = term.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !cleaned.isEmpty else { return nil }
+
+        var forms = Set(surfaceForms(for: cleaned))
+        forms.insert(cleaned)
+        if cleaned.hasSuffix("する") {
+            let stem = String(cleaned.dropLast(2))
+            forms.formUnion([stem, stem + "して", stem + "した", stem + "しない", stem + "します", stem + "される", stem + "された"])
+        }
+
+        return forms
+            .filter { !$0.isEmpty && text.contains($0) }
+            .sorted { $0.count > $1.count }
+            .first
+    }
+
+    private func katakanaFocusTerm(in text: String) -> String? {
+        guard let regex = try? NSRegularExpression(pattern: #"[ァ-ヶー]{2,}(?:して|する|した|しない|される|された)?"#) else {
+            return nil
+        }
+        let nsRange = NSRange(text.startIndex..<text.endIndex, in: text)
+        return regex.matches(in: text, range: nsRange)
+            .compactMap { Range($0.range, in: text).map { String(text[$0]) } }
+            .sorted { $0.count > $1.count }
+            .first
+    }
+
     func matches(_ entry: VocabularyEntry, in text: String) -> Bool {
-        surfaceForms(for: entry.word).contains { text.contains($0) }
-            || surfaceForms(for: entry.reading).contains { text.contains($0) }
+        surfaceForms(for: entry.word).contains { containsSurface($0, in: text) }
+            || surfaceForms(for: entry.reading).contains { containsSurface($0, in: text) }
+    }
+
+    private func leadingVocabularyUsageTerm(in text: String, question: PracticeQuestion) -> String? {
+        let instruction = question.instruction ?? ""
+        let hasUsageHint = instruction.contains("使い方")
+            || instruction.localizedCaseInsensitiveContains("cách dùng")
+            || instruction.localizedCaseInsensitiveContains("dùng từ")
+        guard hasUsageHint else { return nil }
+        guard question.number >= 26 else { return nil }
+        let candidates = text
+            .components(separatedBy: .whitespacesAndNewlines)
+            .map { $0.trimmingCharacters(in: CharacterSet(charactersIn: "：:。、「」『』()（）")) }
+            .filter { !$0.isEmpty }
+        guard let first = candidates.first, first.count <= 8 else { return nil }
+        return first
+    }
+
+    private func longestVocabularyWord(in text: String, reading: String) -> String? {
+        let normalizedReading = reading.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !normalizedReading.isEmpty else { return nil }
+        return vocabulary
+            .compactMap { entry -> String? in
+                let readingForms = surfaceForms(for: entry.reading)
+                guard entry.reading == normalizedReading || readingForms.contains(normalizedReading) else {
+                    return nil
+                }
+                return surfaceForms(for: entry.word)
+                    .filter { !$0.isEmpty && text.contains($0) }
+                    .sorted { $0.count > $1.count }
+                    .first
+            }
+            .sorted { $0.count > $1.count }
+            .first
+    }
+
+    private func readingQuestionUnderlineTerm(in text: String, reading: String) -> String? {
+        let normalizedReading = reading
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .removingAppMarkers
+        guard !normalizedReading.isEmpty else { return nil }
+
+        let entries = vocabulary
+            .filter { containsKanji($0.word) }
+
+        var candidates: [(surface: String, score: Int)] = []
+        for entry in entries {
+            let wordForms = surfaceForms(for: entry.word).filter { !$0.isEmpty }
+            let readingForms = surfaceForms(for: entry.reading).filter { !$0.isEmpty }
+
+            for readingForm in readingForms where readingForm == normalizedReading {
+                for wordForm in wordForms where text.contains(wordForm) {
+                    candidates.append((wordForm, 1_000 + wordForm.count))
+                }
+            }
+
+            candidates.append(contentsOf: inflectedReadingMatches(
+                entry: entry,
+                text: text,
+                normalizedReading: normalizedReading
+            ))
+        }
+
+        return candidates
+            .sorted {
+                if $0.score == $1.score { return $0.surface.count > $1.surface.count }
+                return $0.score > $1.score
+            }
+            .first?
+            .surface
+    }
+
+    private func inflectedReadingMatches(
+        entry: VocabularyEntry,
+        text: String,
+        normalizedReading: String
+    ) -> [(surface: String, score: Int)] {
+        var matches: [(surface: String, score: Int)] = []
+
+        if entry.word.hasSuffix("い"), entry.reading.hasSuffix("い") {
+            let wordStem = String(entry.word.dropLast())
+            let readingStem = String(entry.reading.dropLast())
+            let suffixes = ["くて", "く", "かった", "ければ", "くない", "くなかった", "さ", "そう"]
+            for suffix in suffixes {
+                let surface = wordStem + suffix
+                if text.contains(surface), normalizedReading == readingStem + suffix {
+                    matches.append((surface, 2_000 + surface.count))
+                }
+            }
+        }
+
+        if entry.word.hasSuffix("る"), entry.reading.hasSuffix("る") {
+            let wordStem = String(entry.word.dropLast())
+            let readingStem = String(entry.reading.dropLast())
+            let suffixes = ["て", "た", "ます", "ました", "ない", "なかった", "れば", "よう", "られる", "させる"]
+            for suffix in suffixes {
+                let surface = wordStem + suffix
+                if text.contains(surface), normalizedReading == readingStem + suffix {
+                    matches.append((surface, 1_900 + surface.count))
+                }
+            }
+        }
+
+        if entry.word.hasSuffix("う"), entry.reading.hasSuffix("う") {
+            let wordStem = String(entry.word.dropLast())
+            let readingStem = String(entry.reading.dropLast())
+            let pairs = [
+                ("います", "います"),
+                ("いました", "いました"),
+                ("って", "って"),
+                ("った", "った"),
+                ("わない", "わない"),
+                ("えば", "えば"),
+                ("いたい", "いたい"),
+                ("おう", "おう")
+            ]
+            for (surfaceSuffix, readingSuffix) in pairs {
+                let surface = wordStem + surfaceSuffix
+                if text.contains(surface), normalizedReading == readingStem + readingSuffix {
+                    matches.append((surface, 1_800 + surface.count))
+                }
+            }
+        }
+
+        let godanPairs: [(String, String, [(String, String)])] = [
+            ("す", "す", [("して", "して"), ("した", "した"), ("します", "します"), ("したい", "したい"), ("さない", "さない")]),
+            ("く", "く", [("いて", "いて"), ("いた", "いた"), ("きます", "きます"), ("きたい", "きたい"), ("かない", "かない")]),
+            ("ぐ", "ぐ", [("いで", "いで"), ("いだ", "いだ"), ("ぎます", "ぎます"), ("ぎたい", "ぎたい"), ("がない", "がない")]),
+            ("む", "む", [("んで", "んで"), ("んだ", "んだ"), ("みます", "みます"), ("みたい", "みたい"), ("まない", "まない")]),
+            ("ぶ", "ぶ", [("んで", "んで"), ("んだ", "んだ"), ("びます", "びます"), ("びたい", "びたい"), ("ばない", "ばない")]),
+            ("ぬ", "ぬ", [("んで", "んで"), ("んだ", "んだ"), ("にます", "にます"), ("にたい", "にたい"), ("なない", "なない")]),
+            ("つ", "つ", [("って", "って"), ("った", "った"), ("ちます", "ちます"), ("ちたい", "ちたい"), ("たない", "たない")]),
+            ("る", "る", [("って", "って"), ("った", "った"), ("ります", "ります"), ("りたい", "りたい"), ("らない", "らない")])
+        ]
+        for (wordEnding, readingEnding, suffixes) in godanPairs
+            where entry.word.hasSuffix(wordEnding) && entry.reading.hasSuffix(readingEnding) {
+            let wordStem = String(entry.word.dropLast())
+            let readingStem = String(entry.reading.dropLast())
+            for (surfaceSuffix, readingSuffix) in suffixes {
+                let surface = wordStem + surfaceSuffix
+                if text.contains(surface), normalizedReading == readingStem + readingSuffix {
+                    matches.append((surface, 1_850 + surface.count))
+                }
+            }
+        }
+
+        return matches
+    }
+
+    private func kanaTermForKanjiAnswer(_ answer: String, in text: String) -> String? {
+        let entries = vocabulary
+            .filter { $0.word == answer || answer.contains($0.word) || $0.word.contains(answer) }
+            .sorted { $0.reading.count > $1.reading.count }
+
+        for entry in entries {
+            for form in surfaceForms(for: entry.reading).sorted(by: { $0.count > $1.count }) {
+                if text.contains(form) {
+                    return form
+                }
+            }
+        }
+
+        return nil
+    }
+
+    private func longestVocabularyWordContained(in text: String, excluding answer: String) -> String? {
+        let ignored = Set(["今日", "昨日", "明日", "私", "彼", "彼女", "人", "年", "月", "日"])
+        return vocabulary
+            .compactMap { entry -> (entry: VocabularyEntry, surface: String)? in
+                guard entry.word.count >= 2, !answer.contains(entry.word), !ignored.contains(entry.word) else { return nil }
+                let surfaces = (surfaceForms(for: entry.word) + surfaceForms(for: entry.reading))
+                    .filter { $0.count >= 2 && !answer.contains($0) }
+                    .sorted { $0.count > $1.count }
+                guard let surface = surfaces.first(where: { text.contains($0) }) else { return nil }
+                return (entry, surface)
+            }
+            .sorted {
+                if $0.surface.count == $1.surface.count { return $0.entry.level < $1.entry.level }
+                return $0.surface.count > $1.surface.count
+            }
+            .first?
+            .surface
+    }
+
+    private func longestKanjiTerm(in text: String) -> String? {
+        let ignored = Set(["私", "彼", "彼女", "今日", "昨日", "明日"])
+        var terms: [String] = []
+        let characters = Array(text)
+        var index = 0
+
+        while index < characters.count {
+            guard containsKanji(String(characters[index])) else {
+                index += 1
+                continue
+            }
+
+            var term = String(characters[index])
+            index += 1
+            while index < characters.count, containsKanji(String(characters[index])) {
+                term.append(characters[index])
+                index += 1
+            }
+
+            let cleaned = term.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !cleaned.isEmpty, !ignored.contains(cleaned) {
+                terms.append(cleaned)
+            }
+        }
+
+        return terms.sorted {
+            if $0.count == $1.count { return $0 < $1 }
+            return $0.count > $1.count
+        }.first
+    }
+
+    private func longestKanaTerm(in text: String) -> String? {
+        let ignored = Set(["ので", "から", "こと", "ため", "です", "ます", "した", "して", "いる", "ある", "なる", "とても"])
+        var terms: [String] = []
+        var current = ""
+
+        for character in text {
+            if isHiraganaCharacter(character) {
+                current.append(character)
+            } else {
+                if current.count >= 3, !ignored.contains(current) {
+                    terms.append(current)
+                }
+                current = ""
+            }
+        }
+        if current.count >= 3, !ignored.contains(current) {
+            terms.append(current)
+        }
+
+        return terms.sorted {
+            if $0.count == $1.count { return $0 < $1 }
+            return $0.count > $1.count
+        }.first
+    }
+
+    private func isKanaCharacter(_ character: Character) -> Bool {
+        character.unicodeScalars.allSatisfy(isKana)
+    }
+
+    private func isKanaText(_ text: String) -> Bool {
+        let cleaned = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !cleaned.isEmpty else { return false }
+        return cleaned.allSatisfy { character in
+            character == "ー" || isKanaCharacter(character)
+        }
+    }
+
+    private func isHiraganaCharacter(_ character: Character) -> Bool {
+        character.unicodeScalars.allSatisfy { scalar in
+            (0x3040...0x309F).contains(Int(scalar.value))
+        }
+    }
+
+    private func isKana(_ scalar: UnicodeScalar) -> Bool {
+        (0x3040...0x30FF).contains(Int(scalar.value))
+    }
+
+    private func containsSurface(_ surface: String, in text: String) -> Bool {
+        guard !surface.isEmpty else { return false }
+        if containsKanji(surface) || surface.count >= 4 {
+            return text.contains(surface)
+        }
+
+        var searchStart = text.startIndex
+        while let range = text.range(of: surface, range: searchStart..<text.endIndex) {
+            let before = range.lowerBound > text.startIndex ? text[text.index(before: range.lowerBound)] : nil
+            let after = range.upperBound < text.endIndex ? text[range.upperBound] : nil
+            if !isJapaneseLetter(before) && !isJapaneseLetter(after) {
+                return true
+            }
+            searchStart = range.upperBound
+        }
+        return false
+    }
+
+    private func isJapaneseLetter(_ character: Character?) -> Bool {
+        guard let character else { return false }
+        return character.unicodeScalars.contains { scalar in
+            let value = Int(scalar.value)
+            return (0x3040...0x30FF).contains(value) || (0x4E00...0x9FFF).contains(value)
+        }
     }
 
     private func load() {
@@ -306,23 +633,30 @@ final class StudyDictionaryStore: ObservableObject {
             vocabulary = document.vocabulary
             grammar = document.grammar
             hanViet = document.hanViet
+            vocabularyMatchCache = [:]
+            grammarMatchCache = [:]
         } catch {
             vocabulary = []
             grammar = []
             hanViet = [:]
+            vocabularyMatchCache = [:]
+            grammarMatchCache = [:]
         }
     }
 
-    private func studyText(for question: PracticeQuestion) -> String {
-        [
+    private func studyText(for question: PracticeQuestion, includeLongPassage: Bool) -> String {
+        var parts = [
             question.text,
-            question.passage ?? "",
             question.options.joined(separator: "\n"),
             question.answerText ?? "",
             question.correctAnswer.flatMap { index in
                 question.options.indices.contains(index - 1) ? question.options[index - 1] : nil
             } ?? ""
-        ].joined(separator: "\n")
+        ]
+        if includeLongPassage, let passage = question.passage {
+            parts.append(passage)
+        }
+        return parts.joined(separator: "\n")
     }
 
     private func containsKanji(_ text: String) -> Bool {
@@ -364,6 +698,7 @@ final class StudyDictionaryStore: ObservableObject {
         if word.hasSuffix("る") {
             let stem = String(word.dropLast())
             forms.formUnion([stem + "て", stem + "た", stem + "ない", stem + "ず", stem + "ずに", stem + "ます", stem + "れば", stem + "られる", stem + "られて", stem + "られた", stem + "よう"])
+            forms.formUnion([stem + "って", stem + "った", stem + "らない", stem + "らず", stem + "らずに", stem + "ります", stem + "れ", stem + "れる"])
         }
         if word.hasSuffix("い") {
             let stem = String(word.dropLast())

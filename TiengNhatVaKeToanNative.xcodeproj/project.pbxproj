@@ -17,13 +17,16 @@
 		101010101010101010101008 /* StudyDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100010 /* StudyDictionary.json */; };
 		101010101010101010101009 /* SelectableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100011 /* SelectableTextView.swift */; };
 		101010101010101010101010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100012 /* Assets.xcassets */; };
+		101010101010101010101011 /* PlatformText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100013 /* PlatformText.swift */; };
+		101010101010101010101013 /* BGMCanonInD.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100015 /* BGMCanonInD.mp3 */; };
+		101010101010101010101014 /* BossImages in Resources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100016 /* BossImages */; };
 		202020202020202020201001 /* TiengNhatVaKeToanWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202020202020202020200001 /* TiengNhatVaKeToanWatchApp.swift */; };
 		202020202020202020201002 /* WatchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202020202020202020200002 /* WatchContentView.swift */; };
 		202020202020202020201003 /* WatchStudyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202020202020202020200003 /* WatchStudyStore.swift */; };
 		202020202020202020201004 /* StudyDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100010 /* StudyDictionary.json */; };
 		202020202020202020201005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 101010101010101010100012 /* Assets.xcassets */; };
 		202020202020202020201006 /* WatchDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 202020202020202020200006 /* WatchDictionary.json */; };
-		303030303030303030301001 /* TiengNhatVaKeToanWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 202020202020202020200004 /* TiengNhatVaKeToanWatch.app */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		303030303030303030301001 /* TiengNhatVaKeToanWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 202020202020202020200004 /* TiengNhatVaKeToanWatch.app */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,7 @@
 				303030303030303030301001 /* TiengNhatVaKeToanWatch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			platformFilter = ios;
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -63,6 +67,9 @@
 		101010101010101010100010 /* StudyDictionary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StudyDictionary.json; sourceTree = "<group>"; };
 		101010101010101010100011 /* SelectableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableTextView.swift; sourceTree = "<group>"; };
 		101010101010101010100012 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		101010101010101010100013 /* PlatformText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformText.swift; sourceTree = "<group>"; };
+		101010101010101010100015 /* BGMCanonInD.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BGMCanonInD.mp3; sourceTree = "<group>"; };
+		101010101010101010100016 /* BossImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BossImages; sourceTree = "<group>"; };
 		202020202020202020200001 /* TiengNhatVaKeToanWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiengNhatVaKeToanWatchApp.swift; sourceTree = "<group>"; };
 		202020202020202020200002 /* WatchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchContentView.swift; sourceTree = "<group>"; };
 		202020202020202020200003 /* WatchStudyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchStudyStore.swift; sourceTree = "<group>"; };
@@ -105,10 +112,13 @@
 				101010101010101010100003 /* Models.swift */,
 				101010101010101010100004 /* QuestionStore.swift */,
 				101010101010101010100005 /* PencilCanvasView.swift */,
+				101010101010101010100013 /* PlatformText.swift */,
 				101010101010101010100009 /* StudyDictionary.swift */,
 				101010101010101010100011 /* SelectableTextView.swift */,
 				101010101010101010100006 /* ExamData */,
 				101010101010101010100012 /* Assets.xcassets */,
+				101010101010101010100016 /* BossImages */,
+				101010101010101010100015 /* BGMCanonInD.mp3 */,
 				101010101010101010100010 /* StudyDictionary.json */,
 				101010101010101010100007 /* Info.plist */,
 			);
@@ -179,6 +189,7 @@
 /* Begin PBXTargetDependency section */
 		303030303030303030304001 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 202020202020202020204001 /* TiengNhatVaKeToanWatch */;
 			targetProxy = 303030303030303030302001 /* PBXContainerItemProxy */;
 		};
@@ -226,6 +237,8 @@
 			files = (
 				101010101010101010101006 /* ExamData in Resources */,
 				101010101010101010101010 /* Assets.xcassets in Resources */,
+				101010101010101010101014 /* BossImages in Resources */,
+				101010101010101010101013 /* BGMCanonInD.mp3 in Resources */,
 				101010101010101010101008 /* StudyDictionary.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +264,7 @@
 				101010101010101010101003 /* Models.swift in Sources */,
 				101010101010101010101004 /* QuestionStore.swift in Sources */,
 				101010101010101010101005 /* PencilCanvasView.swift in Sources */,
+				101010101010101010101011 /* PlatformText.swift in Sources */,
 				101010101010101010101007 /* StudyDictionary.swift in Sources */,
 				101010101010101010101009 /* SelectableTextView.swift in Sources */,
 			);
@@ -450,7 +464,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9C4H9322AU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = TiengNhatVaKeToan;
+				INFOPLIST_KEY_CFBundleDisplayName = "BOSS Japan";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.nghiayeuthu.TiengNhatVaKeToanNative;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -480,7 +494,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9C4H9322AU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = TiengNhatVaKeToan;
+				INFOPLIST_KEY_CFBundleDisplayName = "BOSS Japan";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.nghiayeuthu.TiengNhatVaKeToanNative;
 				LD_RUNPATH_SEARCH_PATHS = (

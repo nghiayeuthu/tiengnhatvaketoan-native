@@ -1,6 +1,7 @@
 import PencilKit
 import SwiftUI
 
+#if canImport(UIKit)
 struct PencilCanvasView: UIViewRepresentable {
     @Binding var drawing: PKDrawing
 
@@ -45,7 +46,7 @@ struct PencilCanvasView: UIViewRepresentable {
 
         func showToolPicker(for canvas: PKCanvasView) {
             DispatchQueue.main.async {
-                guard let window = canvas.window else {
+                guard canvas.window != nil else {
                     canvas.becomeFirstResponder()
                     return
                 }
@@ -59,6 +60,7 @@ struct PencilCanvasView: UIViewRepresentable {
         }
     }
 }
+#endif
 
 struct ScratchPadView: View {
     @Binding var drawing: PKDrawing
@@ -80,15 +82,24 @@ struct ScratchPadView: View {
             .padding()
             .background(.regularMaterial)
 
+            #if canImport(UIKit)
             PencilCanvasView(drawing: $drawing)
-                .background(Color.white)
+                .background(Color(red: 1.0, green: 0.96, blue: 0.86))
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .overlay(
                     RoundedRectangle(cornerRadius: 16)
                         .strokeBorder(.green.opacity(0.25), style: StrokeStyle(lineWidth: 2, dash: [8]))
                 )
                 .padding()
+            #else
+            ContentUnavailableView(
+                "Nháp Apple Pencil",
+                systemImage: "pencil.tip.crop.circle",
+                description: Text("Phần viết tay chỉ dùng trên iPad. Trên iPhone và Mac có thể luyện đề và xem đáp án bình thường.")
+            )
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            #endif
         }
-        .background(Color(.systemGroupedBackground))
+        .background(Color(red: 0.95, green: 0.96, blue: 0.94))
     }
 }

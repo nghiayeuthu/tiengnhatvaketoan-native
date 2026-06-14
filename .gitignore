@@ -1,5 +1,8 @@
 DerivedData/
+DerivedData*/
+build/
 *.xcuserdata/
 xcuserdata/
 *.xcuserstate
 .DS_Store
+n2_page4.png

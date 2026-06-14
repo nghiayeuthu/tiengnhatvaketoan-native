@@ -5,6 +5,7 @@ import SwiftUI
 final class QuestionStore: ObservableObject {
     @Published private(set) var exams: [ExamDocument] = []
     @Published private(set) var questionsByExam: [String: [PracticeQuestion]] = [:]
+    @Published private(set) var allQuestions: [PracticeQuestion] = []
     @Published private(set) var loadError: String?
 
     init() {
@@ -26,7 +27,11 @@ final class QuestionStore: ObservableObject {
         var loadedQuestions: [String: [PracticeQuestion]] = [:]
         let decoder = JSONDecoder()
 
-        for url in urls.sorted(by: { $0.lastPathComponent < $1.lastPathComponent }) {
+        let examURLs = urls
+            .filter { $0.lastPathComponent.hasPrefix("exam-") }
+            .sorted(by: { $0.lastPathComponent < $1.lastPathComponent })
+
+        for url in examURLs {
             do {
                 let data = try Data(contentsOf: url)
                 let exam = try decoder.decode(ExamDocument.self, from: data)
@@ -42,6 +47,7 @@ final class QuestionStore: ObservableObject {
             return $0.year > $1.year
         }
         questionsByExam = loadedQuestions
+        allQuestions = exams.flatMap { loadedQuestions[$0.id] ?? [] }
     }
 
     private func flatten(_ exam: ExamDocument) -> [PracticeQuestion] {
@@ -50,17 +56,33 @@ final class QuestionStore: ObservableObject {
 
         for section in exam.sections {
             for group in section.groups {
+                var inheritedPassage = group.passage
                 for raw in group.questions {
                     let number = raw.questionNumber ?? raw.id ?? runningIndex
-                    let textHtml = raw.textHtml?.nonEmpty ?? raw.prompt?.nonEmpty ?? raw.question?.nonEmpty
-                    let text = (textHtml ?? raw.text?.nonEmpty ?? raw.question?.nonEmpty ?? raw.prompt?.nonEmpty ?? "")
+                    let sourceTextHtml = raw.textHtml?.nonEmpty ?? raw.text?.nonEmpty ?? raw.prompt?.nonEmpty ?? raw.question?.nonEmpty
+                    let textHtml = normalizeQuestionText(
+                        sourceTextHtml,
+                        section: section,
+                        instruction: group.instruction
+                    )
+                    let text = (textHtml ?? "")
                         .removingAppMarkers
-                    let passage = raw.passage ?? group.passage
+                    let explicitPassage = raw.passage ?? group.passage
+                    if let explicitPassage {
+                        inheritedPassage = explicitPassage
+                    }
+                    let passage = explicitPassage ?? (shouldInheritPassage(
+                        section: section,
+                        instruction: group.instruction,
+                        questionNumber: number,
+                        text: text
+                    ) ? inheritedPassage : nil)
 
                     result.append(
                         PracticeQuestion(
                             id: "\(exam.id)-\(section.type)-\(number)-\(runningIndex)",
                             examID: exam.id,
+                            examLevel: exam.normalizedLevel,
                             examTitle: exam.title,
                             sectionTitle: section.title,
                             instruction: group.instruction,
@@ -82,5 +104,84 @@ final class QuestionStore: ObservableObject {
         }
 
         return result
+    }
+
+    private func shouldInheritPassage(section: ExamSection, instruction: String?, questionNumber: Int, text: String) -> Bool {
+        guard section.type == "grammar" else { return false }
+        let instruction = instruction ?? ""
+        if instruction.contains("問題9")
+            || instruction.contains("文章")
+            || instruction.contains("文を読んで")
+            || instruction.localizedCaseInsensitiveContains("đoạn văn") {
+            return true
+        }
+        if text.trimmingCharacters(in: .whitespacesAndNewlines).hasPrefix("【") {
+            return true
+        }
+        if instruction.localizedCaseInsensitiveContains("ngữ pháp") {
+            return (48...54).contains(questionNumber) || (41...45).contains(questionNumber)
+        }
+        return false
+    }
+
+    private func normalizeQuestionText(_ text: String?, section: ExamSection, instruction: String?) -> String? {
+        guard var output = text else { return nil }
+        output = output
+            .replacingOccurrences(of: "[[blank]]", with: "（　）")
+            .replacingOccurrences(of: "[[/blank]]", with: "")
+
+        let instruction = instruction ?? ""
+        let isFillQuestion = instruction.contains("入れ")
+            || instruction.contains("（")
+            || instruction.contains("( )")
+            || instruction.localizedCaseInsensitiveContains("điền")
+
+        if isFillQuestion && !hasVisibleBlank(output) {
+            let blankCharacters = ["\u{00A0}", "\u{2007}", "\u{202F}"]
+            for blank in blankCharacters where output.contains(blank) {
+                output = output.replacingOccurrences(of: blank, with: "（　）")
+                return output
+            }
+        }
+
+        guard section.type == "grammar" else { return output }
+        let isFillGrammar = instruction.contains("問題7") || instruction.contains("入れる") || instruction.localizedCaseInsensitiveContains("ngữ pháp")
+        let isStarGrammar = instruction.contains("問題8") || instruction.contains("★") || output.contains("★") || output.contains("_★_")
+        let isPassageGrammar = instruction.contains("問題9") || instruction.contains("文章") || instruction.contains("文を読んで")
+        guard isFillGrammar && !isStarGrammar && !isPassageGrammar else { return output }
+        guard !hasVisibleBlank(output) else { return output }
+
+        let blankCharacters = ["\u{00A0}", "\u{2007}", "\u{202F}"]
+        for blank in blankCharacters where output.contains(blank) {
+            output = output.replacingOccurrences(of: blank, with: "（　）")
+            return output
+        }
+
+        if let range = output.range(
+            of: #"[ \t　]+\)"#,
+            options: .regularExpression
+        ) {
+            output.replaceSubrange(range, with: "（　）")
+            return output
+        }
+
+        if let range = output.range(
+            of: #"[ \t　]{2,}"#,
+            options: .regularExpression
+        ) {
+            output.replaceSubrange(range, with: "（　）")
+            return output
+        }
+
+        return output + "（　）"
+    }
+
+    private func hasVisibleBlank(_ text: String) -> Bool {
+        text.contains("（　）")
+            || text.contains("（ ）")
+            || text.contains("(　)")
+            || text.contains("( )")
+            || text.contains("（）")
+            || text.contains("()")
     }
 }

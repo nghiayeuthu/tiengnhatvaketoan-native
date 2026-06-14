@@ -55465,8 +55465,8 @@
       "level": "N1"
     },
     {
-      "word": "返す",
-      "reading": "ひっくりす",
+      "word": "ひっくり返す",
+      "reading": "ひっくりかえす",
       "meaning": "lật ngược, đảo",
       "level": "N1"
     },
@@ -56789,6 +56789,1368 @@
       "reading": "よてい",
       "meaning": "dự định, kế hoạch",
       "level": "N2"
+    },
+    {
+      "word": "深刻",
+      "reading": "しんこく",
+      "meaning": "nghiêm trọng, sâu sắc",
+      "level": "N2"
+    },
+    {
+      "word": "思わぬ",
+      "reading": "おもわぬ",
+      "meaning": "không ngờ tới, bất ngờ",
+      "level": "N2"
+    },
+    {
+      "word": "柱",
+      "reading": "はしら",
+      "meaning": "cột, trụ; chỗ chống đỡ chính",
+      "level": "N2"
+    },
+    {
+      "word": "略す",
+      "reading": "りゃくす",
+      "meaning": "viết/tạo dạng rút gọn, lược bớt",
+      "level": "N2"
+    },
+    {
+      "word": "略する",
+      "reading": "りゃくする",
+      "meaning": "viết/tạo dạng rút gọn, lược bớt",
+      "level": "N2"
+    },
+    {
+      "word": "辛い",
+      "reading": "からい",
+      "meaning": "cay; mặn/chát; khó chịu, khổ sở",
+      "level": "N4"
+    },
+    {
+      "word": "景色",
+      "reading": "けしき",
+      "meaning": "phong cảnh, cảnh sắc",
+      "level": "N4"
+    },
+    {
+      "word": "備える",
+      "reading": "そなえる",
+      "meaning": "chuẩn bị, phòng bị; trang bị",
+      "level": "N2"
+    },
+    {
+      "word": "防災訓練",
+      "reading": "ぼうさいくんれん",
+      "meaning": "diễn tập phòng chống thiên tai",
+      "level": "N2"
+    },
+    {
+      "word": "相互理解",
+      "reading": "そうごりかい",
+      "meaning": "sự hiểu biết lẫn nhau",
+      "level": "N2"
+    },
+    {
+      "word": "異文化",
+      "reading": "いぶんか",
+      "meaning": "văn hóa khác, dị văn hóa",
+      "level": "N2"
+    },
+    {
+      "word": "触れる",
+      "reading": "ふれる",
+      "meaning": "chạm vào; tiếp xúc, biết đến",
+      "level": "N2"
+    },
+    {
+      "word": "隣",
+      "reading": "となり",
+      "meaning": "bên cạnh, hàng xóm",
+      "level": "N4"
+    },
+    {
+      "word": "要求",
+      "reading": "ようきゅう",
+      "meaning": "yêu cầu, đòi hỏi",
+      "level": "N2"
+    },
+    {
+      "word": "祝う",
+      "reading": "いわう",
+      "meaning": "chúc mừng, ăn mừng",
+      "level": "N4"
+    },
+    {
+      "word": "補う",
+      "reading": "おぎなう",
+      "meaning": "bổ sung, bù đắp",
+      "level": "N2"
+    },
+    {
+      "word": "装置",
+      "reading": "そうち",
+      "meaning": "thiết bị, bộ máy",
+      "level": "N2"
+    },
+    {
+      "word": "占める",
+      "reading": "しめる",
+      "meaning": "chiếm, giữ phần",
+      "level": "N2"
+    },
+    {
+      "word": "削除",
+      "reading": "さくじょ",
+      "meaning": "xóa bỏ, delete",
+      "level": "N2"
+    },
+    {
+      "word": "針",
+      "reading": "はり",
+      "meaning": "kim; kim đồng hồ",
+      "level": "N3"
+    },
+    {
+      "word": "撮影",
+      "reading": "さつえい",
+      "meaning": "chụp ảnh, quay phim",
+      "level": "N2"
+    },
+    {
+      "word": "破片",
+      "reading": "はへん",
+      "meaning": "mảnh vỡ",
+      "level": "N2"
+    },
+    {
+      "word": "世の中",
+      "reading": "よのなか",
+      "meaning": "xã hội, thế gian",
+      "level": "N3"
+    },
+    {
+      "word": "隠す",
+      "reading": "かくす",
+      "meaning": "giấu, che giấu",
+      "level": "N3"
+    },
+    {
+      "word": "積む",
+      "reading": "つむ",
+      "meaning": "chất, xếp chồng; tích lũy",
+      "level": "N3"
+    },
+    {
+      "word": "傷む",
+      "reading": "いたむ",
+      "meaning": "hỏng, ôi thiu; đau",
+      "level": "N2"
+    },
+    {
+      "word": "戻す",
+      "reading": "もどす",
+      "meaning": "trả về, đưa lại chỗ cũ",
+      "level": "N3"
+    },
+    {
+      "word": "除く",
+      "reading": "のぞく",
+      "meaning": "loại trừ, bỏ ra",
+      "level": "N2"
+    },
+    {
+      "word": "含める",
+      "reading": "ふくめる",
+      "meaning": "bao gồm, tính cả",
+      "level": "N2"
+    },
+    {
+      "word": "行事",
+      "reading": "ぎょうじ",
+      "meaning": "sự kiện, hoạt động thường kỳ",
+      "level": "N2"
+    },
+    {
+      "word": "囲む",
+      "reading": "かこむ",
+      "meaning": "bao quanh, vây quanh",
+      "level": "N2"
+    },
+    {
+      "word": "現象",
+      "reading": "げんしょう",
+      "meaning": "hiện tượng",
+      "level": "N2"
+    },
+    {
+      "word": "憎い",
+      "reading": "にくい",
+      "meaning": "đáng ghét, căm ghét",
+      "level": "N2"
+    },
+    {
+      "word": "批評",
+      "reading": "ひひょう",
+      "meaning": "phê bình, bình luận",
+      "level": "N2"
+    },
+    {
+      "word": "容姿",
+      "reading": "ようし",
+      "meaning": "dáng vẻ, ngoại hình",
+      "level": "N2"
+    },
+    {
+      "word": "幼い",
+      "reading": "おさない",
+      "meaning": "non nớt, trẻ con",
+      "level": "N2"
+    },
+    {
+      "word": "握る",
+      "reading": "にぎる",
+      "meaning": "nắm, nắm chặt",
+      "level": "N3"
+    },
+    {
+      "word": "密閉",
+      "reading": "みっぺい",
+      "meaning": "đóng kín, bịt kín",
+      "level": "N2"
+    },
+    {
+      "word": "絞る",
+      "reading": "しぼる",
+      "meaning": "vắt; thu hẹp, siết lại",
+      "level": "N2"
+    },
+    {
+      "word": "強火",
+      "reading": "つよび",
+      "meaning": "lửa lớn",
+      "level": "N2"
+    },
+    {
+      "word": "抱える",
+      "reading": "かかえる",
+      "meaning": "ôm giữ; gánh vác",
+      "level": "N2"
+    },
+    {
+      "word": "求人",
+      "reading": "きゅうじん",
+      "meaning": "tuyển người, tin tuyển dụng",
+      "level": "N2"
+    },
+    {
+      "word": "怖い",
+      "reading": "こわい",
+      "meaning": "đáng sợ, sợ",
+      "level": "N4"
+    },
+    {
+      "word": "冷蔵庫",
+      "reading": "れいぞうこ",
+      "meaning": "tủ lạnh",
+      "level": "N4"
+    },
+    {
+      "word": "湿る",
+      "reading": "しめる",
+      "meaning": "ẩm, bị ẩm",
+      "level": "N2"
+    },
+    {
+      "word": "処理",
+      "reading": "しょり",
+      "meaning": "xử lý",
+      "level": "N2"
+    },
+    {
+      "word": "憎む",
+      "reading": "にくむ",
+      "meaning": "ghét, căm ghét",
+      "level": "N2"
+    },
+    {
+      "word": "偶然",
+      "reading": "ぐうぜん",
+      "meaning": "ngẫu nhiên, tình cờ",
+      "level": "N2"
+    },
+    {
+      "word": "恥",
+      "reading": "はじ",
+      "meaning": "sự xấu hổ, nỗi nhục",
+      "level": "N2"
+    },
+    {
+      "word": "等しい",
+      "reading": "ひとしい",
+      "meaning": "bằng nhau, ngang nhau",
+      "level": "N2"
+    },
+    {
+      "word": "映る",
+      "reading": "うつる",
+      "meaning": "phản chiếu, hiện lên",
+      "level": "N2"
+    },
+    {
+      "word": "下旬",
+      "reading": "げじゅん",
+      "meaning": "hạ tuần, 10 ngày cuối tháng",
+      "level": "N2"
+    },
+    {
+      "word": "潜む",
+      "reading": "ひそむ",
+      "meaning": "ẩn nấp; tiềm ẩn, ẩn chứa",
+      "level": "N1"
+    },
+    {
+      "word": "卓越",
+      "reading": "たくえつ",
+      "meaning": "vượt trội, xuất sắc",
+      "level": "N1"
+    },
+    {
+      "word": "芳しい",
+      "reading": "かんばしい",
+      "meaning": "tốt, thuận lợi; thường dùng dạng phủ định 芳しくない = không tốt",
+      "level": "N1"
+    },
+    {
+      "word": "管轄",
+      "reading": "かんかつ",
+      "meaning": "thẩm quyền quản lý, phạm vi phụ trách",
+      "level": "N1"
+    },
+    {
+      "word": "一環",
+      "reading": "いっかん",
+      "meaning": "một phần trong chuỗi/hoạt động chung",
+      "level": "N1"
+    },
+    {
+      "word": "前半",
+      "reading": "ぜんはん",
+      "meaning": "nửa đầu, hiệp đầu",
+      "level": "N2"
+    },
+    {
+      "word": "後半",
+      "reading": "こうはん",
+      "meaning": "nửa sau, hiệp sau",
+      "level": "N2"
+    },
+    {
+      "word": "逆転",
+      "reading": "ぎゃくてん",
+      "meaning": "lội ngược dòng, đảo ngược tình thế",
+      "level": "N2"
+    },
+    {
+      "word": "リード",
+      "reading": "リード",
+      "meaning": "dẫn trước, dẫn điểm",
+      "level": "N2"
+    },
+    {
+      "word": "互角",
+      "reading": "ごかく",
+      "meaning": "ngang tài ngang sức",
+      "level": "N1"
+    },
+    {
+      "word": "若手",
+      "reading": "わかて",
+      "meaning": "người trẻ, lớp trẻ có triển vọng",
+      "level": "N2"
+    },
+    {
+      "word": "実力",
+      "reading": "じつりょく",
+      "meaning": "thực lực, năng lực thật",
+      "level": "N2"
+    },
+    {
+      "word": "割り当てる",
+      "reading": "わりあてる",
+      "meaning": "phân công, phân bổ, giao cho",
+      "level": "N2"
+    },
+    {
+      "word": "周到",
+      "reading": "しゅうとう",
+      "meaning": "chu đáo, chuẩn bị kỹ lưỡng",
+      "level": "N1"
+    },
+    {
+      "word": "臨む",
+      "reading": "のぞむ",
+      "meaning": "tham dự, bước vào; đối mặt với",
+      "level": "N1"
+    },
+    {
+      "word": "ひとまず",
+      "reading": "ひとまず",
+      "meaning": "tạm thời, trước hết",
+      "level": "N2"
+    },
+    {
+      "word": "むしゃくしゃ",
+      "reading": "むしゃくしゃ",
+      "meaning": "bực bội, khó chịu trong lòng",
+      "level": "N2"
+    },
+    {
+      "word": "ひそか",
+      "reading": "ひそか",
+      "meaning": "âm thầm, bí mật, kín đáo",
+      "level": "N1"
+    },
+    {
+      "word": "試練",
+      "reading": "しれん",
+      "meaning": "thử thách, gian nan",
+      "level": "N1"
+    },
+    {
+      "word": "苦難",
+      "reading": "くなん",
+      "meaning": "khó khăn, gian khổ",
+      "level": "N1"
+    },
+    {
+      "word": "うろたえる",
+      "reading": "うろたえる",
+      "meaning": "lúng túng, hoảng hốt, mất bình tĩnh",
+      "level": "N1"
+    },
+    {
+      "word": "慌てる",
+      "reading": "あわてる",
+      "meaning": "vội vàng, hoảng hốt",
+      "level": "N2"
+    },
+    {
+      "word": "当面",
+      "reading": "とうめん",
+      "meaning": "trước mắt, trong thời gian hiện tại",
+      "level": "N2"
+    },
+    {
+      "word": "しばらく",
+      "reading": "しばらく",
+      "meaning": "một lúc, một thời gian",
+      "level": "N3"
+    },
+    {
+      "word": "憩い",
+      "reading": "いこい",
+      "meaning": "sự nghỉ ngơi, thư giãn; nơi nghỉ chân",
+      "level": "N1"
+    },
+    {
+      "word": "憩う",
+      "reading": "いこう",
+      "meaning": "nghỉ ngơi, thư giãn",
+      "level": "N1"
+    },
+    {
+      "word": "自前",
+      "reading": "じまえ",
+      "meaning": "tự mình lo; đồ của mình, tự có",
+      "level": "N1"
+    },
+    {
+      "word": "衣装",
+      "reading": "いしょう",
+      "meaning": "trang phục, phục trang",
+      "level": "N2"
+    },
+    {
+      "word": "壊す",
+      "reading": "こわす",
+      "meaning": "phá, làm hỏng",
+      "level": "N3"
+    },
+    {
+      "word": "壊れる",
+      "reading": "こわれる",
+      "meaning": "bị hỏng, bị phá",
+      "level": "N3"
+    },
+    {
+      "word": "ルーズ",
+      "reading": "ルーズ",
+      "meaning": "cẩu thả, lỏng lẻo, không chặt chẽ",
+      "level": "N2"
+    },
+    {
+      "word": "なじむ",
+      "reading": "なじむ",
+      "meaning": "quen, hòa nhập, hợp với",
+      "level": "N2"
+    },
+    {
+      "word": "煩わしい",
+      "reading": "わずらわしい",
+      "meaning": "phiền phức, rắc rối",
+      "level": "N1"
+    },
+    {
+      "word": "嫌味",
+      "reading": "いやみ",
+      "meaning": "lời mỉa mai; vẻ khó ưa",
+      "level": "N2"
+    },
+    {
+      "word": "伴奏",
+      "reading": "ばんそう",
+      "meaning": "đệm nhạc",
+      "level": "N1"
+    },
+    {
+      "word": "練る",
+      "reading": "ねる",
+      "meaning": "trau chuốt, nghiền ngẫm, lập kỹ",
+      "level": "N2"
+    },
+    {
+      "word": "まばら",
+      "reading": "まばら",
+      "meaning": "thưa thớt, lác đác",
+      "level": "N1"
+    },
+    {
+      "word": "どんより",
+      "reading": "どんより",
+      "meaning": "u ám, nặng nề, âm u",
+      "level": "N2"
+    },
+    {
+      "word": "捗る",
+      "reading": "はかどる",
+      "meaning": "tiến triển thuận lợi, trôi chảy",
+      "level": "N1"
+    },
+    {
+      "word": "やむを得ず",
+      "reading": "やむをえず",
+      "meaning": "bất đắc dĩ, không còn cách nào khác",
+      "level": "N2"
+    },
+    {
+      "word": "細心",
+      "reading": "さいしん",
+      "meaning": "hết sức cẩn thận, tỉ mỉ",
+      "level": "N1"
+    },
+    {
+      "word": "めきめき",
+      "reading": "めきめき",
+      "meaning": "nhanh chóng, rõ rệt",
+      "level": "N1"
+    },
+    {
+      "word": "利益",
+      "reading": "りえき",
+      "meaning": "lợi ích, lợi nhuận",
+      "level": "N3"
+    },
+    {
+      "word": "目論む",
+      "reading": "もくろむ",
+      "meaning": "mưu tính, lên kế hoạch",
+      "level": "N1"
+    },
+    {
+      "word": "にわかには",
+      "reading": "にわかには",
+      "meaning": "khó mà ngay lập tức, không dễ gì",
+      "level": "N1"
+    },
+    {
+      "word": "シビア",
+      "reading": "シビア",
+      "meaning": "nghiêm khắc, khắt khe",
+      "level": "N1"
+    },
+    {
+      "word": "鈍る",
+      "reading": "にぶる",
+      "meaning": "cùn đi; suy giảm, chậm lại",
+      "level": "N2"
+    },
+    {
+      "word": "歴然",
+      "reading": "れきぜん",
+      "meaning": "rõ ràng, hiển nhiên",
+      "level": "N1"
+    },
+    {
+      "word": "おのずと",
+      "reading": "おのずと",
+      "meaning": "tự nhiên, tự khắc",
+      "level": "N1"
+    },
+    {
+      "word": "枠",
+      "reading": "わく",
+      "meaning": "khung, khuôn khổ, phạm vi",
+      "level": "N2"
+    },
+    {
+      "word": "スケール",
+      "reading": "スケール",
+      "meaning": "quy mô, tầm cỡ",
+      "level": "N2"
+    },
+    {
+      "word": "しきりに",
+      "reading": "しきりに",
+      "meaning": "liên tục, nhiều lần, không ngừng",
+      "level": "N2"
+    },
+    {
+      "word": "けなす",
+      "reading": "けなす",
+      "meaning": "chê bai, nói xấu",
+      "level": "N1"
+    },
+    {
+      "word": "おっくう",
+      "reading": "おっくう",
+      "meaning": "ngại, thấy phiền, không muốn làm",
+      "level": "N1"
+    },
+    {
+      "word": "跡地",
+      "reading": "あとち",
+      "meaning": "khu đất sau khi dỡ/chuyển đi",
+      "level": "N1"
+    },
+    {
+      "word": "あらかじめ",
+      "reading": "あらかじめ",
+      "meaning": "trước, sẵn, từ trước",
+      "level": "N2"
+    },
+    {
+      "word": "抜群",
+      "reading": "ばつぐん",
+      "meaning": "vượt trội, xuất sắc",
+      "level": "N1"
+    },
+    {
+      "word": "バックアップ",
+      "reading": "バックアップ",
+      "meaning": "hỗ trợ; sao lưu",
+      "level": "N2"
+    },
+    {
+      "word": "おおむね",
+      "reading": "おおむね",
+      "meaning": "nhìn chung, đại khái",
+      "level": "N1"
+    },
+    {
+      "word": "ことごとく",
+      "reading": "ことごとく",
+      "meaning": "toàn bộ, hết thảy",
+      "level": "N1"
+    },
+    {
+      "word": "裏づけ",
+      "reading": "うらづけ",
+      "meaning": "căn cứ, bằng chứng hỗ trợ",
+      "level": "N1"
+    },
+    {
+      "word": "術",
+      "reading": "すべ",
+      "meaning": "cách, phương kế",
+      "level": "N1"
+    },
+    {
+      "word": "急かす",
+      "reading": "せかす",
+      "meaning": "thúc giục",
+      "level": "N1"
+    },
+    {
+      "word": "ストレート",
+      "reading": "ストレート",
+      "meaning": "thẳng thắn, trực tiếp",
+      "level": "N2"
+    },
+    {
+      "word": "気掛かり",
+      "reading": "きがかり",
+      "meaning": "lo lắng, bận tâm",
+      "level": "N2"
+    },
+    {
+      "word": "不用意",
+      "reading": "ふようい",
+      "meaning": "bất cẩn, thiếu thận trọng",
+      "level": "N1"
+    },
+    {
+      "word": "手分け",
+      "reading": "てわけ",
+      "meaning": "chia việc, phân công",
+      "level": "N2"
+    },
+    {
+      "word": "慕う",
+      "reading": "したう",
+      "meaning": "kính mến, ngưỡng mộ, yêu quý",
+      "level": "N1"
+    },
+    {
+      "word": "仕上がる",
+      "reading": "しあがる",
+      "meaning": "hoàn thành, xong xuôi",
+      "level": "N2"
+    },
+    {
+      "word": "クレーム",
+      "reading": "クレーム",
+      "meaning": "khiếu nại, phàn nàn",
+      "level": "N2"
+    },
+    {
+      "word": "今更",
+      "reading": "いまさら",
+      "meaning": "đến giờ thì..., quá muộn",
+      "level": "N2"
+    },
+    {
+      "word": "くまなく",
+      "reading": "くまなく",
+      "meaning": "khắp nơi, không bỏ sót",
+      "level": "N1"
+    },
+    {
+      "word": "ふいに",
+      "reading": "ふいに",
+      "meaning": "đột nhiên, bất chợt",
+      "level": "N2"
+    },
+    {
+      "word": "もはや",
+      "reading": "もはや",
+      "meaning": "đã/không còn... nữa",
+      "level": "N2"
+    },
+    {
+      "word": "甚だしい",
+      "reading": "はなはだしい",
+      "meaning": "quá mức, nghiêm trọng",
+      "level": "N1"
+    },
+    {
+      "word": "催す",
+      "reading": "もよおす",
+      "meaning": "tổ chức; cảm thấy",
+      "level": "N2"
+    },
+    {
+      "word": "満たない",
+      "reading": "みたない",
+      "meaning": "chưa đến, không đủ",
+      "level": "N2"
+    },
+    {
+      "word": "言い張る",
+      "reading": "いいはる",
+      "meaning": "khăng khăng, một mực nói",
+      "level": "N2"
+    },
+    {
+      "word": "人出",
+      "reading": "ひとで",
+      "meaning": "lượng người ra ngoài, đám đông",
+      "level": "N1"
+    },
+    {
+      "word": "一任",
+      "reading": "いちにん",
+      "meaning": "giao phó toàn quyền",
+      "level": "N1"
+    },
+    {
+      "word": "荷が重い",
+      "reading": "にがおもい",
+      "meaning": "quá sức, là gánh nặng",
+      "level": "N2"
+    },
+    {
+      "word": "支援",
+      "reading": "しえん",
+      "meaning": "hỗ trợ, viện trợ",
+      "level": "N2"
+    },
+    {
+      "word": "仰天",
+      "reading": "ぎょうてん",
+      "meaning": "kinh ngạc, sửng sốt",
+      "level": "N1"
+    },
+    {
+      "word": "かばう",
+      "reading": "かばう",
+      "meaning": "bảo vệ, bênh vực",
+      "level": "N2"
+    },
+    {
+      "word": "はがす",
+      "reading": "はがす",
+      "meaning": "bóc, gỡ, lột ra",
+      "level": "N2"
+    },
+    {
+      "word": "可決",
+      "reading": "かけつ",
+      "meaning": "thông qua, được phê chuẩn",
+      "level": "N1"
+    },
+    {
+      "word": "異色",
+      "reading": "いしょく",
+      "meaning": "khác thường, độc đáo",
+      "level": "N1"
+    },
+    {
+      "word": "揺らぎ",
+      "reading": "ゆらぎ",
+      "meaning": "dao động, lung lay",
+      "level": "N1"
+    },
+    {
+      "word": "耐えがたい",
+      "reading": "たえがたい",
+      "meaning": "khó chịu đựng",
+      "level": "N1"
+    },
+    {
+      "word": "稼働",
+      "reading": "かどう",
+      "meaning": "vận hành, hoạt động",
+      "level": "N1"
+    },
+    {
+      "word": "錯覚",
+      "reading": "さっかく",
+      "meaning": "ảo giác; hiểu nhầm",
+      "level": "N1"
+    },
+    {
+      "word": "殺到",
+      "reading": "さっとう",
+      "meaning": "đổ xô tới, ùn tới",
+      "level": "N1"
+    },
+    {
+      "word": "平凡",
+      "reading": "へいぼん",
+      "meaning": "bình thường, tầm thường",
+      "level": "N2"
+    },
+    {
+      "word": "ささい",
+      "reading": "ささい",
+      "meaning": "nhỏ nhặt, không đáng kể",
+      "level": "N1"
+    },
+    {
+      "word": "戸惑う",
+      "reading": "とまどう",
+      "meaning": "bối rối, lúng túng",
+      "level": "N2"
+    },
+    {
+      "word": "かねがね",
+      "reading": "かねがね",
+      "meaning": "từ lâu, trước nay",
+      "level": "N1"
+    },
+    {
+      "word": "お詫び",
+      "reading": "おわび",
+      "meaning": "lời xin lỗi",
+      "level": "N2"
+    },
+    {
+      "word": "怯える",
+      "reading": "おびえる",
+      "meaning": "sợ hãi, hoảng sợ",
+      "level": "N2"
+    },
+    {
+      "word": "非",
+      "reading": "ひ",
+      "meaning": "lỗi, sai trái, điều không đúng",
+      "level": "N1"
+    },
+    {
+      "word": "粘り強い",
+      "reading": "ねばりづよい",
+      "meaning": "kiên trì, bền bỉ",
+      "level": "N1"
+    },
+    {
+      "word": "むっとする",
+      "reading": "むっとする",
+      "meaning": "bực mình, sa sầm mặt",
+      "level": "N2"
+    },
+    {
+      "word": "真っ先",
+      "reading": "まっさき",
+      "meaning": "đầu tiên, trước hết",
+      "level": "N2"
+    },
+    {
+      "word": "うなだれる",
+      "reading": "うなだれる",
+      "meaning": "cúi gằm đầu",
+      "level": "N1"
+    },
+    {
+      "word": "言及",
+      "reading": "げんきゅう",
+      "meaning": "đề cập, nhắc tới",
+      "level": "N1"
+    },
+    {
+      "word": "速やか",
+      "reading": "すみやか",
+      "meaning": "nhanh chóng, mau lẹ",
+      "level": "N2"
+    },
+    {
+      "word": "つかの間",
+      "reading": "つかのま",
+      "meaning": "thoáng chốc, trong khoảnh khắc",
+      "level": "N1"
+    },
+    {
+      "word": "しくじる",
+      "reading": "しくじる",
+      "meaning": "thất bại, mắc lỗi",
+      "level": "N1"
+    },
+    {
+      "word": "心当たり",
+      "reading": "こころあたり",
+      "meaning": "điều nhớ ra, manh mối",
+      "level": "N1"
+    },
+    {
+      "word": "起用",
+      "reading": "きよう",
+      "meaning": "bổ nhiệm, dùng người",
+      "level": "N1"
+    },
+    {
+      "word": "多角的",
+      "reading": "たかくてき",
+      "meaning": "đa phương diện, nhiều góc độ",
+      "level": "N1"
+    },
+    {
+      "word": "薄く切る",
+      "reading": "うすくきる",
+      "meaning": "cắt mỏng, thái lát",
+      "level": "N2"
+    },
+    {
+      "word": "めいめい",
+      "reading": "めいめい",
+      "meaning": "từng người, mỗi người",
+      "level": "N1"
+    },
+    {
+      "word": "渋る",
+      "reading": "しぶる",
+      "meaning": "do dự, miễn cưỡng",
+      "level": "N1"
+    },
+    {
+      "word": "かさばる",
+      "reading": "かさばる",
+      "meaning": "cồng kềnh, chiếm chỗ",
+      "level": "N1"
+    },
+    {
+      "word": "コンパクト",
+      "reading": "コンパクト",
+      "meaning": "nhỏ gọn",
+      "level": "N2"
+    },
+    {
+      "word": "つぶやく",
+      "reading": "つぶやく",
+      "meaning": "lẩm bẩm, thì thầm một mình",
+      "level": "N2"
+    },
+    {
+      "word": "ばてる",
+      "reading": "ばてる",
+      "meaning": "kiệt sức, mệt lả",
+      "level": "N2"
+    },
+    {
+      "word": "目安",
+      "reading": "めやす",
+      "meaning": "mốc, tiêu chuẩn tham khảo",
+      "level": "N2"
+    },
+    {
+      "word": "危ぶむ",
+      "reading": "あやぶむ",
+      "meaning": "lo ngại, e rằng",
+      "level": "N1"
+    },
+    {
+      "word": "異例",
+      "reading": "いれい",
+      "meaning": "hiếm, khác thường, ngoại lệ",
+      "level": "N1"
+    },
+    {
+      "word": "ひたむき",
+      "reading": "ひたむき",
+      "meaning": "hết mình, một lòng chăm chỉ",
+      "level": "N1"
+    },
+    {
+      "word": "施す",
+      "reading": "ほどこす",
+      "meaning": "thực hiện, áp dụng; ban cho",
+      "level": "N1"
+    },
+    {
+      "word": "余波",
+      "reading": "よは",
+      "meaning": "dư âm, ảnh hưởng lan ra",
+      "level": "N1"
+    },
+    {
+      "word": "寡黙",
+      "reading": "かもく",
+      "meaning": "ít nói",
+      "level": "N1"
+    },
+    {
+      "word": "ずれ込む",
+      "reading": "ずれこむ",
+      "meaning": "bị trễ, lùi sang",
+      "level": "N1"
+    },
+    {
+      "word": "ろくに",
+      "reading": "ろくに",
+      "meaning": "không đủ, chẳng mấy",
+      "level": "N2"
+    },
+    {
+      "word": "なつく",
+      "reading": "なつく",
+      "meaning": "quấn, thân thiết",
+      "level": "N2"
+    },
+    {
+      "word": "派",
+      "reading": "は",
+      "meaning": "phái, phe, nhóm",
+      "level": "N2"
+    },
+    {
+      "word": "熟知",
+      "reading": "じゅくち",
+      "meaning": "biết rõ, nắm vững",
+      "level": "N1"
+    },
+    {
+      "word": "リスク",
+      "reading": "リスク",
+      "meaning": "rủi ro",
+      "level": "N2"
+    },
+    {
+      "word": "絶賛",
+      "reading": "ぜっさん",
+      "meaning": "khen ngợi hết lời",
+      "level": "N1"
+    },
+    {
+      "word": "リタイア",
+      "reading": "リタイア",
+      "meaning": "bỏ cuộc, rút lui",
+      "level": "N2"
+    },
+    {
+      "word": "かみ合う",
+      "reading": "かみあう",
+      "meaning": "ăn khớp, khớp nhau",
+      "level": "N1"
+    },
+    {
+      "word": "閉口",
+      "reading": "へいこう",
+      "meaning": "ngán ngẩm, bó tay",
+      "level": "N1"
+    },
+    {
+      "word": "気まま",
+      "reading": "きまま",
+      "meaning": "tùy thích, tùy hứng",
+      "level": "N2"
+    },
+    {
+      "word": "調達",
+      "reading": "ちょうたつ",
+      "meaning": "thu xếp, huy động, cung ứng",
+      "level": "N1"
+    },
+    {
+      "word": "スポット",
+      "reading": "スポット",
+      "meaning": "địa điểm, điểm nổi bật",
+      "level": "N2"
+    },
+    {
+      "word": "拮抗",
+      "reading": "きっこう",
+      "meaning": "cân bằng, ngang sức",
+      "level": "N1"
+    },
+    {
+      "word": "懸念",
+      "reading": "けねん",
+      "meaning": "lo ngại, quan ngại",
+      "level": "N1"
+    },
+    {
+      "word": "不慮",
+      "reading": "ふりょ",
+      "meaning": "bất ngờ, ngoài ý muốn",
+      "level": "N1"
+    },
+    {
+      "word": "もろい",
+      "reading": "もろい",
+      "meaning": "dễ vỡ, yếu, mong manh",
+      "level": "N2"
+    },
+    {
+      "word": "快挙",
+      "reading": "かいきょ",
+      "meaning": "thành tích lớn, chiến công đáng mừng",
+      "level": "N1"
+    },
+    {
+      "word": "見返り",
+      "reading": "みかえり",
+      "meaning": "đổi lại, sự đáp lại",
+      "level": "N1"
+    },
+    {
+      "word": "辛抱",
+      "reading": "しんぼう",
+      "meaning": "nhẫn nại, chịu đựng",
+      "level": "N2"
+    },
+    {
+      "word": "足手まとい",
+      "reading": "あしでまとい",
+      "meaning": "vướng víu, gánh nặng",
+      "level": "N1"
+    },
+    {
+      "word": "委託",
+      "reading": "いたく",
+      "meaning": "ủy thác, giao phó",
+      "level": "N1"
+    },
+    {
+      "word": "すがすがしい",
+      "reading": "すがすがしい",
+      "meaning": "sảng khoái, dễ chịu",
+      "level": "N1"
+    },
+    {
+      "word": "コンスタント",
+      "reading": "コンスタント",
+      "meaning": "đều đặn, ổn định",
+      "level": "N2"
+    },
+    {
+      "word": "手腕",
+      "reading": "しゅわん",
+      "meaning": "năng lực, tài xử lý",
+      "level": "N1"
+    },
+    {
+      "word": "ロス",
+      "reading": "ロス",
+      "meaning": "mất mát, lãng phí",
+      "level": "N2"
+    },
+    {
+      "word": "請け負う",
+      "reading": "うけおう",
+      "meaning": "nhận thầu, đảm nhận",
+      "level": "N1"
+    },
+    {
+      "word": "進呈",
+      "reading": "しんてい",
+      "meaning": "biếu, tặng",
+      "level": "N1"
+    },
+    {
+      "word": "手先",
+      "reading": "てさき",
+      "meaning": "đầu ngón tay; sự khéo tay",
+      "level": "N2"
+    },
+    {
+      "word": "加筆",
+      "reading": "かひつ",
+      "meaning": "viết thêm, bổ sung vào văn bản",
+      "level": "N1"
+    },
+    {
+      "word": "着手",
+      "reading": "ちゃくしゅ",
+      "meaning": "bắt tay vào, khởi công",
+      "level": "N1"
+    },
+    {
+      "word": "破格",
+      "reading": "はかく",
+      "meaning": "phá lệ, đặc biệt; giá rất rẻ",
+      "level": "N1"
+    },
+    {
+      "word": "まろやか",
+      "reading": "まろやか",
+      "meaning": "dịu, êm, tròn vị",
+      "level": "N1"
+    },
+    {
+      "word": "抜き打ち",
+      "reading": "ぬきうち",
+      "meaning": "bất ngờ, không báo trước",
+      "level": "N1"
+    },
+    {
+      "word": "かすれる",
+      "reading": "かすれる",
+      "meaning": "khàn; mờ, nhòe",
+      "level": "N1"
+    },
+    {
+      "word": "頑丈",
+      "reading": "がんじょう",
+      "meaning": "chắc chắn, bền, vững chãi",
+      "level": "N2"
+    },
+    {
+      "word": "行政",
+      "reading": "ぎょうせい",
+      "meaning": "hành chính, chính quyền",
+      "level": "N2"
+    },
+    {
+      "word": "携わる",
+      "reading": "たずさわる",
+      "meaning": "tham gia, làm việc trong lĩnh vực",
+      "level": "N1"
+    },
+    {
+      "word": "開花",
+      "reading": "かいか",
+      "meaning": "nở hoa; phát huy tài năng",
+      "level": "N1"
+    },
+    {
+      "word": "才能",
+      "reading": "さいのう",
+      "meaning": "tài năng",
+      "level": "N3"
+    },
+    {
+      "word": "営業",
+      "reading": "えいぎょう",
+      "meaning": "kinh doanh, bán hàng",
+      "level": "N2"
+    },
+    {
+      "word": "成績",
+      "reading": "せいせき",
+      "meaning": "thành tích, kết quả",
+      "level": "N3"
+    },
+    {
+      "word": "運用",
+      "reading": "うんよう",
+      "meaning": "vận dụng, quản lý/vận hành tiền hoặc hệ thống",
+      "level": "N1"
+    },
+    {
+      "word": "緻密",
+      "reading": "ちみつ",
+      "meaning": "tỉ mỉ, tinh vi, chặt chẽ",
+      "level": "N1"
+    },
+    {
+      "word": "迫力",
+      "reading": "はくりょく",
+      "meaning": "sức mạnh gây ấn tượng, sự lôi cuốn mạnh",
+      "level": "N2"
+    },
+    {
+      "word": "目まぐるしい",
+      "reading": "めまぐるしい",
+      "meaning": "chóng mặt, thay đổi liên tục rất nhanh",
+      "level": "N1"
+    },
+    {
+      "word": "大げさ",
+      "reading": "おおげさ",
+      "meaning": "phóng đại, khoa trương",
+      "level": "N2"
+    },
+    {
+      "word": "こっそり",
+      "reading": "こっそり",
+      "meaning": "lén lút, âm thầm, kín đáo",
+      "level": "N2"
+    },
+    {
+      "word": "山小屋",
+      "reading": "やまごや",
+      "meaning": "nhà nghỉ/lều trên núi",
+      "level": "N2"
+    },
+    {
+      "word": "雨が止む",
+      "reading": "あめがやむ",
+      "meaning": "mưa tạnh",
+      "level": "N3"
+    },
+    {
+      "word": "本番",
+      "reading": "ほんばん",
+      "meaning": "lần diễn/thi thật, thời điểm chính thức",
+      "level": "N2"
     }
   ],
   "grammar": [
@@ -57420,11 +58782,6 @@
     {
       "pattern": "としたって",
       "meaning": "dù cho, ngay cả nếu",
-      "aliases": []
-    },
-    {
-      "pattern": "とて",
-      "meaning": "ngay cả, dù là; văn viết",
       "aliases": []
     },
     {
@@ -58168,6 +59525,102 @@
       "pattern": "んばかりの",
       "meaning": "gần như, như muốn",
       "aliases": []
+    },
+    {
+      "pattern": "はずだ",
+      "meaning": "chắc là, lẽ ra phải; suy luận có căn cứ",
+      "aliases": [
+        "はず",
+        "はずです",
+        "はずだった"
+      ]
+    },
+    {
+      "pattern": "てくる",
+      "meaning": "dần trở nên; thay đổi từ trước đến nay",
+      "aliases": [
+        "てきた",
+        "てくる"
+      ]
+    },
+    {
+      "pattern": "らしい",
+      "meaning": "có vẻ, nghe nói; suy đoán dựa trên thông tin",
+      "aliases": [
+        "らしい",
+        "らしく"
+      ]
+    },
+    {
+      "pattern": "わけだ",
+      "meaning": "thảo nào, nghĩa là; kết luận từ lý do",
+      "aliases": [
+        "わけ",
+        "わけです"
+      ]
+    },
+    {
+      "pattern": "わけではない",
+      "meaning": "không hẳn là, không có nghĩa là",
+      "aliases": [
+        "わけではない",
+        "わけじゃない"
+      ]
+    },
+    {
+      "pattern": "わけにはいかない",
+      "meaning": "không thể làm vì hoàn cảnh/đạo lý không cho phép",
+      "aliases": [
+        "わけにはいかない",
+        "わけにもいかない"
+      ]
+    },
+    {
+      "pattern": "に違いない",
+      "meaning": "chắc chắn là",
+      "aliases": [
+        "に違いない"
+      ]
+    },
+    {
+      "pattern": "かもしれない",
+      "meaning": "có thể, biết đâu",
+      "aliases": [
+        "かもしれない"
+      ]
+    },
+    {
+      "pattern": "ようだ",
+      "meaning": "có vẻ như, dường như",
+      "aliases": [
+        "ようだ",
+        "ようです"
+      ]
+    },
+    {
+      "pattern": "べきだ",
+      "meaning": "nên, cần phải",
+      "aliases": [
+        "べき",
+        "べきだ",
+        "べきではない"
+      ]
+    },
+    {
+      "pattern": "というときに限って",
+      "meaning": "đúng vào lúc... thì lại; thường dùng cho việc không mong muốn",
+      "aliases": [
+        "という時に限って",
+        "ときに限って",
+        "時に限って"
+      ]
+    },
+    {
+      "pattern": "に限って",
+      "meaning": "chính vào/lại đúng; riêng... thì",
+      "aliases": [
+        "に限って"
+      ]
     }
   ],
   "hanViet": {

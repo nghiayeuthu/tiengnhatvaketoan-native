@@ -7,8 +7,10 @@ struct ExamDocument: Decodable, Identifiable {
     let month: Int
     let sections: [ExamSection]
 
-    var id: String { date }
+    var normalizedLevel: String { (level ?? "N1").uppercased() }
+    var id: String { normalizedLevel == "N1" ? date : "\(normalizedLevel)-\(date)" }
     var title: String { "\(year) tháng \(month)" }
+    var levelTitle: String { normalizedLevel }
 }
 
 struct ExamSection: Decodable {
@@ -51,6 +53,7 @@ struct RawQuestion: Decodable {
 struct PracticeQuestion: Identifiable {
     let id: String
     let examID: String
+    let examLevel: String
     let examTitle: String
     let sectionTitle: String
     let instruction: String?
